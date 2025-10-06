@@ -1,0 +1,5880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RuleForge Interactive Demo</title>
+  <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  overflow: hidden;
+}
+
+.loading {
+  padding: 12px 16px;
+  background-color: #f0f8ff; /* light bluish background */
+  color: #0a4b78; /* dark blue text */
+  font-style: italic;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Left Side */
+#left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px;
+  background-color: #1e1e1e;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+
+th, td {
+  font-size: 1vw;
+  padding: 1vw;
+  text-align: left;
+  transition: background-color 0.5s;
+  color: #f0f0f0;
+  white-space: nowrap;
+  border: 1px solid #2c2c2c;
+}
+
+th {
+  background-color: #2c2c2c;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+tr:hover {
+  background-color: #2a2a2a;
+}
+
+.highlighted-row {
+  background-color: rgba(255, 99, 71, 0.5) !important;
+}
+
+.action-button {
+  margin-top: 2vh;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  background-color: #00CED1; /* Cyan background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0.5vw 1vw rgba(0, 255, 255, 0.2); /* Light cyan shadow */
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.action-button:hover {
+  background-color: #008B8B; /* Darker cyan on hover */
+  box-shadow: 0 1vw 1.5vw rgba(0, 255, 255, 0.4); /* Slightly stronger shadow on hover */
+  transform: translateY(-0.3vw);
+}
+
+
+/* Highlighted columns */
+.highlighted-column {
+  background-color: purple !important;
+}
+
+/* Right Side */
+#right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  height: 100vh;
+}
+
+#typing-text {
+  width: 80%;
+  height: auto;
+  overflow: visible;
+  font-size: 2vw;
+  line-height: 1;
+  max-width: 90%;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#typing-text.near-progress {
+  margin-bottom: 1vh;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  width: 5vw;
+  height: 5vw;
+  opacity: 1;
+  display: none;
+}
+
+.left-arrow svg {
+  width: 100%;
+  height: 100%;
+  fill: #1DB954;
+}
+
+/* Next Button Container */
+#next-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+#progress-bar-container {
+  width: 90%;
+  display: none;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 3vh;
+  background-color: #2c2c2c;
+  border-radius: 15px;
+  position: relative;
+}
+
+.progress-step {
+  margin-top: 1vh;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-size: clamp(1.2rem, 1vw, 1.5rem);
+
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #a8e063, #56ab2f);
+  border-radius: 15px;
+  transition: width 0.5s ease;
+}
+
+#rules-list {
+  margin-top: 2vh;
+  width: 90%;
+  overflow-y: auto;
+  max-height: 90vh;
+  max-width: 100%; /* Limit the width to 90% of its parent */
+  overflow: auto;
+  display: block;
+}
+
+.rule-item {
+  font-size: 2rem;
+  padding: 1.2rem;
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  margin-bottom: 1rem; 
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease;}
+
+/* Rule Item Hover Effect */
+.rule-item:hover {
+  background-color: #00CED1; /* Cyan background on hover */
+  transform: translateY(-0.5rem); /* Slight upward movement on hover */
+}
+
+
+
+
+
+#left-side #rule-violations-count, #left-side #rule-description, #left-side #rule-caption {
+  font-size: 1.2rem;
+}
+
+#menu {
+ width: 100%;
+   width: 100%;
+  margin-bottom: 5vh;
+  z-index: 2;
+
+}
+
+#menu-btn {
+  top: 10px;
+  left: 10px;
+  margin-top: 2vh;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #00CED1;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1vw 1.5vw rgba(0, 255, 255, 0.4); /* Cyan shadow on hover */
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+#menu-btn:hover {
+  background-color: #008B8B; /* Darker cyan for hover */
+  box-shadow: 0 1vw 1.5vw rgba(0, 255, 255, 0.4); /* Cyan shadow on hover */
+  transform: translateY(-0.3vw);
+
+}
+
+#menu-btn::after {
+  content: "Click to view violation categories";
+  position: absolute;
+  top: 50%;
+  left: 105%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+#menu-btn:hover::after {
+  opacity: 1;
+}
+
+.rule-container, .violation-container {
+    z-index: 1;
+}
+
+
+
+  .dropdown-content {
+    position: absolute;
+  display: none;
+  background-color: #2d2a2a;
+  max-height: 40vh; /* Optional max height for scrollable dropdown */
+  max-width: 40vw;
+  overflow-y: auto; /* Scroll if the content exceeds max-height */
+  padding: 1vh; /* Padding around the dropdown content */
+  z-index: 10;
+}
+
+.dropdown-content ul {
+  list-style-type: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.dropdown-content li {
+  color: white;
+  padding: 1vh 1.5vw; /* Responsive padding */
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+  border-bottom: 1px solid #444; /* Border to separate the items */
+  border-radius: 5px; /* Rounded corners to give a button-like appearance */
+  cursor: pointer; /* Cursor change to indicate it's clickable */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.dropdown-content li:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+.dropdown-content li:hover {
+  background-color: #00CED1; /* Cyan background on hover */
+  transform: translateY(-0.5rem); /* Slight upward movement on hover */
+}
+
+#violation-container {
+  margin-top: 2vh;
+  width: 90%;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 1vw;
+  display: none;
+  flex-direction: column;
+}
+
+
+/* General button styling */
+button {
+    padding: 0.8em 2em;
+    font-size: 1.2em;
+    background-color: #00CED1; /* Cyan background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 1vw;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #008B8B; /* Darker cyan for hover */
+    transform: scale(1.1);
+}
+
+/* Disabled button styling */
+button:disabled {
+    background-color: #aaa; /* Light gray background */
+    color: #666; /* Gray text */
+    cursor: not-allowed; /* No cursor pointer */
+    transform: none; /* Remove scaling effect */
+    transition: none; /* No transition for disabled state */
+}
+
+
+#rules_generated {
+  color: cyan; /* Text color */
+  font-size: 1.5rem; /* Adjusts font size for better readability */
+  margin: 2rem 0; /* Adds space above and below */
+  padding: 1rem; /* Adds internal space around the content */
+  border-radius: 8px; /* Rounded corners for a smoother appearance */
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle background color */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  width: 100%; /* Makes the div take up the full available width */
+  max-width: 800px; /* Limits the width to maintain structure */
+  transition: all 0.3s ease; /* Smooth transition for changes */
+  display: block;
+}
+
+#rules_generated h2 {
+  font-size: 2rem; /* Larger font size for the title */
+  margin-bottom: 1rem; /* Adds space below the title */
+  color: #00CED1; /* Color for the title */
+}
+#no-rules {
+  display: none; /* Initially hidden */
+  color: red; /* Text color to indicate absence of rules */
+  font-size: 1.5rem; /* Readable font size */
+  margin: 2rem 0; /* Adds spacing above and below */
+  padding: 1rem; /* Internal padding for better structure */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(255, 0, 0, 0.1); /* Light red background */
+  box-shadow: 0 0.5rem 1rem rgba(255, 0, 0, 0.2); /* Soft shadow for emphasis */
+  width: 100%; /* Takes full width */
+  max-width: 800px; /* Restricts width for better layout */
+  text-align: center; /* Centers the text */
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+#no-rules p {
+  font-size: 1.2rem; /* Slightly smaller text for the message */
+  font-weight: bold; /* Makes the message stand out */
+  margin: 0; /* Removes default margin */
+  color: darkred; /* Darker red for contrast */
+}
+
+/* Updated header styles */
+.centered-header,
+.dynamic-header {
+    text-align: left; /* Changed from center to left */
+    margin: 1rem 0; /* Using rem for consistent spacing */
+    padding: 1rem 0; /* Consistent padding */
+    font-size: 1.2rem; /* Fixed font size (not viewport-dependent) */
+    color: #00CED1;
+    font-weight: bold;
+    border-bottom: 2px solid #444;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Specific adjustments for dynamic-header */
+.dynamic-header {
+    width: 100%; /* Changed from 80% to match other header */
+    margin-left: 0; /* Remove auto margins that were centering it */
+    padding-left: 0; /* Remove extra left padding */
+}
+
+
+.violation-data-container {
+  margin-bottom: 2vh;
+  font-size: 1vh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 45vh;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  /*padding: 1vw;*/
+  position: relative;
+}
+
+/* Styling for the dataset table */
+.violation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #252323;
+  color: white;
+}
+
+#dataset-table, .violation-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.violation-table th {
+  position: sticky;
+  top: 0;
+  background-color: #2c2c2c;
+  z-index: 2;
+}
+
+/* Each table gets its own scroll space */
+.violation-data-wrapper {
+  max-height: 30vh;
+  overflow: auto;
+  margin-bottom: 2vh;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+#folder-input {
+  display: none !important;
+}
+
+/* Styling for the button container with the new class name */
+.button-container-dynamic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures buttons don’t overflow on small screens */
+    min-height: 40px; /* Ensures buttons are always visible */
+    max-height: 5vh; /* Still limits height, but allows adjustments */
+    margin-bottom: 3vh;
+    padding: 0.5vh 1vw; /* Adds space around buttons */
+}
+
+
+#toggle-type-filter {
+  font-size: 1em; /* Changed from rem to em for relative sizing */
+  text-align: left;
+  display: block;
+  margin: 0 auto 0.625em 0; /* Changed 10px to 0.625em (10/16) */
+}
+
+#ruleTypeCheckboxes {
+  font-size: 1rem; /* Changed from rem to em */
+  text-align: left;
+  max-height: 12.5em; /* Changed from 200px to 12.5em (200/16) */
+  overflow-y: auto;
+  border: 0.0625em solid #ccc; /* Changed from 1px to 0.0625em (1/16) */
+  padding: 0.625em; /* Changed from 10px to 0.625em */
+  margin-top: 0.625em; /* Changed from 10px to 0.625em */
+  display: none;
+}
+
+
+#ruleTypeCheckboxes.visible {
+  display: block;
+}
+
+#folder-input {
+  display: none;
+}
+
+#folder-input-label {
+  margin-top: 50vh;
+  font-size: 2vw;
+  padding: 1vw 2vw;
+  background-color: #00CED1;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0.5vw 1vw rgba(29, 185, 84, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+#folder-input-label:hover {
+  background-color: #00b7b7; /* Slightly darker on hover */
+  box-shadow: 0 1vw 1.5vw rgba(0, 255, 255, 0.4);
+  transform: translateY(-0.3vw);
+}
+
+.rule-item.selected {
+  background-color: #4682B4; /* SteelBlue or any color you prefer */
+  transform: none; /* Optional: cancel hover lift effect */
+}
+
+
+/* Common button styles */
+#toggle-type-filter,
+#menu-btn {
+  padding: 0.8em 1.5em;
+  font-size: 1rem;
+  min-width: 10em;
+  display: inline-flex;       /* Changed from 'block' to 'inline-flex' */
+  align-items: center;
+  justify-content: flex-start; /* Left-align text inside button */
+  margin: 0.625em 0 0.625em 0; /* Reset margins (top right bottom left) */
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  text-align: left;          /* Left-align text (fallback) */
+}
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    #main-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+
+    /* Rule Content Display */
+    #rule-content {
+      width: 90%;
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: none;
+    }
+
+
+    #rule-content h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #1DB954;
+    }
+
+    #rule-content p {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    #rule-caption {
+      font-size: 2em;
+      margin-top: 10px;
+      font-style: italic;
+      color: #bbbbbb;
+    }
+
+ #dataset-container {
+  margin: 2rem auto;
+  width: 95%;
+  max-height: 70vh;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+}
+
+    #dataset-table {
+      width: max-content; /* Allow table to expand horizontally */
+      border-collapse: collapse;
+    }
+
+    th, td {
+      font-size: 1.5em;
+      padding: 16px;
+      text-align: left;
+      transition: background-color 0.5s;
+      color: #f0f0f0;
+      white-space: nowrap; /* Prevent text from wrapping */
+      border: 1px solid #2c2c2c; /* Optional: Add borders for clarity */
+    }
+
+    th {
+      background-color: #2c2c2c;
+      position: sticky;
+      top: 0; /* Keep headers fixed at the top */
+      z-index: 1;
+    }
+
+    tr:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+
+    tr:hover {
+      background-color: #2a2a2a;
+    }
+
+    .highlighted-row {
+      background-color: rgba(255, 99, 71, 0.5) !important; /* Highlight color for violations */
+    }
+
+    .action-button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 1em;
+      background-color: #1DB954;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(29, 185, 84, 0.2);
+      transition: all 0.3s ease;
+      display: none;
+    }
+
+    .action-button:hover {
+      background-color: #17a149;
+      box-shadow: 0 15px 20px rgba(29, 185, 84, 0.4);
+      transform: translateY(-3px);
+    }
+
+    /* Highlighted columns */
+    .highlighted-column {
+      background-color: purple !important;
+    }
+
+    /* Right Side */
+    #right-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    #typing-text {
+      font-size: 3em;
+      line-height: 1.5;
+      max-width: 90%;
+      text-align: left;
+    }
+
+    .left-arrow {
+      position: absolute;
+      left: 50%;
+      bottom: 20%;
+      width: 80px;
+      height: 80px;
+      opacity: 0;
+    }
+
+    .left-arrow svg {
+      width: 100%;
+      height: 100%;
+      fill: #1DB954;
+    }
+
+    /* Step name styles */
+/*.progress-step {*/
+/*  position: absolute;*/
+/*  font-size: 1.2em; !* Make text larger *!*/
+/*  color: #fff;*/
+/*  opacity: 0; !* Initially hidden *!*/
+/*  transition: opacity 0.5s, transform 0.5s; !* Smooth transition *!*/
+/*  transform: translateY(-20px); !* Position above the progress bar *!*/
+/*}*/
+
+/*!* Highlight step name when active *!*/
+/*.progress-step.active {*/
+/*  font-size: 1.5em; !* Enlarge active step *!*/
+/*  color: #a8e063; !* Match the gradient start color *!*/
+/*  opacity: 1; !* Make visible *!*/
+/*  transform: translateY(-40px); !* Lift higher when active *!*/
+/*}*/
+
+/*!* Connecting line styles *!*/
+/*.step-connector {*/
+/*  position: absolute;*/
+/*  width: 2px;*/
+/*  height: 30px;*/
+/*  background-color: #a8e063; !* Match gradient start color *!*/
+/*  transition: background-color 0.5s ease;*/
+/*}*/
+
+
+
+    #rules-list {
+      margin-top: 20px;
+      width: 90%;
+      display: none;
+    }
+
+    .rule-item {
+      font-size: 2em;
+      padding: 20px;
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .rule-item:hover {
+      background-color: #3a3a3a;
+    }
+
+    /* File Input Styles */
+    #csv-file-input {
+      margin-top: 20px;
+      display: none;
+    }
+
+
+    #file-input-label {
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      /*font-size: 1em;*/
+      background-color: #1DB954;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(29, 185, 84, 0.2);
+    }
+
+    #file-input-label:hover {
+      background-color: #17a149;
+      box-shadow: 0 15px 20px rgba(29, 185, 84, 0.4);
+      /*transform: translateY(-3px);*/
+    }
+
+      body, button, .rule-item, #typing-text, #rules_generated, #no-rules {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  }
+
+    th, td {
+    font-size: 0.9rem; /* smaller, responsive font size */
+    padding: 0.5rem;
+  }
+  
+  </style>
+</head>
+<body>
+  <div id="main-container">
+    <!-- Left Side -->
+    <div id="left-side">
+
+      <div id="menu" style="display: none;">
+    <button id="menu-btn">Violation Groups</button>
+
+  <div class="dropdown-content"></div>
+</div>
+      <!-- File Input for CSV Upload -->
+
+
+      <!-- Rule Content Display -->
+      <div id="rule-content">
+        <h2 id="rule-title"></h2>
+        <p id="rule-description"></p>
+        <p id="rule-violations-count"></p>
+        <div id="rule-caption"></div>
+      </div>
+      <div id="dataset-container">
+        <table id="dataset-table">
+          <!-- Table content will be generated here -->
+        </table>
+      </div>
+        <div id="violation-container">
+      </div>
+      <button id="verify-button" class="action-button">Verify Data</button>
+    </div>
+
+    <!-- Right Side -->
+    <div id="right-side">
+      <div id="typing-text"></div>
+      <div id="left-arrow" class="left-arrow">
+        <svg viewBox="0 0 64 64">
+          <path d="M40 16 L24 32 L40 48" stroke="#1DB954" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div id="next-button-container" class="next-button-container">
+        <button id="next-button" class="action-button">Next</button>
+      </div>
+      <div id="progress-bar-container">
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="step-1" class="progress-step">Deep Data Understanding</div>
+        <div id="step-2" class="progress-step">Generating Candidate Data Quality Checking Rules</div>
+        <div id="step-3" class="progress-step">Turning Rules into Executable Programs</div>
+        <div id="step-4" class="progress-step">Evaluating and Selecting Candidate Rules</div>
+        <div id="step-5" class="progress-step">Applying Selected Rules</div>
+      </div>
+      <button id="generated-rules-button" class="action-button">View Generated Rules</button>
+      <div id="rules-list">
+        <!-- Rule items will be generated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Papa Parse Library -->
+  <script>
+let rules = {
+  "R1": {
+    "title": "Intra-Table Asymmetry",
+    "description": "For every department, following the chain of parent_department_id values must never lead back to the same department_id. ",
+    "caption": "See rows that violate R1.",
+    "violationIndices": {
+      "(('circular_pair', 'D-ASYM-A-D-ASYM-B'),)": {
+        "circular_dependency": [
+          897,
+          520,
+          651,
+          269,
+          17,
+          785,
+          147,
+          402,
+          281,
+          921,
+          412,
+          799,
+          33,
+          34,
+          163,
+          677,
+          423,
+          680,
+          807,
+          44,
+          45,
+          942,
+          812,
+          304,
+          312,
+          697,
+          952,
+          59,
+          189,
+          704,
+          451,
+          452,
+          453,
+          711,
+          71,
+          328,
+          587,
+          332,
+          973,
+          218,
+          858,
+          735,
+          743,
+          106,
+          235,
+          887,
+          752,
+          241,
+          503,
+          379,
+          381,
+          383
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "department_id",
+      "parent_department_id"
+    ],
+    "num_vio": 52,
+    "num_groups": 1
+  },
+  "R2": {
+    "title": "Temporal Order Checking",
+    "description": "If employment_end_date is not null, it must be greater than or equal to employment_start_date.",
+    "caption": "See rows that violate R2.",
+    "violationIndices": [
+      499,
+      417,
+      821,
+      407,
+      139,
+      847,
+      625,
+      276,
+      458,
+      474,
+      340,
+      35,
+      469,
+      880,
+      243,
+      832,
+      292,
+      607,
+      13,
+      774,
+      449,
+      730,
+      741,
+      201,
+      961,
+      369,
+      610,
+      267,
+      861,
+      82,
+      277,
+      620,
+      727,
+      863,
+      96,
+      53,
+      20,
+      28,
+      30,
+      399,
+      396,
+      62,
+      918,
+      658,
+      388,
+      913,
+      216,
+      802
+    ],
+    "highlightedColumns": [
+      "employment_start_date",
+      "employment_end_date"
+    ],
+    "num_vio": 48,
+    "num_groups": 48
+  },
+  "R3": {
+    "title": "Implication / Conditional Completeness",
+    "description": "If employment_status = 'Terminated', then employment_end_date must not be null.",
+    "caption": "See rows that violate R3.",
+    "violationIndices": [
+      230,
+      792,
+      989,
+      934,
+      413,
+      228,
+      653,
+      219,
+      69,
+      109,
+      982,
+      481,
+      804,
+      315,
+      968,
+      76,
+      112,
+      876,
+      484,
+      135,
+      547,
+      761,
+      928,
+      879,
+      605,
+      237,
+      25,
+      814,
+      787,
+      684,
+      303,
+      594,
+      950,
+      433,
+      864,
+      93,
+      81,
+      867,
+      603,
+      905,
+      806,
+      114,
+      401,
+      560,
+      722,
+      618
+    ],
+    "highlightedColumns": [
+      "employment_status",
+      "employment_end_date"
+    ],
+    "num_vio": 46,
+    "num_groups": 46
+  },
+  "R4": {
+    "title": "Implication / Conditional Completeness",
+    "description": "If employment_status = 'Active', then employment_end_date must be null.",
+    "caption": "See rows that violate R4.",
+    "violationIndices": [
+      837,
+      924,
+      124,
+      686,
+      898,
+      366,
+      368,
+      190,
+      749,
+      491,
+      962,
+      128,
+      184,
+      901,
+      88,
+      47,
+      375,
+      286,
+      502,
+      948,
+      478,
+      162,
+      801,
+      55,
+      859,
+      295,
+      345
+    ],
+    "highlightedColumns": [
+      "employment_status",
+      "employment_end_date"
+    ],
+    "num_vio": 27,
+    "num_groups": 27
+  },
+  "R5": {
+    "title": "Implication / Concrete Value",
+    "description": "If employment_status = 'Contractor', then bonus_percentage must be 0.",
+    "caption": "See rows that violate R5.",
+    "violationIndices": [
+      1114,
+      1011,
+      1008,
+      1057,
+      1021,
+      1074,
+      1061,
+      1104,
+      1075,
+      1095,
+      1055,
+      1098,
+      1105,
+      1041,
+      1063,
+      1093,
+      1067,
+      1010,
+      1094,
+      1003,
+      1043,
+      1004,
+      1025,
+      1031,
+      1017,
+      1038,
+      1062,
+      1080,
+      1046,
+      1030,
+      1007,
+      1022,
+      1109,
+      1034,
+      1092,
+      1035,
+      1071,
+      1122,
+      1026,
+      1024,
+      1009,
+      1099,
+      1078,
+      1116,
+      1119,
+      1076,
+      1048
+    ],
+    "highlightedColumns": [
+      "employment_status",
+      "bonus_percentage"
+    ],
+    "num_vio": 47,
+    "num_groups": 47
+  },
+  "R6": {
+    "title": "Implication / Concrete Value",
+    "description": "If job_title IN ('Software Engineer I', 'Software Engineer II', 'Senior Software Engineer', 'Lead Software Engineer'), then job_family must be 'Technology'.",
+    "caption": "See rows that violate R6.",
+    "violationIndices": [
+      272,
+      299,
+      935,
+      780,
+      535,
+      646,
+      720,
+      839,
+      748,
+      818,
+      602,
+      506,
+      628,
+      873,
+      1016,
+      577,
+      51,
+      609,
+      404,
+      544,
+      387,
+      778,
+      405,
+      195,
+      561,
+      260,
+      881,
+      724,
+      616,
+      333,
+      214,
+      932,
+      48,
+      902,
+      508,
+      656,
+      999,
+      282,
+      1020,
+      287,
+      1069,
+      574,
+      1019,
+      855,
+      969,
+      298,
+      31,
+      845,
+      899,
+      116,
+      878,
+      188
+    ],
+    "highlightedColumns": [
+      "job_title",
+      "job_family"
+    ],
+    "num_vio": 52,
+    "num_groups": 52
+  },
+  "R7": {
+    "title": "Implication / Concrete Value",
+    "description": "If level_rank < 5, department_id is not the Executive Leadership department ('D001'), and employment_start_date is within the last 10 years, then bonus_percentage must be <= 0.3.",
+    "caption": "See rows that violate R7.",
+    "violationIndices": [
+      371,
+      824,
+      223,
+      990,
+      1079,
+      848,
+      782,
+      980,
+      153,
+      475,
+      351,
+      40,
+      110,
+      588,
+      350,
+      271,
+      349,
+      1086,
+      100,
+      571,
+      619,
+      86,
+      176,
+      947,
+      669,
+      94,
+      614,
+      744,
+      854,
+      540,
+      557,
+      866,
+      865,
+      353,
+      256,
+      719,
+      885,
+      763,
+      485,
+      671,
+      19,
+      8,
+      1023,
+      164,
+      120,
+      95,
+      441,
+      857,
+      36,
+      343
+    ],
+    "highlightedColumns": [
+      "level_rank",
+      "department_id",
+      "employment_start_date",
+      "bonus_percentage"
+    ],
+    "num_vio": 50,
+    "num_groups": 50
+  },
+  "R8": {
+    "title": "Syntactic",
+    "description": "If employment_status is 'Active' or 'Terminated', the email must follow the format 'firstname.lastname@acme.corp'. If multiple employees share a name, subsequent ones must have a numeric suffix 'firstname.lastnameN@acme.corp'.",
+    "caption": "See rows that violate R8.",
+    "violationIndices": [
+      175,
+      132,
+      415,
+      323,
+      297,
+      783,
+      248,
+      553,
+      566,
+      513,
+      672,
+      842,
+      507,
+      439,
+      149,
+      543,
+      811,
+      640,
+      708,
+      356,
+      403,
+      134,
+      521,
+      611,
+      702,
+      495,
+      270
+    ],
+    "highlightedColumns": [
+      "email",
+      "employee_name",
+      "employment_status"
+    ],
+    "num_vio": 27,
+    "num_groups": 27
+  },
+  "R9": {
+    "title": "Domain-Specific Syntactic",
+    "description": "A manager_id must conform to the standard employee ID format, matching the regex '^EMP-\\d{6}$'.",
+    "caption": "See rows that violate R9.",
+    "violationIndices": [
+      224,
+      240,
+      795,
+      667,
+      61,
+      170,
+      424,
+      893,
+      537,
+      280,
+      846,
+      473,
+      386,
+      760,
+      525,
+      512,
+      654,
+      314,
+      590,
+      169,
+      823,
+      180,
+      598,
+      98,
+      692,
+      678
+    ],
+    "highlightedColumns": [
+      "manager_id"
+    ],
+    "num_vio": 26,
+    "num_groups": 26
+  },
+  "R10": {
+    "title": "Amount Comparison",
+    "description": "The total_compensation must be greater than or equal to the base_salary.",
+    "caption": "See rows that violate R10.",
+    "violationIndices": [
+      108,
+      208,
+      263,
+      583,
+      523,
+      206,
+      466,
+      650,
+      956,
+      231,
+      595,
+      581,
+      911,
+      753,
+      173,
+      461,
+      450,
+      225,
+      767,
+      965,
+      567,
+      556,
+      174,
+      564,
+      265,
+      430,
+      467,
+      592,
+      185,
+      358,
+      545,
+      483,
+      1047,
+      324,
+      1107,
+      448,
+      463,
+      709,
+      459,
+      346,
+      698,
+      1036,
+      739,
+      432,
+      42,
+      254,
+      784,
+      922,
+      974,
+      104,
+      1111,
+      647,
+      886
+    ],
+    "highlightedColumns": [
+      "total_compensation",
+      "base_salary"
+    ],
+    "num_vio": 53,
+    "num_groups": 53
+  },
+  "R11": {
+    "title": "Functional Dependency (FD) Checking",
+    "description": "For any given combination of department_id and job_level, the value of level_rank must always be the same.",
+    "caption": "See rows that violate R11.",
+    "violationIndices": {
+      "(('department_id', 'D015'), ('job_level', 'Mid-Level'))": {
+        "('level_rank', 3)": [
+          78,
+          167,
+          468,
+          476,
+          500,
+          701,
+          838,
+          980,
+          988,
+          1051,
+          1052,
+          1053
+        ],
+        "('level_rank', 4)": [
+          943
+        ]
+      },
+      "(('department_id', 'D010'), ('job_level', 'Junior'))": {
+        "('level_rank', 2)": [
+          63,
+          75,
+          127,
+          303
+        ],
+        "('level_rank', 3)": [
+          612
+        ]
+      },
+      "(('department_id', 'D005'), ('job_level', 'Principal'))": {
+        "('level_rank', 5)": [
+          460
+        ],
+        "('level_rank', 6)": [
+          50,
+          112,
+          165,
+          289,
+          450,
+          484,
+          505,
+          521,
+          563,
+          604,
+          661
+        ]
+      },
+      "(('department_id', 'D017'), ('job_level', 'Junior'))": {
+        "('level_rank', 2)": [
+          86,
+          179,
+          194,
+          198,
+          215,
+          473,
+          475,
+          552,
+          562,
+          590,
+          618,
+          732,
+          741,
+          805,
+          853,
+          860,
+          861,
+          905,
+          916,
+          945,
+          987
+        ],
+        "('level_rank', 3)": [
+          998
+        ]
+      },
+      "(('department_id', 'D002'), ('job_level', 'Mid-Level'))": {
+        "('level_rank', 2)": [
+          58
+        ],
+        "('level_rank', 3)": [
+          243,
+          249,
+          297,
+          395,
+          399,
+          408,
+          600,
+          609,
+          659,
+          660,
+          777,
+          832,
+          932
+        ]
+      },
+      "(('department_id', 'D017'), ('job_level', 'Manager'))": {
+        "('level_rank', 5)": [
+          141,
+          330
+        ],
+        "('level_rank', 6)": [
+          676
+        ]
+      },
+      "(('department_id', 'D008'), ('job_level', 'Principal'))": {
+        "('level_rank', 5)": [
+          54
+        ],
+        "('level_rank', 6)": [
+          42,
+          196,
+          445
+        ]
+      },
+      "(('department_id', 'D013'), ('job_level', 'Director'))": {
+        "('level_rank', 7)": [
+          171,
+          369,
+          417,
+          859
+        ],
+        "('level_rank', 8)": [
+          729
+        ]
+      },
+      "(('department_id', 'D015'), ('job_level', 'Director'))": {
+        "('level_rank', 7)": [
+          132,
+          783
+        ],
+        "('level_rank', 8)": [
+          695
+        ]
+      },
+      "(('department_id', 'D014'), ('job_level', 'Director'))": {
+        "('level_rank', 7)": [
+          108
+        ],
+        "('level_rank', 8)": [
+          409
+        ]
+      },
+      "(('department_id', 'D009'), ('job_level', 'Senior'))": {
+        "('level_rank', 3)": [
+          470
+        ],
+        "('level_rank', 4)": [
+          48,
+          51,
+          110,
+          195,
+          237,
+          329,
+          432,
+          769,
+          774,
+          819,
+          879,
+          895,
+          898,
+          912,
+          958,
+          1078,
+          1079,
+          1080,
+          1081
+        ]
+      },
+      "(('department_id', 'D006'), ('job_level', 'Mid-Level'))": {
+        "('level_rank', 2)": [
+          889
+        ],
+        "('level_rank', 3)": [
+          105,
+          109,
+          142,
+          232,
+          272,
+          282,
+          375,
+          413,
+          434,
+          479,
+          540,
+          583,
+          597,
+          857,
+          885,
+          899,
+          1019,
+          1020,
+          1029,
+          1030,
+          1031,
+          1040,
+          1041,
+          1042,
+          1043
+        ]
+      },
+      "(('department_id', 'D003'), ('job_level', 'Lead'))": {
+        "('level_rank', 4)": [
+          158
+        ],
+        "('level_rank', 5)": [
+          25,
+          273,
+          319,
+          334,
+          508,
+          839
+        ]
+      },
+      "(('department_id', 'D002'), ('job_level', 'Director'))": {
+        "('level_rank', 6)": [
+          229
+        ],
+        "('level_rank', 7)": [
+          603,
+          843
+        ]
+      },
+      "(('department_id', 'D009'), ('job_level', 'Junior'))": {
+        "('level_rank', 1)": [
+          992
+        ],
+        "('level_rank', 2)": [
+          125,
+          236,
+          292,
+          343,
+          559,
+          611,
+          688,
+          753,
+          901,
+          977
+        ]
+      },
+      "(('department_id', 'D015'), ('job_level', 'Junior'))": {
+        "('level_rank', 1)": [
+          690
+        ],
+        "('level_rank', 2)": [
+          38,
+          474,
+          545,
+          712,
+          915
+        ]
+      },
+      "(('department_id', 'D005'), ('job_level', 'Director'))": {
+        "('level_rank', 7)": [
+          277
+        ],
+        "('level_rank', 8)": [
+          883
+        ]
+      },
+      "(('department_id', 'D007'), ('job_level', 'Mid-Level'))": {
+        "('level_rank', 2)": [
+          64
+        ],
+        "('level_rank', 3)": [
+          13,
+          46,
+          188,
+          351,
+          404,
+          424,
+          536,
+          548,
+          608,
+          694,
+          733,
+          806,
+          933,
+          960,
+          999,
+          1021,
+          1022,
+          1023
+        ]
+      },
+      "(('department_id', 'D001'), ('job_level', 'Director'))": {
+        "('level_rank', 6)": [
+          573
+        ],
+        "('level_rank', 7)": [
+          168
+        ]
+      },
+      "(('department_id', 'D009'), ('job_level', 'Director'))": {
+        "('level_rank', 7)": [
+          568
+        ],
+        "('level_rank', 8)": [
+          414
+        ]
+      },
+      "(('department_id', 'D018'), ('job_level', 'Manager'))": {
+        "('level_rank', 4)": [
+          683
+        ],
+        "('level_rank', 5)": [
+          205
+        ]
+      },
+      "(('department_id', 'D016'), ('job_level', 'Junior'))": {
+        "('level_rank', 2)": [
+          1,
+          68,
+          140,
+          190,
+          207,
+          228,
+          251,
+          326,
+          401,
+          511,
+          547,
+          578,
+          689,
+          710,
+          738,
+          849,
+          856,
+          913,
+          981,
+          1115,
+          1116,
+          1117,
+          1118
+        ],
+        "('level_rank', 3)": [
+          300
+        ]
+      },
+      "(('department_id', 'D004'), ('job_level', 'Junior'))": {
+        "('level_rank', 1)": [
+          52
+        ],
+        "('level_rank', 2)": [
+          30,
+          85,
+          234,
+          274,
+          397,
+          441,
+          560,
+          594,
+          761,
+          869,
+          882,
+          926,
+          931,
+          949
+        ]
+      },
+      "(('department_id', 'D018'), ('job_level', 'Senior'))": {
+        "('level_rank', 4)": [
+          6,
+          69,
+          73,
+          227,
+          233,
+          246,
+          275,
+          306,
+          437,
+          582,
+          762,
+          768,
+          837,
+          907,
+          985,
+          1008,
+          1009,
+          1046,
+          1047,
+          1048
+        ],
+        "('level_rank', 5)": [
+          964
+        ]
+      },
+      "(('department_id', 'D003'), ('job_level', 'Junior'))": {
+        "('level_rank', 2)": [
+          94,
+          214,
+          248,
+          287,
+          338,
+          430,
+          478,
+          494,
+          497,
+          527,
+          534,
+          592,
+          593,
+          627,
+          656,
+          691,
+          744,
+          804,
+          818,
+          970
+        ],
+        "('level_rank', 3)": [
+          875
+        ]
+      },
+      "(('department_id', 'D011'), ('job_level', 'Senior'))": {
+        "('level_rank', 4)": [
+          122,
+          221,
+          400,
+          580,
+          675,
+          698,
+          782
+        ],
+        "('level_rank', 5)": [
+          18
+        ]
+      },
+      "(('department_id', 'D012'), ('job_level', 'Manager'))": {
+        "('level_rank', 5)": [
+          202,
+          613,
+          682,
+          951
+        ],
+        "('level_rank', 6)": [
+          529
+        ]
+      },
+      "(('department_id', 'D007'), ('job_level', 'Senior'))": {
+        "('level_rank', 4)": [
+          74,
+          138,
+          180,
+          181,
+          211,
+          286,
+          393,
+          403,
+          438,
+          446,
+          447,
+          477,
+          542,
+          584,
+          653,
+          699,
+          791,
+          801,
+          820,
+          1061,
+          1062,
+          1063,
+          1064
+        ],
+        "('level_rank', 5)": [
+          788
+        ]
+      },
+      "(('department_id', 'D002'), ('job_level', 'Lead'))": {
+        "('level_rank', 4)": [
+          909
+        ],
+        "('level_rank', 5)": [
+          321,
+          483,
+          643,
+          720,
+          871,
+          969
+        ]
+      },
+      "(('department_id', 'D007'), ('job_level', 'Intern'))": {
+        "('level_rank', 1)": [
+          88,
+          499
+        ],
+        "('level_rank', 2)": [
+          148
+        ]
+      },
+      "(('department_id', 'D011'), ('job_level', 'Mid-Level'))": {
+        "('level_rank', 3)": [
+          137,
+          174,
+          454,
+          615,
+          620,
+          623,
+          654,
+          722,
+          829,
+          891,
+          1098,
+          1099
+        ],
+        "('level_rank', 4)": [
+          422
+        ]
+      },
+      "(('department_id', 'D008'), ('job_level', 'Manager'))": {
+        "('level_rank', 4)": [
+          626
+        ],
+        "('level_rank', 5)": [
+          308
+        ]
+      },
+      "(('department_id', 'D006'), ('job_level', 'Manager'))": {
+        "('level_rank', 5)": [
+          32
+        ],
+        "('level_rank', 6)": [
+          750
+        ]
+      },
+      "(('department_id', 'D016'), ('job_level', 'Mid-Level'))": {
+        "('level_rank', 3)": [
+          3,
+          22,
+          113,
+          139,
+          149,
+          177,
+          204,
+          316,
+          318,
+          355,
+          362,
+          444,
+          566,
+          581,
+          649,
+          658,
+          816,
+          872,
+          957,
+          975,
+          1024,
+          1025,
+          1085,
+          1086,
+          1087
+        ],
+        "('level_rank', 4)": [
+          726
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "department_id",
+      "job_level",
+      "level_rank"
+    ],
+    "num_vio": 354,
+    "num_groups": 34
+  },
+  "R12": {
+    "title": "Conditional Functional Dependency (CFD)",
+    "description": "If department_name != 'Executive Leadership' and level_rank <= 3, then for any given (department_id, job_level) the bonus_percentage must be the same across all rows.",
+    "caption": "See rows that violate R12.",
+    "violationIndices": {
+      "(('department_id', 'D008'), ('job_level', 'Intern'))": {
+        "('bonus_percentage', 0.0)": [
+          27,
+          564,
+          681,
+          700,
+          702,
+          793
+        ],
+        "('bonus_percentage', 0.01)": [
+          831
+        ]
+      },
+      "(('department_id', 'D002'), ('job_level', 'Intern'))": {
+        "('bonus_percentage', 0.0)": [
+          57,
+          62,
+          157,
+          160,
+          798,
+          833,
+          919
+        ],
+        "('bonus_percentage', 0.01)": [
+          380
+        ]
+      },
+      "(('department_id', 'D009'), ('job_level', 'Intern'))": {
+        "('bonus_percentage', 0.0)": [
+          461,
+          765,
+          850
+        ],
+        "('bonus_percentage', 0.01)": [
+          60
+        ]
+      },
+      "(('department_id', 'D004'), ('job_level', 'Intern'))": {
+        "('bonus_percentage', 0.0)": [
+          14,
+          606,
+          629,
+          678,
+          797,
+          811,
+          903
+        ],
+        "('bonus_percentage', 0.01)": [
+          121
+        ]
+      },
+      "(('department_id', 'D006'), ('job_level', 'Intern'))": {
+        "('bonus_percentage', 0.0)": [
+          185,
+          295,
+          705
+        ],
+        "('bonus_percentage', 0.01)": [
+          938
+        ]
+      },
+      "(('department_id', 'D005'), ('job_level', 'Intern'))": {
+        "('bonus_percentage', 0.0)": [
+          178,
+          411,
+          455,
+          459,
+          502,
+          555,
+          674,
+          713,
+          963
+        ],
+        "('bonus_percentage', 0.01)": [
+          182
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "department_name",
+      "level_rank",
+      "department_id",
+      "job_level",
+      "bonus_percentage"
+    ],
+    "num_vio": 41,
+    "num_groups": 6
+  },
+  "R13": {
+    "title": "Intra-Table Equality",
+    "description": "If job_level = 'Intern', then the building_id of the employee must match the building_id of their direct manager, as identified by manager_id.",
+    "caption": "See rows that violate R13.",
+    "violationIndices": {
+      "(('manager_id', 'EMP-100230'),)": {
+        "manager_row": 229,
+        "mismatched_intern_rows": [
+          157,
+          919,
+          798,
+          833,
+          160,
+          57
+        ]
+      },
+      "(('manager_id', 'EMP-100884'),)": {
+        "manager_row": 883,
+        "mismatched_intern_rows": [
+          178,
+          713,
+          411,
+          555,
+          455,
+          963,
+          674
+        ]
+      },
+      "(('manager_id', 'EMP-100130'),)": {
+        "manager_row": 129,
+        "mismatched_intern_rows": [
+          27,
+          793,
+          700,
+          681
+        ]
+      },
+      "(('manager_id', 'EMP-100286'),)": {
+        "manager_row": 285,
+        "mismatched_intern_rows": [
+          606,
+          14,
+          797
+        ]
+      },
+      "(('manager_id', 'EMP-100415'),)": {
+        "manager_row": 414,
+        "mismatched_intern_rows": [
+          850,
+          765
+        ]
+      },
+      "(('manager_id', 'EMP-100263'),)": {
+        "manager_row": 262,
+        "mismatched_intern_rows": [
+          37,
+          519,
+          570,
+          524,
+          493
+        ]
+      },
+      "(('manager_id', 'EMP-100554'),)": {
+        "manager_row": 553,
+        "mismatched_intern_rows": [
+          705
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "employee_id",
+      "manager_id",
+      "building_id",
+      "job_level"
+    ],
+    "num_vio": 35,
+    "num_groups": 7
+  },
+  "R14": {
+    "title": "Unique Key Constraint",
+    "description": "If employment_status = 'Active', then employee_id must be unique.",
+    "caption": "See rows that violate R14.",
+    "violationIndices": {
+      "(('employee_id', 'EMP-100499'),)": {
+        "duplicates": [
+          498,
+          987
+        ]
+      },
+      "(('employee_id', 'EMP-100821'),)": {
+        "duplicates": [
+          644,
+          820
+        ]
+      },
+      "(('employee_id', 'EMP-100027'),)": {
+        "duplicates": [
+          26,
+          951
+        ]
+      },
+      "(('employee_id', 'EMP-100441'),)": {
+        "duplicates": [
+          194,
+          440
+        ]
+      },
+      "(('employee_id', 'EMP-100480'),)": {
+        "duplicates": [
+          2,
+          479
+        ]
+      },
+      "(('employee_id', 'EMP-100160'),)": {
+        "duplicates": [
+          159,
+          843
+        ]
+      },
+      "(('employee_id', 'EMP-100292'),)": {
+        "duplicates": [
+          171,
+          291
+        ]
+      },
+      "(('employee_id', 'EMP-100310'),)": {
+        "duplicates": [
+          309,
+          360
+        ]
+      },
+      "(('employee_id', 'EMP-100342'),)": {
+        "duplicates": [
+          341,
+          670
+        ]
+      },
+      "(('employee_id', 'EMP-100719'),)": {
+        "duplicates": [
+          239,
+          718
+        ]
+      },
+      "(('employee_id', 'EMP-100166'),)": {
+        "duplicates": [
+          165,
+          835
+        ]
+      },
+      "(('employee_id', 'EMP-100011'),)": {
+        "duplicates": [
+          10,
+          283
+        ]
+      },
+      "(('employee_id', 'EMP-100401'),)": {
+        "duplicates": [
+          400,
+          558
+        ]
+      },
+      "(('employee_id', 'EMP-100002'),)": {
+        "duplicates": [
+          1,
+          129
+        ]
+      },
+      "(('employee_id', 'EMP-100239'),)": {
+        "duplicates": [
+          238,
+          313
+        ]
+      },
+      "(('employee_id', 'EMP-100327'),)": {
+        "duplicates": [
+          264,
+          326
+        ]
+      },
+      "(('employee_id', 'EMP-100602'),)": {
+        "duplicates": [
+          542,
+          601
+        ]
+      },
+      "(('employee_id', 'EMP-100909'),)": {
+        "duplicates": [
+          655,
+          908
+        ]
+      },
+      "(('employee_id', 'EMP-100708'),)": {
+        "duplicates": [
+          311,
+          707
+        ]
+      },
+      "(('employee_id', 'EMP-100636'),)": {
+        "duplicates": [
+          294,
+          635
+        ]
+      },
+      "(('employee_id', 'EMP-100472'),)": {
+        "duplicates": [
+          355,
+          471
+        ]
+      },
+      "(('employee_id', 'EMP-100446'),)": {
+        "duplicates": [
+          445,
+          786
+        ]
+      },
+      "(('employee_id', 'EMP-100978'),)": {
+        "duplicates": [
+          421,
+          977
+        ]
+      },
+      "(('employee_id', 'EMP-100039'),)": {
+        "duplicates": [
+          38,
+          747
+        ]
+      },
+      "(('employee_id', 'EMP-100419'),)": {
+        "duplicates": [
+          418,
+          552
+        ]
+      },
+      "(('employee_id', 'EMP-100739'),)": {
+        "duplicates": [
+          636,
+          738
+        ]
+      },
+      "(('employee_id', 'EMP-100398'),)": {
+        "duplicates": [
+          97,
+          397
+        ]
+      },
+      "(('employee_id', 'EMP-100804'),)": {
+        "duplicates": [
+          803,
+          808
+        ]
+      },
+      "(('employee_id', 'EMP-100757'),)": {
+        "duplicates": [
+          155,
+          756
+        ]
+      },
+      "(('employee_id', 'EMP-100373'),)": {
+        "duplicates": [
+          197,
+          372
+        ]
+      },
+      "(('employee_id', 'EMP-100340'),)": {
+        "duplicates": [
+          339,
+          532
+        ]
+      },
+      "(('employee_id', 'EMP-100823'),)": {
+        "duplicates": [
+          477,
+          822
+        ]
+      },
+      "(('employee_id', 'EMP-100581'),)": {
+        "duplicates": [
+          580,
+          995
+        ]
+      },
+      "(('employee_id', 'EMP-100417'),)": {
+        "duplicates": [
+          354,
+          416
+        ]
+      },
+      "(('employee_id', 'EMP-100407'),)": {
+        "duplicates": [
+          406,
+          579
+        ]
+      },
+      "(('employee_id', 'EMP-100208'),)": {
+        "duplicates": [
+          207,
+          226
+        ]
+      },
+      "(('employee_id', 'EMP-100262'),)": {
+        "duplicates": [
+          261,
+          665
+        ]
+      },
+      "(('employee_id', 'EMP-100683'),)": {
+        "duplicates": [
+          438,
+          682
+        ]
+      },
+      "(('employee_id', 'EMP-100792'),)": {
+        "duplicates": [
+          764,
+          791
+        ]
+      },
+      "(('employee_id', 'EMP-100767'),)": {
+        "duplicates": [
+          639,
+          766
+        ]
+      },
+      "(('employee_id', 'EMP-100594'),)": {
+        "duplicates": [
+          584,
+          593
+        ]
+      },
+      "(('employee_id', 'EMP-100157'),)": {
+        "duplicates": [
+          49,
+          156
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "employee_id",
+      "employment_status"
+    ],
+    "num_vio": 84,
+    "num_groups": 42
+  },
+  "R15": {
+    "title": "Advanced Duplicate Detection",
+    "description": "Records with the same department_id and highly similar employee_name should be flagged as potential duplicates.",
+    "caption": "See rows that violate R15.",
+    "violationIndices": {
+      "(('department_id', 'D005'), ('base_name', 'Jessica Martin'))": {
+        "near_duplicates": [
+          373,
+          289
+        ]
+      },
+      "(('department_id', 'D006'), ('base_name', 'Christopher White'))": {
+        "near_duplicates": [
+          255,
+          528
+        ]
+      },
+      "(('department_id', 'D009'), ('base_name', 'Robert Jones'))": {
+        "near_duplicates": [
+          993,
+          631
+        ]
+      },
+      "(('department_id', 'D011'), ('base_name', 'Lisa Kennedy'))": {
+        "near_duplicates": [
+          361,
+          137
+        ]
+      },
+      "(('department_id', 'D003'), ('base_name', 'Brandon Anderson'))": {
+        "near_duplicates": [
+          319,
+          997
+        ]
+      },
+      "(('department_id', 'D012'), ('base_name', 'Bailey Smith'))": {
+        "near_duplicates": [
+          796,
+          810
+        ]
+      },
+      "(('department_id', 'D016'), ('base_name', 'Sean Jackson'))": {
+        "near_duplicates": [
+          710,
+          68
+        ]
+      },
+      "(('department_id', 'D008'), ('base_name', 'Tanner Hogan'))": {
+        "near_duplicates": [
+          9,
+          213
+        ]
+      },
+      "(('department_id', 'D015'), ('base_name', 'Ariel Olson'))": {
+        "near_duplicates": [
+          1052,
+          92
+        ]
+      },
+      "(('department_id', 'D014'), ('base_name', 'William Cruz'))": {
+        "near_duplicates": [
+          389,
+          193
+        ]
+      },
+      "(('department_id', 'D007'), ('base_name', 'Tiffany Donovan'))": {
+        "near_duplicates": [
+          1110,
+          728
+        ]
+      },
+      "(('department_id', 'D010'), ('base_name', 'Benjamin Robbins'))": {
+        "near_duplicates": [
+          279,
+          266
+        ]
+      },
+      "(('department_id', 'D002'), ('base_name', 'Thomas Clark'))": {
+        "near_duplicates": [
+          1091,
+          742
+        ]
+      },
+      "(('department_id', 'D018'), ('base_name', 'Andrew Carter'))": {
+        "near_duplicates": [
+          759,
+          634
+        ]
+      },
+      "(('department_id', 'D017'), ('base_name', 'Chad Garcia'))": {
+        "near_duplicates": [
+          637,
+          551
+        ]
+      },
+      "(('department_id', 'D001'), ('base_name', 'Shawn Anderson'))": {
+        "near_duplicates": [
+          168,
+          725
+        ]
+      },
+      "(('department_id', 'D004'), ('base_name', 'Seth King'))": {
+        "near_duplicates": [
+          629,
+          364
+        ]
+      },
+      "(('department_id', 'D013'), ('base_name', 'Chris Campbell'))": {
+        "near_duplicates": [
+          917,
+          751
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "employee_name",
+      "department_id"
+    ],
+    "num_vio": 36,
+    "num_groups": 18
+  },
+  "R16": {
+    "title": "Aggregated Amount Checking",
+    "description": "For each department, the department_head\u2019s budget must be greater than or equal to the sum of the total_compensations of all employees in that department.",
+    "caption": "See rows that violate R16.",
+    "violationIndices": {
+      "(('department_id', 'D008'),)": {
+        "rows_in_sum": [
+          9,
+          21,
+          27,
+          41,
+          42,
+          54,
+          115,
+          118,
+          119,
+          129,
+          161,
+          186,
+          196,
+          213,
+          216,
+          223,
+          239,
+          242,
+          254,
+          260,
+          265,
+          270,
+          308,
+          317,
+          359,
+          367,
+          372,
+          394,
+          433,
+          445,
+          495,
+          517,
+          532,
+          544,
+          561,
+          564,
+          565,
+          579,
+          605,
+          625,
+          626,
+          640,
+          641,
+          650,
+          681,
+          685,
+          686,
+          700,
+          702,
+          703,
+          718,
+          734,
+          737,
+          749,
+          790,
+          793,
+          815,
+          831,
+          865,
+          873,
+          876,
+          880,
+          910,
+          966,
+          978,
+          982,
+          1000,
+          1001,
+          1002,
+          1010,
+          1011,
+          1044,
+          1045,
+          1119,
+          1120,
+          1121,
+          1122
+        ]
+      },
+      "(('department_id', 'D016'),)": {
+        "rows_in_sum": [
+          1,
+          3,
+          22,
+          35,
+          68,
+          113,
+          139,
+          140,
+          149,
+          156,
+          176,
+          177,
+          190,
+          204,
+          207,
+          228,
+          251,
+          291,
+          300,
+          316,
+          318,
+          326,
+          337,
+          352,
+          353,
+          355,
+          362,
+          370,
+          401,
+          444,
+          465,
+          481,
+          511,
+          530,
+          539,
+          547,
+          566,
+          578,
+          581,
+          617,
+          638,
+          649,
+          658,
+          689,
+          710,
+          726,
+          738,
+          772,
+          816,
+          849,
+          856,
+          872,
+          890,
+          913,
+          925,
+          927,
+          939,
+          947,
+          953,
+          957,
+          975,
+          981,
+          1024,
+          1025,
+          1085,
+          1086,
+          1087,
+          1115,
+          1116,
+          1117,
+          1118
+        ]
+      },
+      "(('department_id', 'D018'),)": {
+        "rows_in_sum": [
+          6,
+          11,
+          67,
+          69,
+          72,
+          73,
+          87,
+          100,
+          102,
+          103,
+          131,
+          164,
+          166,
+          169,
+          191,
+          203,
+          205,
+          206,
+          209,
+          217,
+          224,
+          227,
+          230,
+          231,
+          233,
+          246,
+          259,
+          263,
+          275,
+          306,
+          346,
+          356,
+          426,
+          437,
+          464,
+          472,
+          490,
+          504,
+          571,
+          582,
+          591,
+          633,
+          634,
+          657,
+          672,
+          683,
+          692,
+          716,
+          759,
+          762,
+          767,
+          768,
+          784,
+          803,
+          814,
+          830,
+          835,
+          837,
+          863,
+          874,
+          907,
+          964,
+          985,
+          1008,
+          1009,
+          1032,
+          1033,
+          1034,
+          1035,
+          1036,
+          1037,
+          1038,
+          1039,
+          1046,
+          1047,
+          1048,
+          1095,
+          1096,
+          1097
+        ]
+      },
+      "(('department_id', 'D011'),)": {
+        "rows_in_sum": [
+          5,
+          18,
+          43,
+          80,
+          122,
+          126,
+          137,
+          174,
+          208,
+          210,
+          221,
+          361,
+          400,
+          422,
+          454,
+          514,
+          580,
+          615,
+          620,
+          623,
+          654,
+          675,
+          698,
+          722,
+          771,
+          782,
+          813,
+          829,
+          891,
+          900,
+          944,
+          984,
+          1098,
+          1099
+        ]
+      },
+      "(('department_id', 'D017'),)": {
+        "rows_in_sum": [
+          56,
+          86,
+          93,
+          114,
+          141,
+          179,
+          194,
+          198,
+          215,
+          271,
+          283,
+          310,
+          325,
+          330,
+          339,
+          341,
+          342,
+          347,
+          350,
+          374,
+          378,
+          410,
+          429,
+          456,
+          473,
+          475,
+          509,
+          516,
+          518,
+          551,
+          552,
+          557,
+          562,
+          575,
+          590,
+          618,
+          637,
+          666,
+          669,
+          676,
+          715,
+          719,
+          730,
+          732,
+          740,
+          741,
+          805,
+          827,
+          841,
+          853,
+          860,
+          861,
+          864,
+          905,
+          916,
+          945,
+          987,
+          996,
+          998,
+          1102,
+          1103,
+          1104
+        ]
+      },
+      "(('department_id', 'D012'),)": {
+        "rows_in_sum": [
+          24,
+          36,
+          49,
+          77,
+          83,
+          117,
+          130,
+          172,
+          200,
+          202,
+          226,
+          245,
+          427,
+          435,
+          439,
+          480,
+          485,
+          486,
+          529,
+          589,
+          596,
+          599,
+          613,
+          614,
+          639,
+          682,
+          687,
+          707,
+          796,
+          810,
+          847,
+          870,
+          877,
+          894,
+          951,
+          961,
+          971,
+          983,
+          1006,
+          1007,
+          1049,
+          1050
+        ]
+      },
+      "(('department_id', 'D006'),)": {
+        "rows_in_sum": [
+          7,
+          19,
+          23,
+          32,
+          39,
+          47,
+          105,
+          109,
+          120,
+          128,
+          142,
+          183,
+          185,
+          232,
+          252,
+          253,
+          255,
+          264,
+          272,
+          282,
+          295,
+          298,
+          299,
+          336,
+          358,
+          375,
+          384,
+          385,
+          386,
+          391,
+          413,
+          419,
+          428,
+          431,
+          434,
+          479,
+          487,
+          492,
+          510,
+          528,
+          540,
+          553,
+          556,
+          583,
+          597,
+          602,
+          622,
+          705,
+          750,
+          778,
+          786,
+          822,
+          857,
+          878,
+          884,
+          885,
+          889,
+          899,
+          902,
+          920,
+          935,
+          938,
+          946,
+          994,
+          1019,
+          1020,
+          1029,
+          1030,
+          1031,
+          1040,
+          1041,
+          1042,
+          1043,
+          1069,
+          1070,
+          1071,
+          1072,
+          1073,
+          1074,
+          1075
+        ]
+      },
+      "(('department_id', 'D015'),)": {
+        "rows_in_sum": [
+          38,
+          78,
+          92,
+          132,
+          167,
+          268,
+          280,
+          345,
+          468,
+          474,
+          476,
+          500,
+          538,
+          545,
+          636,
+          690,
+          695,
+          701,
+          712,
+          758,
+          770,
+          776,
+          779,
+          783,
+          838,
+          915,
+          943,
+          962,
+          967,
+          980,
+          988,
+          1051,
+          1052,
+          1053,
+          1076,
+          1077
+        ]
+      },
+      "(('department_id', 'D007'),)": {
+        "rows_in_sum": [
+          13,
+          46,
+          64,
+          74,
+          82,
+          88,
+          116,
+          124,
+          138,
+          148,
+          180,
+          181,
+          188,
+          197,
+          199,
+          211,
+          286,
+          294,
+          302,
+          323,
+          327,
+          333,
+          351,
+          393,
+          396,
+          403,
+          404,
+          416,
+          424,
+          438,
+          446,
+          447,
+          477,
+          499,
+          507,
+          513,
+          525,
+          526,
+          536,
+          542,
+          548,
+          577,
+          584,
+          608,
+          647,
+          653,
+          663,
+          664,
+          665,
+          694,
+          699,
+          721,
+          724,
+          728,
+          733,
+          755,
+          775,
+          780,
+          788,
+          791,
+          801,
+          806,
+          820,
+          823,
+          852,
+          893,
+          933,
+          948,
+          960,
+          999,
+          1021,
+          1022,
+          1023,
+          1061,
+          1062,
+          1063,
+          1064,
+          1082,
+          1083,
+          1084,
+          1108,
+          1109,
+          1110,
+          1111
+        ]
+      },
+      "(('department_id', 'D009'),)": {
+        "rows_in_sum": [
+          8,
+          29,
+          48,
+          51,
+          60,
+          89,
+          110,
+          125,
+          151,
+          155,
+          170,
+          192,
+          195,
+          236,
+          237,
+          240,
+          292,
+          296,
+          301,
+          315,
+          329,
+          343,
+          388,
+          405,
+          414,
+          432,
+          461,
+          463,
+          466,
+          470,
+          533,
+          535,
+          549,
+          559,
+          568,
+          574,
+          601,
+          611,
+          631,
+          662,
+          688,
+          693,
+          708,
+          747,
+          753,
+          765,
+          769,
+          774,
+          819,
+          825,
+          850,
+          855,
+          879,
+          895,
+          896,
+          898,
+          901,
+          912,
+          922,
+          958,
+          959,
+          965,
+          972,
+          977,
+          992,
+          993,
+          1015,
+          1016,
+          1017,
+          1018,
+          1057,
+          1058,
+          1059,
+          1060,
+          1065,
+          1066,
+          1067,
+          1068,
+          1078,
+          1079,
+          1080,
+          1081,
+          1105,
+          1106,
+          1107
+        ]
+      },
+      "(('department_id', 'D004'),)": {
+        "rows_in_sum": [
+          2,
+          4,
+          14,
+          20,
+          26,
+          30,
+          31,
+          52,
+          61,
+          66,
+          76,
+          81,
+          85,
+          90,
+          96,
+          121,
+          153,
+          159,
+          184,
+          234,
+          247,
+          261,
+          274,
+          276,
+          285,
+          293,
+          305,
+          307,
+          313,
+          324,
+          357,
+          363,
+          364,
+          392,
+          397,
+          418,
+          441,
+          471,
+          482,
+          515,
+          541,
+          546,
+          554,
+          560,
+          576,
+          594,
+          606,
+          610,
+          629,
+          648,
+          652,
+          670,
+          678,
+          736,
+          746,
+          756,
+          761,
+          787,
+          795,
+          797,
+          800,
+          811,
+          834,
+          840,
+          846,
+          848,
+          851,
+          854,
+          869,
+          882,
+          903,
+          908,
+          914,
+          926,
+          931,
+          934,
+          949,
+          954,
+          955,
+          956,
+          976,
+          979,
+          986,
+          989,
+          1003,
+          1004,
+          1005,
+          1026,
+          1027,
+          1028
+        ]
+      },
+      "(('department_id', 'D003'),)": {
+        "rows_in_sum": [
+          0,
+          12,
+          25,
+          37,
+          40,
+          79,
+          84,
+          94,
+          104,
+          107,
+          158,
+          162,
+          212,
+          214,
+          248,
+          256,
+          257,
+          262,
+          273,
+          278,
+          287,
+          288,
+          314,
+          319,
+          322,
+          334,
+          338,
+          354,
+          360,
+          368,
+          420,
+          430,
+          443,
+          462,
+          467,
+          469,
+          478,
+          489,
+          493,
+          494,
+          497,
+          506,
+          508,
+          519,
+          523,
+          524,
+          527,
+          534,
+          558,
+          570,
+          572,
+          592,
+          593,
+          627,
+          646,
+          656,
+          668,
+          691,
+          731,
+          744,
+          757,
+          763,
+          766,
+          781,
+          804,
+          817,
+          818,
+          839,
+          867,
+          875,
+          892,
+          928,
+          968,
+          970,
+          997,
+          1054,
+          1055,
+          1056
+        ]
+      },
+      "(('department_id', 'D002'),)": {
+        "rows_in_sum": [
+          57,
+          58,
+          62,
+          91,
+          111,
+          134,
+          144,
+          145,
+          157,
+          160,
+          225,
+          229,
+          243,
+          244,
+          249,
+          250,
+          258,
+          297,
+          309,
+          320,
+          321,
+          335,
+          340,
+          349,
+          377,
+          380,
+          387,
+          390,
+          395,
+          399,
+          406,
+          408,
+          425,
+          436,
+          449,
+          457,
+          483,
+          496,
+          512,
+          531,
+          600,
+          603,
+          609,
+          616,
+          642,
+          643,
+          659,
+          660,
+          667,
+          679,
+          684,
+          696,
+          709,
+          720,
+          723,
+          742,
+          745,
+          754,
+          777,
+          798,
+          809,
+          821,
+          832,
+          833,
+          843,
+          844,
+          866,
+          871,
+          906,
+          909,
+          919,
+          932,
+          941,
+          969,
+          1088,
+          1089,
+          1090,
+          1091,
+          1112,
+          1113,
+          1114
+        ]
+      },
+      "(('department_id', 'D010'),)": {
+        "rows_in_sum": [
+          10,
+          63,
+          75,
+          127,
+          136,
+          266,
+          279,
+          303,
+          331,
+          344,
+          365,
+          440,
+          567,
+          612,
+          673,
+          717,
+          888,
+          918,
+          950,
+          990
+        ]
+      },
+      "(('department_id', 'D014'),)": {
+        "rows_in_sum": [
+          15,
+          55,
+          70,
+          99,
+          108,
+          135,
+          154,
+          193,
+          219,
+          220,
+          348,
+          371,
+          382,
+          389,
+          407,
+          409,
+          488,
+          501,
+          543,
+          621,
+          635,
+          645,
+          739,
+          764,
+          773,
+          792,
+          802,
+          836,
+          842,
+          862,
+          911,
+          937,
+          1100,
+          1101
+        ]
+      },
+      "(('department_id', 'D005'),)": {
+        "rows_in_sum": [
+          50,
+          97,
+          98,
+          101,
+          112,
+          123,
+          133,
+          143,
+          146,
+          150,
+          165,
+          173,
+          175,
+          178,
+          182,
+          222,
+          238,
+          267,
+          277,
+          284,
+          289,
+          290,
+          311,
+          373,
+          376,
+          411,
+          415,
+          448,
+          450,
+          455,
+          458,
+          459,
+          460,
+          484,
+          491,
+          498,
+          502,
+          505,
+          521,
+          522,
+          537,
+          550,
+          555,
+          563,
+          569,
+          585,
+          586,
+          588,
+          595,
+          604,
+          607,
+          619,
+          624,
+          628,
+          630,
+          632,
+          644,
+          661,
+          674,
+          706,
+          713,
+          714,
+          727,
+          748,
+          760,
+          794,
+          808,
+          826,
+          828,
+          845,
+          868,
+          881,
+          883,
+          886,
+          923,
+          924,
+          930,
+          936,
+          940,
+          963,
+          974,
+          991,
+          995,
+          1012,
+          1013,
+          1014,
+          1092,
+          1093,
+          1094
+        ]
+      },
+      "(('department_id', 'D013'),)": {
+        "rows_in_sum": [
+          16,
+          53,
+          65,
+          95,
+          152,
+          171,
+          187,
+          201,
+          366,
+          369,
+          398,
+          417,
+          421,
+          442,
+          655,
+          671,
+          729,
+          751,
+          789,
+          824,
+          859,
+          904,
+          917,
+          929
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "department_id",
+      "total_compensation",
+      "department_budget",
+      "is_department_head"
+    ],
+    "num_vio": 1066,
+    "num_groups": 17
+  },
+  "R17": {
+    "title": "Monotonicity",
+    "description": "Within the same department and job_family, an employee's total_compensation should be non-decreasing when ordered by their level_rank.",
+    "caption": "See rows that violate R17.",
+    "violationIndices": {
+      "(('department_id', 'D018'), ('job_family', 'IT Operations'))": [
+        {
+          "higher_rank_lower_comp_row": 275,
+          "lower_rank_higher_comp_row": 72
+        },
+        {
+          "higher_rank_lower_comp_row": 1037,
+          "lower_rank_higher_comp_row": 191
+        },
+        {
+          "higher_rank_lower_comp_row": 762,
+          "lower_rank_higher_comp_row": 103
+        },
+        {
+          "higher_rank_lower_comp_row": 582,
+          "lower_rank_higher_comp_row": 1032
+        },
+        {
+          "higher_rank_lower_comp_row": 768,
+          "lower_rank_higher_comp_row": 1096
+        },
+        {
+          "higher_rank_lower_comp_row": 73,
+          "lower_rank_higher_comp_row": 1033
+        },
+        {
+          "higher_rank_lower_comp_row": 306,
+          "lower_rank_higher_comp_row": 259
+        },
+        {
+          "higher_rank_lower_comp_row": 227,
+          "lower_rank_higher_comp_row": 87
+        }
+      ],
+      "(('department_id', 'D016'), ('job_family', 'IT Operations'))": [
+        {
+          "higher_rank_lower_comp_row": 927,
+          "lower_rank_higher_comp_row": 872
+        },
+        {
+          "higher_rank_lower_comp_row": 816,
+          "lower_rank_higher_comp_row": 578
+        }
+      ],
+      "(('department_id', 'D008'), ('job_family', 'Data Science'))": [
+        {
+          "higher_rank_lower_comp_row": 367,
+          "lower_rank_higher_comp_row": 118
+        },
+        {
+          "higher_rank_lower_comp_row": 1120,
+          "lower_rank_higher_comp_row": 317
+        }
+      ],
+      "(('department_id', 'D006'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 39,
+          "lower_rank_higher_comp_row": 994
+        },
+        {
+          "higher_rank_lower_comp_row": 391,
+          "lower_rank_higher_comp_row": 419
+        }
+      ],
+      "(('department_id', 'D017'), ('job_family', 'IT Operations'))": [
+        {
+          "higher_rank_lower_comp_row": 518,
+          "lower_rank_higher_comp_row": 179
+        },
+        {
+          "higher_rank_lower_comp_row": 310,
+          "lower_rank_higher_comp_row": 732
+        },
+        {
+          "higher_rank_lower_comp_row": 429,
+          "lower_rank_higher_comp_row": 325
+        }
+      ],
+      "(('department_id', 'D007'), ('job_family', 'Data Science'))": [
+        {
+          "higher_rank_lower_comp_row": 211,
+          "lower_rank_higher_comp_row": 608
+        },
+        {
+          "higher_rank_lower_comp_row": 46,
+          "lower_rank_higher_comp_row": 664
+        }
+      ],
+      "(('department_id', 'D005'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 1013,
+          "lower_rank_higher_comp_row": 936
+        },
+        {
+          "higher_rank_lower_comp_row": 930,
+          "lower_rank_higher_comp_row": 794
+        }
+      ],
+      "(('department_id', 'D009'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 959,
+          "lower_rank_higher_comp_row": 688
+        },
+        {
+          "higher_rank_lower_comp_row": 89,
+          "lower_rank_higher_comp_row": 1015
+        },
+        {
+          "higher_rank_lower_comp_row": 693,
+          "lower_rank_higher_comp_row": 296
+        },
+        {
+          "higher_rank_lower_comp_row": 533,
+          "lower_rank_higher_comp_row": 125
+        },
+        {
+          "higher_rank_lower_comp_row": 29,
+          "lower_rank_higher_comp_row": 301
+        }
+      ],
+      "(('department_id', 'D003'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 489,
+          "lower_rank_higher_comp_row": 273
+        },
+        {
+          "higher_rank_lower_comp_row": 79,
+          "lower_rank_higher_comp_row": 0
+        }
+      ],
+      "(('department_id', 'D007'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 181,
+          "lower_rank_higher_comp_row": 852
+        }
+      ],
+      "(('department_id', 'D004'), ('job_family', 'Data Science'))": [
+        {
+          "higher_rank_lower_comp_row": 840,
+          "lower_rank_higher_comp_row": 949
+        },
+        {
+          "higher_rank_lower_comp_row": 247,
+          "lower_rank_higher_comp_row": 914
+        },
+        {
+          "higher_rank_lower_comp_row": 554,
+          "lower_rank_higher_comp_row": 986
+        }
+      ],
+      "(('department_id', 'D002'), ('job_family', 'Data Science'))": [
+        {
+          "higher_rank_lower_comp_row": 144,
+          "lower_rank_higher_comp_row": 436
+        },
+        {
+          "higher_rank_lower_comp_row": 754,
+          "lower_rank_higher_comp_row": 777
+        }
+      ],
+      "(('department_id', 'D004'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 1005,
+          "lower_rank_higher_comp_row": 926
+        }
+      ],
+      "(('department_id', 'D004'), ('job_family', 'Management'))": [
+        {
+          "higher_rank_lower_comp_row": 800,
+          "lower_rank_higher_comp_row": 392
+        },
+        {
+          "higher_rank_lower_comp_row": 90,
+          "lower_rank_higher_comp_row": 955
+        }
+      ],
+      "(('department_id', 'D002'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 871,
+          "lower_rank_higher_comp_row": 659
+        }
+      ],
+      "(('department_id', 'D011'), ('job_family', 'Human Resources'))": [
+        {
+          "higher_rank_lower_comp_row": 221,
+          "lower_rank_higher_comp_row": 126
+        },
+        {
+          "higher_rank_lower_comp_row": 454,
+          "lower_rank_higher_comp_row": 984
+        }
+      ],
+      "(('department_id', 'D003'), ('job_family', 'Data Science'))": [
+        {
+          "higher_rank_lower_comp_row": 212,
+          "lower_rank_higher_comp_row": 494
+        },
+        {
+          "higher_rank_lower_comp_row": 731,
+          "lower_rank_higher_comp_row": 527
+        }
+      ],
+      "(('department_id', 'D008'), ('job_family', 'Technology'))": [
+        {
+          "higher_rank_lower_comp_row": 196,
+          "lower_rank_higher_comp_row": 1044
+        }
+      ],
+      "(('department_id', 'D015'), ('job_family', 'Human Resources'))": [
+        {
+          "higher_rank_lower_comp_row": 779,
+          "lower_rank_higher_comp_row": 167
+        }
+      ],
+      "(('department_id', 'D012'), ('job_family', 'Human Resources'))": [
+        {
+          "higher_rank_lower_comp_row": 480,
+          "lower_rank_higher_comp_row": 1050
+        }
+      ]
+    },
+    "highlightedColumns": [
+      "department_id",
+      "job_family",
+      "level_rank",
+      "total_compensation"
+    ],
+    "num_vio": 90,
+    "num_groups": 20
+  },
+  "R18": {
+    "title": "Outlier Detection",
+    "description": "For the same job_title, the total_compensation should fall within a narrow range. Extreme deviations may indicate data entry errors or special circumstances requiring review.",
+    "caption": "See rows that violate R18.",
+    "violationIndices": {
+      "(('job_title', 'Systems Administrator'),)": {
+        "outlier_row": 657,
+        "inlier_rows": [
+          3,
+          22,
+          56,
+          72,
+          87,
+          93,
+          100,
+          103,
+          113,
+          131,
+          139,
+          149,
+          164,
+          166,
+          177,
+          203,
+          224,
+          231,
+          271,
+          283,
+          316,
+          318,
+          325,
+          339,
+          346,
+          347,
+          350,
+          355,
+          356,
+          410,
+          426,
+          444,
+          464,
+          504,
+          566,
+          571,
+          581,
+          634,
+          637,
+          649,
+          658,
+          669,
+          672,
+          716,
+          719,
+          740,
+          759,
+          784,
+          816,
+          827,
+          835,
+          864,
+          872,
+          874,
+          975,
+          996,
+          1036,
+          1037,
+          1038,
+          1039,
+          1085,
+          1086,
+          1087,
+          1095,
+          1096,
+          1097,
+          1102,
+          1103,
+          1104
+        ]
+      },
+      "(('job_title', 'Software Engineer Intern'),)": {
+        "outlier_row": 903,
+        "inlier_rows": [
+          14,
+          27,
+          37,
+          40,
+          57,
+          60,
+          62,
+          88,
+          121,
+          148,
+          157,
+          160,
+          178,
+          182,
+          185,
+          295,
+          314,
+          380,
+          411,
+          455,
+          459,
+          461,
+          469,
+          493,
+          499,
+          502,
+          519,
+          523,
+          524,
+          555,
+          564,
+          570,
+          606,
+          629,
+          674,
+          678,
+          681,
+          700,
+          702,
+          705,
+          713,
+          765,
+          793,
+          797,
+          798,
+          811,
+          831,
+          833,
+          850,
+          919,
+          928,
+          938,
+          963
+        ]
+      },
+      "(('job_title', 'Senior Data Scientist'),)": {
+        "outlier_row": 781,
+        "inlier_rows": [
+          12,
+          74,
+          119,
+          144,
+          183,
+          211,
+          238,
+          247,
+          253,
+          307,
+          313,
+          335,
+          359,
+          376,
+          386,
+          393,
+          420,
+          425,
+          431,
+          446,
+          447,
+          449,
+          458,
+          471,
+          482,
+          512,
+          522,
+          546,
+          619,
+          640,
+          641,
+          703,
+          723,
+          763,
+          766,
+          769,
+          791,
+          795,
+          801,
+          809,
+          820,
+          828,
+          834,
+          846,
+          912,
+          923,
+          958,
+          978,
+          989,
+          1026,
+          1027,
+          1028,
+          1061,
+          1062,
+          1063,
+          1064,
+          1078,
+          1079,
+          1080,
+          1081
+        ]
+      },
+      "(('job_title', 'Data Scientist'),)": {
+        "outlier_row": 746,
+        "inlier_rows": [
+          2,
+          46,
+          58,
+          105,
+          109,
+          115,
+          142,
+          153,
+          186,
+          192,
+          212,
+          254,
+          257,
+          270,
+          290,
+          297,
+          317,
+          322,
+          367,
+          372,
+          388,
+          434,
+          463,
+          479,
+          532,
+          549,
+          565,
+          569,
+          583,
+          588,
+          600,
+          608,
+          610,
+          632,
+          650,
+          660,
+          685,
+          686,
+          706,
+          718,
+          731,
+          733,
+          777,
+          840,
+          857,
+          885,
+          889,
+          914,
+          924,
+          976,
+          982,
+          986,
+          993,
+          997,
+          1000,
+          1001,
+          1002,
+          1010,
+          1011,
+          1021,
+          1022,
+          1023,
+          1029,
+          1030,
+          1031,
+          1040,
+          1041,
+          1042,
+          1043,
+          1057,
+          1058,
+          1059,
+          1060
+        ]
+      },
+      "(('job_title', 'Data Analyst'),)": {
+        "outlier_row": 1113,
+        "inlier_rows": [
+          85,
+          94,
+          98,
+          111,
+          118,
+          133,
+          175,
+          234,
+          236,
+          252,
+          267,
+          292,
+          320,
+          343,
+          377,
+          394,
+          397,
+          430,
+          433,
+          436,
+          441,
+          448,
+          478,
+          494,
+          495,
+          497,
+          527,
+          528,
+          531,
+          534,
+          559,
+          592,
+          607,
+          611,
+          647,
+          663,
+          664,
+          684,
+          691,
+          714,
+          728,
+          761,
+          786,
+          826,
+          844,
+          865,
+          869,
+          875,
+          876,
+          882,
+          901,
+          920,
+          931,
+          941,
+          948,
+          949,
+          977,
+          1112,
+          1114
+        ]
+      },
+      "(('job_title', 'Director of Engineering'),)": {
+        "outlier_row": 526,
+        "inlier_rows": [
+          10,
+          90,
+          102,
+          108,
+          114,
+          129,
+          132,
+          168,
+          171,
+          189,
+          208,
+          229,
+          242,
+          277,
+          281,
+          285,
+          294,
+          328,
+          369,
+          379,
+          409,
+          414,
+          417,
+          427,
+          435,
+          465,
+          530,
+          553,
+          568,
+          573,
+          603,
+          651,
+          673,
+          695,
+          729,
+          730,
+          755,
+          783,
+          830,
+          843,
+          859,
+          883,
+          952,
+          979,
+          983
+        ]
+      },
+      "(('job_title', 'HR Business Partner'),)": {
+        "outlier_row": 130,
+        "inlier_rows": [
+          15,
+          16,
+          18,
+          44,
+          45,
+          59,
+          122,
+          201,
+          220,
+          221,
+          235,
+          266,
+          268,
+          280,
+          345,
+          389,
+          398,
+          400,
+          480,
+          520,
+          538,
+          580,
+          596,
+          599,
+          636,
+          639,
+          655,
+          675,
+          677,
+          687,
+          698,
+          752,
+          758,
+          770,
+          779,
+          782,
+          796,
+          836,
+          862,
+          870,
+          888,
+          894,
+          897,
+          904,
+          918,
+          962,
+          967,
+          1076,
+          1077
+        ]
+      },
+      "(('job_title', 'Recruiter'),)": {
+        "outlier_row": 245,
+        "inlier_rows": [
+          17,
+          24,
+          36,
+          77,
+          78,
+          83,
+          99,
+          106,
+          136,
+          137,
+          163,
+          167,
+          174,
+          193,
+          218,
+          219,
+          344,
+          365,
+          366,
+          381,
+          402,
+          422,
+          423,
+          451,
+          453,
+          454,
+          468,
+          476,
+          485,
+          500,
+          587,
+          614,
+          620,
+          623,
+          645,
+          680,
+          704,
+          707,
+          711,
+          722,
+          751,
+          802,
+          824,
+          838,
+          842,
+          887,
+          921,
+          929,
+          937,
+          943,
+          950,
+          971,
+          973,
+          980,
+          990,
+          1049,
+          1050,
+          1098,
+          1099
+        ]
+      },
+      "(('job_title', 'IT Support Specialist'),)": {
+        "outlier_row": 591,
+        "inlier_rows": [
+          1,
+          11,
+          68,
+          86,
+          140,
+          179,
+          190,
+          191,
+          194,
+          198,
+          206,
+          207,
+          209,
+          215,
+          217,
+          228,
+          230,
+          251,
+          259,
+          263,
+          300,
+          326,
+          401,
+          472,
+          473,
+          475,
+          490,
+          511,
+          547,
+          552,
+          562,
+          578,
+          590,
+          618,
+          633,
+          689,
+          692,
+          710,
+          732,
+          738,
+          741,
+          767,
+          803,
+          805,
+          814,
+          849,
+          853,
+          856,
+          860,
+          861,
+          863,
+          905,
+          913,
+          916,
+          945,
+          981,
+          987,
+          998,
+          1032,
+          1033,
+          1034,
+          1035,
+          1115,
+          1116,
+          1117,
+          1118
+        ]
+      },
+      "(('job_title', 'Software Engineer I'),)": {
+        "outlier_row": 734,
+        "inlier_rows": [
+          30,
+          52,
+          124,
+          125,
+          128,
+          146,
+          214,
+          244,
+          248,
+          255,
+          264,
+          274,
+          287,
+          299,
+          338,
+          415,
+          428,
+          492,
+          496,
+          498,
+          513,
+          544,
+          560,
+          561,
+          593,
+          594,
+          602,
+          627,
+          628,
+          642,
+          656,
+          688,
+          724,
+          744,
+          748,
+          749,
+          753,
+          790,
+          804,
+          818,
+          821,
+          823,
+          852,
+          878,
+          881,
+          906,
+          926,
+          935,
+          970,
+          992,
+          994,
+          1069,
+          1070,
+          1071,
+          1072,
+          1088,
+          1089,
+          1090,
+          1091
+        ]
+      },
+      "(('job_title', 'Cloud Engineer'),)": {
+        "outlier_row": 907,
+        "inlier_rows": [
+          6,
+          35,
+          69,
+          73,
+          156,
+          176,
+          227,
+          233,
+          246,
+          275,
+          291,
+          306,
+          310,
+          337,
+          341,
+          342,
+          352,
+          353,
+          370,
+          374,
+          378,
+          429,
+          437,
+          481,
+          509,
+          518,
+          539,
+          551,
+          575,
+          582,
+          617,
+          638,
+          666,
+          715,
+          762,
+          768,
+          772,
+          837,
+          841,
+          925,
+          927,
+          939,
+          947,
+          964,
+          985,
+          1008,
+          1009,
+          1046,
+          1047,
+          1048
+        ]
+      },
+      "(('job_title', 'Engineering Manager'),)": {
+        "outlier_row": 32,
+        "inlier_rows": [
+          26,
+          28,
+          61,
+          81,
+          82,
+          92,
+          97,
+          141,
+          150,
+          152,
+          173,
+          202,
+          205,
+          269,
+          279,
+          304,
+          308,
+          330,
+          331,
+          412,
+          503,
+          514,
+          529,
+          550,
+          585,
+          598,
+          613,
+          626,
+          676,
+          682,
+          683,
+          696,
+          697,
+          708,
+          735,
+          750,
+          760,
+          771,
+          776,
+          792,
+          800,
+          807,
+          812,
+          813,
+          890,
+          900,
+          951,
+          953,
+          955,
+          968,
+          995
+        ]
+      },
+      "(('job_title', 'Senior Software Engineer'),)": {
+        "outlier_row": 1056,
+        "inlier_rows": [
+          0,
+          4,
+          7,
+          19,
+          20,
+          21,
+          47,
+          48,
+          51,
+          84,
+          120,
+          123,
+          143,
+          181,
+          195,
+          225,
+          237,
+          265,
+          298,
+          324,
+          329,
+          349,
+          360,
+          368,
+          384,
+          387,
+          432,
+          457,
+          467,
+          470,
+          491,
+          506,
+          556,
+          558,
+          586,
+          605,
+          616,
+          624,
+          625,
+          646,
+          679,
+          745,
+          756,
+          774,
+          778,
+          794,
+          854,
+          884,
+          895,
+          898,
+          934,
+          1054,
+          1055,
+          1073,
+          1074,
+          1075
+        ]
+      },
+      "(('job_title', 'Principal Engineer'),)": {
+        "outlier_row": 721,
+        "inlier_rows": [
+          29,
+          42,
+          50,
+          54,
+          66,
+          79,
+          112,
+          155,
+          165,
+          196,
+          197,
+          199,
+          262,
+          278,
+          289,
+          293,
+          302,
+          305,
+          323,
+          327,
+          357,
+          363,
+          391,
+          443,
+          445,
+          450,
+          460,
+          466,
+          484,
+          487,
+          489,
+          505,
+          507,
+          521,
+          525,
+          541,
+          563,
+          572,
+          601,
+          604,
+          648,
+          661,
+          665,
+          668,
+          670,
+          709,
+          757,
+          775,
+          787,
+          817,
+          822,
+          825,
+          851,
+          893,
+          908,
+          922,
+          972,
+          1003,
+          1004,
+          1005,
+          1082,
+          1083,
+          1084
+        ]
+      },
+      "(('job_title', 'Machine Learning Engineer'),)": {
+        "outlier_row": 91,
+        "inlier_rows": [
+          101,
+          104,
+          107,
+          110,
+          134,
+          138,
+          145,
+          159,
+          161,
+          162,
+          180,
+          250,
+          258,
+          261,
+          286,
+          288,
+          309,
+          311,
+          336,
+          340,
+          354,
+          390,
+          403,
+          406,
+          438,
+          462,
+          477,
+          510,
+          515,
+          537,
+          542,
+          554,
+          579,
+          584,
+          644,
+          653,
+          667,
+          699,
+          727,
+          736,
+          742,
+          754,
+          788,
+          819,
+          848,
+          866,
+          867,
+          879,
+          886,
+          892,
+          946,
+          966,
+          974,
+          1092,
+          1093,
+          1094,
+          1119,
+          1120,
+          1121,
+          1122
+        ]
+      },
+      "(('job_title', 'Lead Software Engineer'),)": {
+        "outlier_row": 896,
+        "inlier_rows": [
+          23,
+          25,
+          31,
+          39,
+          41,
+          76,
+          89,
+          96,
+          116,
+          158,
+          170,
+          184,
+          213,
+          216,
+          239,
+          260,
+          273,
+          315,
+          319,
+          321,
+          333,
+          334,
+          358,
+          364,
+          373,
+          385,
+          396,
+          416,
+          419,
+          483,
+          508,
+          535,
+          577,
+          595,
+          622,
+          630,
+          631,
+          643,
+          693,
+          720,
+          747,
+          780,
+          808,
+          815,
+          839,
+          855,
+          871,
+          873,
+          902,
+          909,
+          910,
+          930,
+          940,
+          959,
+          965,
+          969,
+          1012,
+          1013,
+          1014,
+          1065,
+          1066,
+          1067,
+          1068,
+          1105,
+          1106,
+          1107,
+          1108,
+          1109,
+          1110,
+          1111
+        ]
+      },
+      "(('job_title', 'Project Manager'),)": {
+        "outlier_row": 773,
+        "inlier_rows": [
+          9,
+          33,
+          53,
+          64,
+          67,
+          95,
+          169,
+          187,
+          200,
+          204,
+          223,
+          232,
+          240,
+          249,
+          332,
+          348,
+          362,
+          375,
+          383,
+          392,
+          421,
+          440,
+          456,
+          516,
+          557,
+          567,
+          589,
+          615,
+          654,
+          701,
+          717,
+          725,
+          726,
+          737,
+          764,
+          829,
+          832,
+          891,
+          956,
+          957,
+          988,
+          1024,
+          1025,
+          1051,
+          1052,
+          1053
+        ]
+      },
+      "(('job_title', 'Software Engineer II'),)": {
+        "outlier_row": 222,
+        "inlier_rows": [
+          8,
+          13,
+          151,
+          188,
+          243,
+          256,
+          272,
+          276,
+          282,
+          284,
+          296,
+          301,
+          351,
+          395,
+          399,
+          404,
+          405,
+          408,
+          413,
+          418,
+          424,
+          517,
+          533,
+          536,
+          540,
+          548,
+          574,
+          576,
+          597,
+          609,
+          652,
+          659,
+          662,
+          694,
+          806,
+          845,
+          868,
+          880,
+          899,
+          932,
+          933,
+          936,
+          954,
+          960,
+          991,
+          999,
+          1015,
+          1016,
+          1017,
+          1018,
+          1019,
+          1020,
+          1044,
+          1045
+        ]
+      },
+      "(('job_title', 'HR Coordinator'),)": {
+        "outlier_row": 1006,
+        "inlier_rows": [
+          5,
+          34,
+          38,
+          43,
+          49,
+          55,
+          63,
+          65,
+          70,
+          71,
+          75,
+          80,
+          117,
+          126,
+          127,
+          135,
+          147,
+          154,
+          172,
+          210,
+          226,
+          241,
+          303,
+          312,
+          361,
+          371,
+          382,
+          407,
+          439,
+          442,
+          452,
+          474,
+          486,
+          488,
+          501,
+          543,
+          545,
+          612,
+          621,
+          635,
+          671,
+          690,
+          712,
+          739,
+          743,
+          785,
+          789,
+          799,
+          810,
+          847,
+          858,
+          877,
+          911,
+          915,
+          917,
+          942,
+          944,
+          961,
+          984,
+          1007,
+          1100,
+          1101
+        ]
+      }
+    },
+    "highlightedColumns": [
+      "job_title",
+      "total_compensation"
+    ],
+    "num_vio": 1123,
+    "num_groups": 19
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
+  <script>
+    // DOM Elements
+    const violationMenu = document.getElementById("menu")
+    const typingTextDiv = document.getElementById('typing-text');
+    const leftArrow = document.getElementById('left-arrow');
+    const verifyButton = document.getElementById('verify-button');
+    const nextButton = document.getElementById('next-button');
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressFill = document.getElementById('progress-fill');
+    const generatedRulesButton = document.getElementById('generated-rules-button');
+    const rulesList = document.getElementById('rules-list');
+    const datasetTable = document.getElementById('dataset-table');
+    const datasetContainer = document.getElementById('dataset-container');
+    const csvFileInput = document.getElementById('csv-file-input');
+    const fileInputLabel = document.getElementById('file-input-label');
+    const RuleContent = document.getElementById('rule-content');
+    const ruleTitle = document.getElementById('rule-title');
+    const ruleDescription = document.getElementById('rule-description');
+    const ruleCaption = document.getElementById('rule-caption');
+    const ruleViolationsCount = document.getElementById('rule-violations-count');
+    const violationContainer = document.getElementById("violation-container")
+
+    let dataset = []; // To store the parsed CSV data
+    let headers = []; // To store the CSV headers
+    let rowCount = 0; // To keep track of the number of rows processed
+    let currentDisplayIndex = 0; // Index to track how many rows have been displayed
+    const chunkSizeToDisplay = 100; // Number of rows to load per scroll event
+
+
+    // Generate the rules list dynamically
+    function generateRulesList() {
+      // Clear any existing items
+      rulesList.innerHTML = '';
+
+      for (const ruleId in rules) {
+        if (rules.hasOwnProperty(ruleId)) {
+          const rule = rules[ruleId];
+          const ruleItem = document.createElement('div');
+          ruleItem.classList.add('rule-item');
+          ruleItem.setAttribute('data-rule', ruleId);
+          ruleItem.textContent = `${rule.title}: ${rule.description}`;
+          rulesList.appendChild(ruleItem);
+        }
+      }
+    }
+
+    // Call the function to generate the rules list
+    generateRulesList();
+
+    // Typing Effect Function
+    function typeText(text, callback) {
+      typingTextDiv.innerHTML = '';
+      let index = 0;
+      const typingSpeed = 20;
+      function type() {
+        if (index < text.length) {
+          typingTextDiv.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, typingSpeed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+
+    
+   window.addEventListener('load', () => {
+  const csvUrl = 'https://raw.githubusercontent.com/liriaa/unlimidata_web/main/employees_index.csv';
+  parseCSVDataFromURL(csvUrl);
+});
+
+function parseCSVDataFromURL(url) {
+  dataset = [];
+  headers = null;
+  rowCount = 0;
+  currentDisplayIndex = 0;
+
+  Papa.parse(url, {
+    download: true,   // fetch CSV from URL
+    header: true,
+    skipEmptyLines: true,
+    worker: true,
+    chunkSize: 1024 * 1024,
+    delimiter: ",",
+    step: function(results) {
+      if (!headers) {
+        headers = results.meta.fields;
+      }
+
+      const row = results.data;
+      dataset.push(row);
+      rowCount++;
+
+      if (dataset.length <= chunkSizeToDisplay) {
+        displayDatasetTablePartial([row]);
+      }
+
+      if (rowCount % 1000 === 0) {
+        console.log(`Processed ${rowCount} rows...`);
+      }
+    },
+    complete: function() {
+      console.log(`Finished parsing. Total rows: ${rowCount}`);
+      typeText(
+        "Let’s see how InfoSage leverages external sources—such as Web pages—to automatically detect data errors.",
+        () => {
+          leftArrow.style.opacity = 1;
+          leftArrow.classList.add('bounce');
+          verifyButton.style.display = 'inline-block';
+        }
+      );
+      datasetContainer.addEventListener('scroll', handleScroll);
+    },
+    error: function(err) {
+      console.error('Error parsing CSV:', err);
+      typeText('Error loading CSV from GitHub. Please check the console for more details.');
+    }
+  });
+}
+
+
+
+    // Handle Scroll Event for Infinite Scrolling
+    function handleScroll() {
+      const scrollTop = datasetContainer.scrollTop;
+      const scrollHeight = datasetContainer.scrollHeight;
+      const clientHeight = datasetContainer.clientHeight;
+
+      // If the user has scrolled near the bottom, load more rows
+      if (scrollTop + clientHeight >= scrollHeight - 50) {
+        loadMoreRows();
+      }
+    }
+
+    // Load More Rows Function
+    function loadMoreRows() {
+      const nextIndex = currentDisplayIndex + chunkSizeToDisplay;
+      const rowsToDisplay = dataset.slice(currentDisplayIndex, nextIndex);
+      displayDatasetTablePartial(rowsToDisplay);
+      currentDisplayIndex = nextIndex;
+    }
+
+    // Display Dataset in Table (Partial for infinite scrolling)
+    function displayDatasetTablePartial(rowsData) {
+      // If headers are not yet set, wait
+      if (!headers) return;
+
+      // If table headers are not yet created, create them
+      if (datasetTable.rows.length === 0) {
+        // Create header row
+        const headerRow = document.createElement('tr');
+        headers.forEach(headerText => {
+          const th = document.createElement('th');
+          th.textContent = headerText;
+
+          // Highlight columns if required
+          if (highlightedColumns && highlightedColumns.includes(headerText.toLowerCase())) {
+            th.classList.add('highlighted-column');
+          }
+
+          headerRow.appendChild(th);
+        });
+        datasetTable.appendChild(headerRow);
+      }
+
+      // Create data rows
+      rowsData.forEach(rowData => {
+        const row = document.createElement('tr');
+        headers.forEach(header => {
+          const td = document.createElement('td');
+          td.textContent = rowData[header];
+
+          // Highlight columns if required
+          if (highlightedColumns && highlightedColumns.includes(header.toLowerCase())) {
+            td.classList.add('highlighted-column');
+          }
+
+          row.appendChild(td);
+        });
+        datasetTable.appendChild(row);
+      });
+    }
+
+    // Display Dataset in Table (Full display for violations)
+    function displayDatasetTable(data) {
+      // Clear existing table content
+      datasetTable.innerHTML = '';
+      currentDisplayIndex = 0; // Reset index
+
+      // Check if headers and data are available
+      if (!headers || headers.length === 0) {
+        console.error('No headers found in the CSV file.');
+        typeText('No data to display. Please ensure the CSV file has proper headers.');
+        return;
+      }
+
+      // Create header row
+      const headerRow = document.createElement('tr');
+      headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+
+        // Highlight columns if required
+        if (highlightedColumns && highlightedColumns.includes(headerText.toLowerCase())) {
+          th.classList.add('highlighted-column');
+        }
+
+        headerRow.appendChild(th);
+      });
+      datasetTable.appendChild(headerRow);
+
+      // Store the data to be displayed
+      datasetToDisplay = data;
+
+      // Attach scroll event listener for infinite scrolling on filtered data
+      datasetContainer.addEventListener('scroll', handleScrollFilteredData);
+
+      // Load initial rows
+      loadMoreFilteredRows();
+    }
+
+    let datasetToDisplay = []; // Dataset to display after filtering
+    let highlightedColumns = []; // Columns to highlight
+
+    function handleScrollFilteredData() {
+      const scrollTop = datasetContainer.scrollTop;
+      const scrollHeight = datasetContainer.scrollHeight;
+      const clientHeight = datasetContainer.clientHeight;
+
+      // If the user has scrolled near the bottom, load more rows
+      if (scrollTop + clientHeight >= scrollHeight - 50) {
+        loadMoreFilteredRows();
+      }
+    }
+
+    function loadMoreFilteredRows() {
+      const nextIndex = currentDisplayIndex + chunkSizeToDisplay;
+      const rowsToDisplay = datasetToDisplay.slice(currentDisplayIndex, nextIndex);
+      displayDatasetTablePartial(rowsToDisplay);
+      currentDisplayIndex = nextIndex;
+
+      // After rendering, adjust scroll to bring highlighted columns into view
+      adjustHorizontalScroll();
+    }
+
+    // Adjust Horizontal Scroll to Bring Highlighted Columns into View
+    function adjustHorizontalScroll() {
+      // Find the first highlighted header cell
+      const highlightedHeader = datasetTable.querySelector('th.highlighted-column');
+      if (highlightedHeader) {
+        const offsetLeft = highlightedHeader.offsetLeft;
+        datasetContainer.scrollLeft = offsetLeft - 20; // Adjust as needed
+      }
+    }
+
+    // Verify Button Click
+    verifyButton.addEventListener('click', () => {
+      verifyButton.style.display = 'none';
+      leftArrow.style.opacity = 0;
+      typeText("This dataset contains employee records for a corporate organization, including details on job titles, salaries, departments, managers, employment status, and locations. It models hierarchical department structures, assigns department heads and budgets, and incorporates both full-time employees and contractors.", () => {
+        nextButton.style.display = 'inline-block';
+      });
+    });
+
+    // Next Button Click
+    nextButton.addEventListener('click', () => {
+      nextButton.style.display = 'none';
+      // typingTextDiv.classList.add('near-progress'); // Add this line
+      typeText("Generating rules for checking data qualities of this dataset.", () => {
+        progressBarContainer.style.display = 'block';
+        typingTextDiv.classList.add('near-progress');
+        startProgressBar();
+      });
+    });
+
+    // Progress Bar Steps
+    const steps = ["Deep Data Understanding", "Generating Candidate Rules", "Turning Rules into Executable Programs", "Evaluating and Selecting Candidate Rules", "Applying Selected Rules"];
+    function startProgressBar() {
+      let stepIndex = 0;
+      function nextStep() {
+        if (stepIndex < steps.length) {
+          document.getElementById('step-' + (stepIndex + 1)).style.opacity = 1;
+          progressFill.style.width = `${(stepIndex + 1) * 20}%`;
+          stepIndex++;
+          setTimeout(nextStep, 1500);
+        } else {
+          generatedRulesButton.style.display = 'inline-block';
+        }
+      }
+      nextStep();
+    }
+
+    // Generated Rules Button Click
+    generatedRulesButton.addEventListener('click', () => {
+      generatedRulesButton.style.display = 'none';
+      document.getElementById('typing-text').style.display = 'none';
+      document.getElementById('progress-bar-container').style.display = 'none';
+      rulesList.style.display = 'block';
+    });
+
+    // Rule Item Click
+    rulesList.addEventListener('click', (event) => {
+      if (event.target.classList.contains('rule-item')) {
+        const ruleId = event.target.getAttribute('data-rule');
+        displayAnomaliesForRule(ruleId);
+      }
+    });
+
+
+let isMenuEventListenerAdded = false;
+let isWindowEventListenerAdded = false;
+
+// Display Anomalies for Selected Rule
+function displayAnomaliesForRule(ruleId) {
+  violationContainer.innerHTML = '';
+  datasetContainer.style.display = "none"
+    console.log(`Clicked rule ID: ${ruleId}`); // Log rule ID
+
+    const rule = rules[ruleId];
+    if (!rule) {
+        console.error(`Rule ${ruleId} not found.`);
+        return;
+    }
+
+    console.log(`Rule found:`, rule); // Log rule details
+
+    // Show the violation menu
+    violationMenu.style.display = 'block';
+
+    document.getElementById('left-side').scrollTop = 0;
+
+    // Get elements
+    const menuButton = document.querySelector('#menu-btn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    if (!menuButton || !dropdownContent) {
+        console.error("Dropdown elements not found");
+        return;
+    }
+
+    // Clear and populate dropdown
+    dropdownContent.innerHTML = "";
+    const ul = document.createElement('ul');
+    
+    const v = rule.violationIndices
+    let entriesToUse;
+
+    // Check if v is an array
+    if (Array.isArray(v)) {
+      entriesToUse = { "All Violations": v };
+      rule.violationIndices = { "All Violations": v };
+    } else {
+      entriesToUse = v;
+    }
+
+    Object.entries(entriesToUse).forEach(([key, value]) => {
+        const li = document.createElement('li');
+        li.textContent = key;
+
+        li.addEventListener('click', () => {
+          dropdownContent.style.display =  'none'
+            handleViolationClick(key, rule);
+        });
+
+        ul.appendChild(li);
+    });
+    dropdownContent.appendChild(ul);
+
+    // Add event listener for toggle (only once)
+    if (!isMenuEventListenerAdded) {
+        menuButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from closing immediately
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+        isMenuEventListenerAdded = true;
+    }
+
+    // Close dropdown when clicking outside (only once)
+    if (!isWindowEventListenerAdded) {
+        window.addEventListener('click', (event) => {
+            if (!dropdownContent.contains(event.target) && event.target !== menuButton) {
+                dropdownContent.style.display = 'none';
+            }
+        });
+        isWindowEventListenerAdded = true;
+    }
+
+    // Highlighted columns
+    highlightedColumns = rule.highlightedColumns.map(col => col.toLowerCase());
+    console.log(`Highlighted columns:`, highlightedColumns); // Log highlighted columns
+
+    const firstGroupKey = Object.keys(rule.violationIndices)[0];
+    if (firstGroupKey) {
+      handleViolationClick(firstGroupKey, rule); // auto-load first group
+    }
+
+    // Display Rule Content
+    ruleTitle.textContent = rule.title;
+    ruleDescription.textContent = rule.description;
+    ruleCaption.textContent = rule.caption;
+
+    // Log dataset before filtering
+    console.log(`Dataset before filtering:`, dataset);
+
+    // Update the violation count in the rule content
+    const violationCount = rule.num_vio;
+    ruleViolationsCount.textContent = `Number of Violations: ${violationCount}`;
+
+    RuleContent.style.display = 'block';
+}
+
+
+
+let eventContainer = []
+
+
+function handleNext(datasetTable, datasetContainer, violatingRows, highlightedColumns, prevButton, nextButton, size, current_pair){
+  datasetTable.innerHTML = ""
+  let currentDisplayIndex = 0
+  violatingRows.forEach((rowData, index) => {
+  if (index <= chunkSizeToDisplay){
+    displayViolation([rowData],datasetTable,highlightedColumns)
+    currentDisplayIndex++
+  }
+  else if (index == chunkSizeToDisplay) {
+    addScrollHandler(currentDisplayIndex,datasetContainer, datasetTable, violatingRows, highlightedColumns);
+  }
+  });
+
+  if (violatingRows.length < chunkSizeToDisplay ){
+    addScrollHandler(currentDisplayIndex, datasetContainer, datasetTable, violatingRows, highlightedColumns);
+  }
+    prevButton.disabled  = current_pair.index === 0
+    nextButton.disabled = current_pair.index === size-1
+}
+
+let eventListeners = [];
+
+function addTrackedEventListener(element, eventType, handler) {
+  element.addEventListener(eventType, handler);
+  eventListeners.push({ element, eventType, handler });
+}
+
+// Remove all event listeners tracked
+function removeAllEventListeners() {
+  for (let { element, eventType, handler } of eventListeners) {
+    element.removeEventListener(eventType, handler);
+  }
+  eventListeners = []; // Clear the list after removal
+}
+function handleViolationClick(key, rule) {
+    removeAllEventListeners();
+    console.log(key)
+    console.log(rule.violationIndices)
+     console.log(rule.violationIndices[key])
+    violationContainer.innerHTML = '';
+    violationContainer.style.display = 'block';
+    violationContainer.style.maxHeight = '45vh';
+
+
+    // Create and append main header
+    createAndAppendHeader('h2', key, 'centered-header', violationContainer);
+
+    // Check if violations exist
+ if (Array.isArray(rule.violationIndices[key])) {
+    console.log("Array of values");
+    let datasetContainer = createDatasetContainer();
+    let datasetTable = createDatasetTable();
+
+    processViolations(key, { violationIndices: { [key]: rule.violationIndices[key] }, highlightedColumns: rule.highlightedColumns }, datasetContainer, datasetTable);
+
+    if (typeof rule.violationIndices[key][0] === 'object' && rule.violationIndices[key][0] !== null) {
+        appendNavigationButtons(datasetTable, datasetContainer, rule, key);
+    }
+
+} else if (typeof rule.violationIndices[key] === 'object' && rule.violationIndices[key] !== null) {
+    Object.entries(rule.violationIndices[key]).forEach(([k, val]) => {
+        console.log("Y")
+        let datasetContainer = createDatasetContainer();
+        let datasetTable = createDatasetTable();
+        if (Array.isArray(val)) {
+          val = val.flat();  // Only flatten if val is an array
+      } else {
+          val = [val]
+      }
+
+        let valDict = {};
+        val.forEach((item, index) => {
+            valDict[index] = item;
+        });
+
+        createAndAppendHeader('h3', k, 'dynamic-header', violationContainer);
+        console.log(k);
+        processViolations(k, { violationIndices: { [k]: [valDict] }, highlightedColumns: rule.highlightedColumns }, datasetContainer, datasetTable);
+    });
+}
+
+}
+
+// Creates and appends a header (h2 or h3)
+function createAndAppendHeader(tag, text, className, container) {
+    let header = document.createElement(tag);
+    header.classList.add(className);
+    header.innerHTML = text;
+    container.appendChild(header);
+}
+
+// Processes violations and appends the dataset table
+function processViolations(key, rule,datasetContainer, datasetTable) {
+    console.log(rule)
+    console.log(rule.violationIndices)
+    console.log(rule.violationIndices[key])
+    console.log(rule.violationIndices[key][0])
+let v;
+if (typeof rule.violationIndices[key][0] === 'object' && rule.violationIndices[key][0] !== null) {
+    // If it's an object/dictionary, use Object.values()
+    v = Object.values(rule.violationIndices[key][0]);
+} else {
+    // If it's a primitive value (int, string, etc.), use the array directly
+    v = rule.violationIndices[key];
+}
+
+
+
+      const indexColumn = headers.find(h => h.toLowerCase() === 'index');
+      if (!indexColumn) {
+        console.error("Column 'index' not found in dataset. Please check the CSV headers.");
+        typeText("Column 'index' not found in dataset. Please ensure the CSV file has an 'index' column.");
+        return;
+      }
+
+            const violatingRows = dataset.filter(row => {
+        const indexValue = parseInt(row[indexColumn], 10);
+        console.log(indexValue)
+        return v.includes(indexValue);
+      });
+
+
+
+    console.log(violatingRows)
+    let currentDisplayIndex = 0
+
+    let tbody = document.createElement('tbody');
+    violatingRows.forEach((rowData, index) => {
+        if (index <= chunkSizeToDisplay) {
+            displayViolation([rowData], datasetTable, rule.highlightedColumns);
+            currentDisplayIndex++
+        } else if (index === chunkSizeToDisplay) {
+            addScrollHandler(currentDisplayIndex, datasetContainer, datasetTable, violatingRows, rule.highlightedColumns);
+        }
+    });
+
+    if (violatingRows.length < chunkSizeToDisplay) {
+        addScrollHandler(currentDisplayIndex, datasetContainer, datasetTable, violatingRows, rule.highlightedColumns);
+    }
+
+    datasetTable.appendChild(tbody);
+    datasetContainer.appendChild(datasetTable);
+    violationContainer.appendChild(datasetContainer);
+}
+
+// Creates a dataset container
+function createDatasetContainer() {
+    let container = document.createElement('div');
+    container.classList.add('violation-data-container');
+    return container;
+}
+
+// Creates a dataset table
+function createDatasetTable() {
+    let table = document.createElement('table');
+    table.classList.add('violation-table');
+    return table;
+}
+
+// Adds a scroll event handler
+function addScrollHandler(currentDisplayIndex, container, table, rows, highlightedColumns) {
+    let index = { index: currentDisplayIndex };
+    let handler = (event) => handleViolationScroll(rows, table, container, index, highlightedColumns);
+    
+    container.addEventListener('scroll', handler);
+    addTrackedEventListener(container, 'scroll', handler);
+}
+
+// Appends navigation buttons (Previous/Next)
+function appendNavigationButtons(datasetTable, datasetContainer,  rule, key) {
+  console.log("Next")
+    let currentPair = { index: 0 };
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container-dynamic');
+
+    const prevButton = createNavButton('Previous', (event) => navigateViolation(-1, datasetTable, datasetContainer, rule, key, currentPair, prevButton, nextButton));
+    const nextButton = createNavButton('Next', (event) => navigateViolation(1, datasetTable, datasetContainer,  rule, key, currentPair, prevButton, nextButton));
+
+    prevButton.disabled = currentPair.index === 0;
+    
+    buttonContainer.appendChild(prevButton);
+    buttonContainer.appendChild(nextButton);
+    violationContainer.appendChild(buttonContainer);
+}
+
+// Creates a navigation button
+function createNavButton(text, clickHandler) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.addEventListener('click', clickHandler);
+    addTrackedEventListener(button, 'click', clickHandler);
+    return button;
+}
+
+// Handles navigation between violation pages
+function navigateViolation(direction, datasetTable, datasetContainer, rule, key, currentPair, prevButton, nextButton) {
+    let newIndex = currentPair.index + direction;
+
+    if (newIndex >= 0 && newIndex < rule.violationIndices[key].length) {
+        currentPair.index = newIndex;
+        let val = Object.values(rule.violationIndices[key][currentPair.index]);
+
+        const indexColumn = headers.find(h => h.toLowerCase() === 'index');
+        if (!indexColumn) {
+            console.error("Column 'index' not found in dataset. Please check the CSV headers.");
+            typeText("Column 'index' not found in dataset. Please ensure the CSV file has an 'index' column.");
+            return;
+        }
+
+        const violations = dataset.filter(row => {
+            const indexValue = parseInt(row[indexColumn], 10);
+            console.log(indexValue)
+            return val.includes(indexValue);
+        });
+
+        handleNext(datasetTable, datasetContainer, violations, rule.highlightedColumns, prevButton, nextButton, rule.violationIndices[key].length, currentPair);
+        
+        // Auto-scroll to highlighted column after rendering
+        setTimeout(() => {
+            adjustHorizontalScrollForViolation(datasetContainer);
+        }, 100);
+    }
+}
+
+
+// Display Dataset in Table (Partial for infinite scrolling)
+function displayViolation(rowsData, violationTable, highlightedCol) {
+  // If headers are not yet set, wait
+  if (!headers) {
+    console.warn("Headers not set yet. Exiting function.");
+    return;
+  }
+  // If table headers are not yet created, create them
+  if (violationTable.rows.length === 0) {
+    // Create header row
+    const headerRow = document.createElement('tr');
+    headers.forEach(headerText => {
+      const th = document.createElement('th');
+      th.textContent = headerText;
+      // Highlight columns if required
+      if (highlightedCol && highlightedCol.includes(headerText.toLowerCase())) {
+        th.classList.add('highlighted-column');
+      }
+      headerRow.appendChild(th);
+    });
+    violationTable.appendChild(headerRow);
+    
+    // Auto-scroll to first highlighted column after headers are rendered
+    setTimeout(() => {
+      adjustHorizontalScrollForViolation(violationTable.closest('.violation-data-container'));
+    }, 100);
+  }  
+  rowsData.forEach((rowData, index) => {
+    const row = document.createElement('tr');
+    headers.forEach(header => {
+      const td = document.createElement('td');
+      td.textContent = rowData[header];
+      // Highlight columns if required
+      if (highlightedCol && highlightedCol.includes(header.toLowerCase())) {
+        td.classList.add('highlighted-column');
+      }
+      row.appendChild(td);
+    });
+    violationTable.appendChild(row);
+  });
+}
+
+// Adjust Horizontal Scroll for Violation Tables
+function adjustHorizontalScrollForViolation(container) {
+  if (!container) return;
+  
+  // Find the first highlighted header cell within this container
+  const highlightedHeader = container.querySelector('th.highlighted-column');
+  if (highlightedHeader) {
+    const offsetLeft = highlightedHeader.offsetLeft;
+    container.scrollLeft = offsetLeft - 20; // Adjust as needed
+  }
+}
+
+
+    // Handle Scroll Event for Infinite Scrolling
+    function handleViolationScroll(data, violationTable, ViolationsContainer, index, highlightedCol) {
+      console.log("Scroller")
+      const scrollTop = ViolationsContainer.scrollTop;
+      const scrollHeight = ViolationsContainer.scrollHeight;
+      const clientHeight = ViolationsContainer.clientHeight;
+
+      // If the user has scrolled near the bottom, load more rows
+      if (scrollTop + clientHeight >= scrollHeight - 50) {
+        loadMoreViolationRows(data, violationTable, index, highlightedCol);
+      }
+    }
+    // Load More Rows Function
+    function loadMoreViolationRows(data, violationTable, index, highlightedCol) {
+      console.log(`The data is ${data}, Current Index is ${index}`)
+      const nextIndex = index.index + chunkSizeToDisplay;
+      const rowsToDisplay = data.slice(index.index, nextIndex);
+      displayViolation(rowsToDisplay, violationTable, highlightedCol);
+      index.index = nextIndex;
+      console.log(`The data to be displayed ${rowsToDisplay}, Current Index now ${index}`)
+    }
+
+
+  </script>
+</body>
+</html>
