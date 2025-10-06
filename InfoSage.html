@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InfoSage Interactive Demo</title>
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    #main-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    /* Left Side */
+    #left-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px;
+      background-color: #1e1e1e;
+      overflow: hidden; /* Hide scrollbars on the left-side container */
+    }
+
+    /* Rule Content Display */
+    #rule-content {
+      width: 90%;
+      background-color: #2c2c2c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 120px;
+      display: none; /* Initially hidden */
+    }
+
+    #rule-content h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #1DB954;
+    }
+
+    #rule-content p {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    #rule-caption {
+      font-size: 2em;
+      margin-top: 10px;
+      font-style: italic;
+      color: #bbbbbb;
+    }
+
+    #dataset-container {
+      margin-top: 100px;
+      font-size: 1em;
+      width: 90%;
+      max-height: 1200px; /* Adjusted for better vertical scrolling */
+      overflow-y: auto; /* Enable vertical scrolling */
+      overflow-x: auto;   /* Enable horizontal scrolling */
+      border-radius: 10px;
+      background-color: #1e1e1e;
+      position: relative;
+    }
+
+    #dataset-table {
+      width: max-content; /* Allow table to expand horizontally */
+      border-collapse: collapse;
+    }
+
+    th, td {
+      font-size: 1.5em;
+      padding: 16px;
+      text-align: left;
+      transition: background-color 0.5s;
+      color: #f0f0f0;
+      white-space: nowrap; /* Prevent text from wrapping */
+      border: 1px solid #2c2c2c; /* Optional: Add borders for clarity */
+    }
+
+    th {
+      background-color: #2c2c2c;
+      position: sticky;
+      top: 0; /* Keep headers fixed at the top */
+      z-index: 1;
+    }
+
+    tr:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+
+    tr:hover {
+      background-color: #2a2a2a;
+    }
+
+    .highlighted-row {
+      background-color: rgba(255, 99, 71, 0.5) !important; /* Highlight color for violations */
+    }
+
+    .action-button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 2em;
+      background-color: #1DB954;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(29, 185, 84, 0.2);
+      transition: all 0.3s ease;
+      display: none;
+    }
+
+    .action-button:hover {
+      background-color: #17a149;
+      box-shadow: 0 15px 20px rgba(29, 185, 84, 0.4);
+      transform: translateY(-3px);
+    }
+
+    /* Highlighted columns */
+    .highlighted-column {
+      background-color: purple !important;
+    }
+
+    /* Right Side */
+    #right-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    #typing-text {
+      font-size: 3em;
+      line-height: 1.5;
+      max-width: 90%;
+      text-align: left;
+    }
+
+    .left-arrow {
+      position: absolute;
+      left: 50%;
+      bottom: 20%;
+      width: 80px;
+      height: 80px;
+      opacity: 0;
+    }
+
+    .left-arrow svg {
+      width: 100%;
+      height: 100%;
+      fill: #1DB954;
+    }
+
+    .bounce {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    #progress-bar-container {
+      width: 90%;
+      margin-top: 20px;
+      display: none;
+      text-align: left;
+    }
+
+    #progress-bar {
+      width: 100%;
+      height: 30px;
+      background-color: #2c2c2c;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .progress-step {
+      margin-top: 16px;
+      font-size: 2em;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    #progress-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(to right, #a8e063, #56ab2f); /* Add gradient colors */
+      border-radius: 15px;
+      transition: width 0.5s ease; /* Smooth transition for progress width */
+    }
+
+    /* Step name styles */
+/*.progress-step {*/
+/*  position: absolute;*/
+/*  font-size: 1.2em; !* Make text larger *!*/
+/*  color: #fff;*/
+/*  opacity: 0; !* Initially hidden *!*/
+/*  transition: opacity 0.5s, transform 0.5s; !* Smooth transition *!*/
+/*  transform: translateY(-20px); !* Position above the progress bar *!*/
+/*}*/
+
+/*!* Highlight step name when active *!*/
+/*.progress-step.active {*/
+/*  font-size: 1.5em; !* Enlarge active step *!*/
+/*  color: #a8e063; !* Match the gradient start color *!*/
+/*  opacity: 1; !* Make visible *!*/
+/*  transform: translateY(-40px); !* Lift higher when active *!*/
+/*}*/
+
+/*!* Connecting line styles *!*/
+/*.step-connector {*/
+/*  position: absolute;*/
+/*  width: 2px;*/
+/*  height: 30px;*/
+/*  background-color: #a8e063; !* Match gradient start color *!*/
+/*  transition: background-color 0.5s ease;*/
+/*}*/
+
+
+
+    #rules-list {
+      margin-top: 20px;
+      width: 90%;
+      display: none;
+    }
+
+    .rule-item {
+      font-size: 2em;
+      padding: 20px;
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .rule-item:hover {
+      background-color: #3a3a3a;
+    }
+
+    /* File Input Styles */
+    #csv-file-input {
+      margin-top: 20px;
+      display: none;
+    }
+
+    #file-input-label {
+      margin-top: 700px;
+      font-size: 2em;
+      padding: 14px 28px;
+      /*font-size: 1em;*/
+      background-color: #1DB954;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(29, 185, 84, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    #file-input-label:hover {
+      background-color: #17a149;
+      box-shadow: 0 15px 20px rgba(29, 185, 84, 0.4);
+      transform: translateY(-3px);
+    }
+
+  </style>
+</head>
+<body>
+  <div id="main-container">
+    <!-- Left Side -->
+    <div id="left-side">
+      <!-- File Input for CSV Upload -->
+
+      <!-- Rule Content Display -->
+      <div id="rule-content">
+        <h2 id="rule-title"></h2>
+        <p id="rule-description"></p>
+        <p id="rule-violations-count"></p>
+        <div id="rule-caption"></div>
+      </div>
+
+      <div id="dataset-container">
+        <table id="dataset-table">
+          <!-- Table content will be generated here -->
+        </table>
+      </div>
+      <button id="verify-button" class="action-button">Verify Data</button>
+    </div>
+
+    <!-- Right Side -->
+    <div id="right-side">
+      <div id="typing-text"></div>
+      <div id="left-arrow" class="left-arrow">
+        <svg viewBox="0 0 64 64">
+          <path d="M40 16 L24 32 L40 48" stroke="#1DB954" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div id="next-button-container" class="next-button-container">
+        <button id="next-button" class="action-button">Next</button>
+      </div>
+      <div id="progress-bar-container">
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="step-1" class="progress-step"><strong>Search for External Sources</strong>: Automatically generate search queries based on the dataset to find relevant information.</div>
+        <div id="step-2" class="progress-step"><strong>Select Trustworthy Sources</strong>: Detect and prioritize official web pages and APIs from authoritative data providers.</div>
+        <div id="step-3" class="progress-step"><strong>Generate Extraction Programs</strong>: Automatically create programs to extract relevant information from the selected sources. </div>
+        <div id="step-4" class="progress-step"><strong>Plan Inference Workflow</strong>: Construct a workflow that applies logic and reasoning to verify data correctness based on external information.</div>
+        <div id="step-5" class="progress-step"><strong>Execute Workflow at Scale</strong>: Apply the workflow to each data record across distributed worker nodes for scalable processing.</div>
+      </div>
+      <button id="generated-rules-button" class="action-button">View Identified Data Errors</button>
+      <div id="rules-list">
+        <!-- Rule items will be generated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Papa Parse Library -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
+  <script>
+    // DOM Elements
+    const typingTextDiv = document.getElementById('typing-text');
+    const leftArrow = document.getElementById('left-arrow');
+    const verifyButton = document.getElementById('verify-button');
+    const nextButton = document.getElementById('next-button');
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressFill = document.getElementById('progress-fill');
+    const generatedRulesButton = document.getElementById('generated-rules-button');
+    const rulesList = document.getElementById('rules-list');
+    const datasetTable = document.getElementById('dataset-table');
+    const datasetContainer = document.getElementById('dataset-container');
+    const csvFileInput = document.getElementById('csv-file-input');
+    const fileInputLabel = document.getElementById('file-input-label');
+    const ruleContentDiv = document.getElementById('rule-content');
+    const ruleTitle = document.getElementById('rule-title');
+    const ruleDescription = document.getElementById('rule-description');
+    const ruleCaption = document.getElementById('rule-caption');
+    const ruleViolationsCount = document.getElementById('rule-violations-count');
+
+    let dataset = []; // To store the parsed CSV data
+    let headers = []; // To store the CSV headers
+    let rowCount = 0; // To keep track of the number of rows processed
+    let currentDisplayIndex = 0; // Index to track how many rows have been displayed
+    const chunkSizeToDisplay = 100; // Number of rows to load per scroll event
+
+    // Rule Definitions
+    const rules = {
+      'R1': {
+        title: 'Data Error 1',
+        description: 'The National Provider Identifier (NPI) 1295188332 belongs to Oral Surgery Partners PC, a dental practice specializing in oral and maxillofacial surgery. ' +
+                '\n However, the listed service—“ARTHRO, POST INBODY TECH, SINGLE INTERSPACE, LUMBAR”—is highly unlikely to be offered by this provider, suggesting a potential data inconsistency.',
+        caption: 'See the row with the data error.',
+        violationIndices: [422795],
+        highlightedColumns: ['name','negotiated_rates_provider_groups_npi'],
+        num_vio: 1
+      },
+
+      'R2': {
+        title: 'Data Error 2',
+        description: 'The National Provider Identifier (NPI) 1437619186 belongs to a medical practice specializing in procedures such as vaginal hysterectomy, ' +
+                'including the removal of tubes and/or ovaries. \n ' +
+                'However, the listed service—“LIGATION, DIRECT, ESOPHAGEAL VARICES”—is highly unlikely to be offered by this provider, ' +
+                'suggesting a potential data inconsistency.',
+        caption: 'See the row with the data error.',
+        violationIndices: [1101436],
+        highlightedColumns: ['negotiated_rates_provider_groups_npi','name'],
+        num_vio: 1
+      },
+
+      'R3': {
+        title: 'Data Error 3',
+        description: 'The National Provider Identifier (NPI) 1437619186 is associated with a medical practice ' +
+                'that provides procedures such as shaving of an epidermal or dermal lesion on a single lesion located on the trunk or arms. ' +
+                '\n However, the listed service—“CAST SUPPLIES”—is highly unlikely to be offered by this provider, ' +
+                'suggesting a potential data inconsistency.',
+        caption: 'See the row with the data error.',
+        violationIndices: [260663],
+        highlightedColumns: ['negotiated_rates_provider_groups_npi','name'],
+        num_vio: 1
+      },
+
+      'R4': {
+        title: 'Data Error 4',
+        description: 'The National Provider Identifier (NPI) 1437619186 is associated with a medical practice that performs procedures such as bypass graft using a vein for axillary-femoral circulation. ' +
+                '\n However, the listed service—“REMOVAL OF IMPLANTABLE DEFIB PLSE GEN W/RPLCMNT OF IMPLANTABLE”—is highly unlikely to be offered by this provider, ' +
+                'suggesting a potential data inconsistency.',
+        caption: 'See the row with the data error.',
+        violationIndices: [802644],
+        highlightedColumns: ['negotiated_rates_provider_groups_npi','name'],
+        num_vio: 1
+      },
+
+      // 'R5': {
+      //   title: 'Fact Check 5',
+      //   description: "NPI values must be validated against an official NPI registry. There shouldn't be deactivated or invalid NPI. ",
+      //   caption: 'See rows that violate R3.',
+      //   violationIndices: [197800, 198308, 196010, 210900, 206686, 202865, 202842, 201729, 205443, 205725, 202303, 209664, 217326, 224471, 229570, 224291, 222059, 231192, 230253, 230178, 235012, 241652, 232244, 238355, 244722, 244893, 242208, 245826, 249147, 250231, 254952, 253137, 258773, 260524, 260491, 260447, 270836, 269624, 267629, 264949, 262288, 261933, 274754, 286151, 288642, 284861, 283357, 299290, 298354, 298223, 291612],
+      //   highlightedColumns: ['negotiated_rates_provider_groups_npi'],
+      //   num_vio: 1075
+      // },
+      
+
+     // 'R9': {
+     //    title: 'Rule R9',
+     //    description: 'Columns name and description must not both be empty or contain semantically meaningless content.',
+     //    caption: 'See rows that violate R9.',
+     //    violationIndices: [198884, 198889, 198906, 198908, 198920, 198924, 198930, 198951, 199026, 199032, 199040, 199050, 199066, 199072, 199086, 199098, 199104, 199115, 199116, 199125, 199159, 199167, 208384, 208394, 208406, 208422, 208439, 208452, 208456, 208458, 208465, 208475, 208479, 208482, 208485, 208499, 208530, 208543, 208544, 208566, 208576, 208589, 208591, 208595, 208616, 208628, 208632, 208642, 208668, 208677, 208681, 208690, 208718, 208722, 208749, 208760, 208783, 208784, 219709, 219712, 219724, 219734, 219750, 219752, 219764, 219777, 219779, 219797, 219805, 219813, 219821, 219830, 219840, 219857, 219862, 219864, 219866, 219868, 219874, 219888, 219897, 219907, 219926, 219934, 219953, 219954, 219963, 219966, 219979, 219993, 219994, 220020, 220081, 220091, 220102, 220109, 220110, 220122, 220126, 220129],
+     //    highlightedColumns: ['name', 'description'],
+     //    num_vio: 102930
+     //  },
+
+    };
+
+    // Generate the rules list dynamically
+    function generateRulesList() {
+      // Clear any existing items
+      rulesList.innerHTML = '';
+
+      for (const ruleId in rules) {
+        if (rules.hasOwnProperty(ruleId)) {
+          const rule = rules[ruleId];
+          const ruleItem = document.createElement('div');
+          ruleItem.classList.add('rule-item');
+          ruleItem.setAttribute('data-rule', ruleId);
+          ruleItem.textContent = `${rule.title}: ${rule.description}`;
+          rulesList.appendChild(ruleItem);
+        }
+      }
+    }
+
+    // Call the function to generate the rules list
+    generateRulesList();
+
+    // Typing Effect Function
+    function typeText(text, callback) {
+      typingTextDiv.innerHTML = '';
+      let index = 0;
+      const typingSpeed = 20;
+      function type() {
+        if (index < text.length) {
+          typingTextDiv.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, typingSpeed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+
+window.addEventListener('load', () => {
+  const csvUrl = 'https://raw.githubusercontent.com/liriaa/unlimidata_web/main/Price-Transparency-demo-data---InfoSage.csv';
+  parseCSVDataFromURL(csvUrl);
+});
+
+function parseCSVDataFromURL(url) {
+  dataset = [];
+  headers = null;
+  rowCount = 0;
+  currentDisplayIndex = 0;
+
+  Papa.parse(url, {
+    download: true,   // fetch CSV from URL
+    header: true,
+    skipEmptyLines: true,
+    worker: true,
+    chunkSize: 1024 * 1024,
+    delimiter: ",",
+    step: function(results) {
+      if (!headers) {
+        headers = results.meta.fields;
+      }
+
+      const row = results.data;
+      dataset.push(row);
+      rowCount++;
+
+      if (dataset.length <= chunkSizeToDisplay) {
+        displayDatasetTablePartial([row]);
+      }
+
+      if (rowCount % 1000 === 0) {
+        console.log(`Processed ${rowCount} rows...`);
+      }
+    },
+    complete: function() {
+      console.log(`Finished parsing. Total rows: ${rowCount}`);
+      typeText(
+        "Let’s see how InfoSage leverages external sources—such as Web pages—to automatically detect data errors.",
+        () => {
+          leftArrow.style.opacity = 1;
+          leftArrow.classList.add('bounce');
+          verifyButton.style.display = 'inline-block';
+        }
+      );
+      datasetContainer.addEventListener('scroll', handleScroll);
+    },
+    error: function(err) {
+      console.error('Error parsing CSV:', err);
+      typeText('Error loading CSV from GitHub. Please check the console for more details.');
+    }
+  });
+}
+
+
+
+    // Handle Scroll Event for Infinite Scrolling
+    function handleScroll() {
+      const scrollTop = datasetContainer.scrollTop;
+      const scrollHeight = datasetContainer.scrollHeight;
+      const clientHeight = datasetContainer.clientHeight;
+
+      // If the user has scrolled near the bottom, load more rows
+      if (scrollTop + clientHeight >= scrollHeight - 50) {
+        loadMoreRows();
+      }
+    }
+
+    // Load More Rows Function
+    function loadMoreRows() {
+      const nextIndex = currentDisplayIndex + chunkSizeToDisplay;
+      const rowsToDisplay = dataset.slice(currentDisplayIndex, nextIndex);
+      displayDatasetTablePartial(rowsToDisplay);
+      currentDisplayIndex = nextIndex;
+    }
+
+    // Display Dataset in Table (Partial for infinite scrolling)
+    function displayDatasetTablePartial(rowsData) {
+      // If headers are not yet set, wait
+      if (!headers) return;
+
+      // If table headers are not yet created, create them
+      if (datasetTable.rows.length === 0) {
+        // Create header row
+        const headerRow = document.createElement('tr');
+        headers.forEach(headerText => {
+          const th = document.createElement('th');
+          th.textContent = headerText;
+
+          // Highlight columns if required
+          if (highlightedColumns && highlightedColumns.includes(headerText.toLowerCase())) {
+            th.classList.add('highlighted-column');
+          }
+
+          headerRow.appendChild(th);
+        });
+        datasetTable.appendChild(headerRow);
+      }
+
+      // Create data rows
+      rowsData.forEach(rowData => {
+        const row = document.createElement('tr');
+        headers.forEach(header => {
+          const td = document.createElement('td');
+          td.textContent = rowData[header];
+
+          // Highlight columns if required
+          if (highlightedColumns && highlightedColumns.includes(header.toLowerCase())) {
+            td.classList.add('highlighted-column');
+          }
+
+          row.appendChild(td);
+        });
+        datasetTable.appendChild(row);
+      });
+    }
+
+    // Display Dataset in Table (Full display for violations)
+    function displayDatasetTable(data) {
+      // Clear existing table content
+      datasetTable.innerHTML = '';
+      currentDisplayIndex = 0; // Reset index
+
+      // Check if headers and data are available
+      if (!headers || headers.length === 0) {
+        console.error('No headers found in the CSV file.');
+        typeText('No data to display. Please ensure the CSV file has proper headers.');
+        return;
+      }
+
+      // Create header row
+      const headerRow = document.createElement('tr');
+      headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+
+        // Highlight columns if required
+        if (highlightedColumns && highlightedColumns.includes(headerText.toLowerCase())) {
+          th.classList.add('highlighted-column');
+        }
+
+        headerRow.appendChild(th);
+      });
+      datasetTable.appendChild(headerRow);
+
+      // Store the data to be displayed
+      datasetToDisplay = data;
+
+      // Attach scroll event listener for infinite scrolling on filtered data
+      datasetContainer.addEventListener('scroll', handleScrollFilteredData);
+
+      // Load initial rows
+      loadMoreFilteredRows();
+    }
+
+    let datasetToDisplay = []; // Dataset to display after filtering
+    let highlightedColumns = []; // Columns to highlight
+
+    function handleScrollFilteredData() {
+      const scrollTop = datasetContainer.scrollTop;
+      const scrollHeight = datasetContainer.scrollHeight;
+      const clientHeight = datasetContainer.clientHeight;
+
+      // If the user has scrolled near the bottom, load more rows
+      if (scrollTop + clientHeight >= scrollHeight - 50) {
+        loadMoreFilteredRows();
+      }
+    }
+
+    function loadMoreFilteredRows() {
+      const nextIndex = currentDisplayIndex + chunkSizeToDisplay;
+      const rowsToDisplay = datasetToDisplay.slice(currentDisplayIndex, nextIndex);
+      displayDatasetTablePartial(rowsToDisplay);
+      currentDisplayIndex = nextIndex;
+
+      // After rendering, adjust scroll to bring highlighted columns into view
+      adjustHorizontalScroll();
+    }
+
+    // Adjust Horizontal Scroll to Bring Highlighted Columns into View
+    function adjustHorizontalScroll() {
+      // Find the first highlighted header cell
+      const highlightedHeader = datasetTable.querySelector('th.highlighted-column');
+      if (highlightedHeader) {
+      //  const offsetLeft = highlightedHeader.offsetLeft;
+       // datasetContainer.scrollLeft = offsetLeft - 20; // Adjust as needed
+      }
+    }
+
+    // Verify Button Click
+    verifyButton.addEventListener('click', () => {
+      verifyButton.style.display = 'none';
+      leftArrow.style.opacity = 0;
+      typeText("This dataset contains information on negotiated healthcare rates for various services, including details on payment arrangements, service names, billing codes, provider group identifiers, and negotiated pricing structures.", () => {
+        nextButton.style.display = 'inline-block';
+      });
+    });
+
+    // Next Button Click
+    nextButton.addEventListener('click', () => {
+      nextButton.style.display = 'none';
+      typeText("Searching and utilizing relevant information from external sources—such as Web pages—to automatically detect data errors.", () => {
+        progressBarContainer.style.display = 'block';
+        startProgressBar();
+      });
+    });
+
+    // Progress Bar Steps
+    const steps = [
+      "<strong>Search for External Sources</strong>: <i>Automatically generate search queries based on the dataset to find relevant information.</i>",
+      "<strong>Select Trustworthy Sources</strong>: <i>Detect and prioritize official and the most recently updated web pages.</i>",
+      "<strong>Generate Extraction Programs</strong>: <i>Automatically create programs to extract relevant information from the selected</i>",
+      "<strong>Problem Decomposition and Planning</strong>: <i>Construct a workflow that applies logic and reasoning to verify data correctness based on external information.</i>",
+      "<strong>Execute Workflow at Scale</strong>: <i>Apply the workflow to each data record across distributed worker nodes for scalable processing.</i>"
+    ];
+
+
+    function startProgressBar() {
+      let stepIndex = 0;
+      function nextStep() {
+        if (stepIndex < steps.length) {
+          document.getElementById('step-' + (stepIndex + 1)).style.opacity = 1;
+          progressFill.style.width = `${(stepIndex + 1) * 20}%`;
+          stepIndex++;
+          setTimeout(nextStep, 1500);
+        } else {
+          generatedRulesButton.style.display = 'inline-block';
+        }
+      }
+      nextStep();
+    }
+
+    // Generated Rules Button Click
+    generatedRulesButton.addEventListener('click', () => {
+      generatedRulesButton.style.display = 'none';
+      document.getElementById('typing-text').style.display = 'none';
+      document.getElementById('progress-bar-container').style.display = 'none';
+      rulesList.style.display = 'block';
+    });
+
+    // Rule Item Click
+    rulesList.addEventListener('click', (event) => {
+      if (event.target.classList.contains('rule-item')) {
+        const ruleId = event.target.getAttribute('data-rule');
+        displayAnomaliesForRule(ruleId);
+      }
+    });
+
+    // Display Anomalies for Selected Rule
+        // Display Anomalies for Selected Rule
+    function displayAnomaliesForRule(ruleId) {
+      const rule = rules[ruleId];
+      if (!rule) {
+        console.error(`Rule ${ruleId} not found.`);
+        return;
+      }
+
+      // Clear previous scroll event listeners
+      datasetContainer.removeEventListener('scroll', handleScroll);
+      datasetContainer.removeEventListener('scroll', handleScrollFilteredData);
+
+      datasetContainer.style.maxHeight = '500px';
+
+      // Reset table and indices
+      datasetTable.innerHTML = '';
+      currentDisplayIndex = 0;
+      highlightedColumns = rule.highlightedColumns.map(col => col.toLowerCase()); // Set highlighted columns
+
+      // Display Rule Content
+      ruleTitle.textContent = rule.title;
+      ruleDescription.textContent = rule.description;
+      ruleCaption.textContent = rule.caption;
+
+      // Ensure 'index' column exists
+      const indexColumn = headers.find(h => h.toLowerCase() === 'index');
+      if (!indexColumn) {
+        console.error("Column 'index' not found in dataset. Please check the CSV headers.");
+        typeText("Column 'index' not found in dataset. Please ensure the CSV file has an 'index' column.");
+        return;
+      }
+
+      // Filter rows based on violation indices
+      const violatingRows = dataset.filter(row => {
+        const indexValue = parseInt(row[indexColumn], 10);
+        return rule.violationIndices.includes(indexValue);
+      });
+
+      // Update the violation count in the rule content
+      const violationCount = rule.num_vio;
+      // ruleViolationsCount.textContent = `Number of Violations: ${violationCount}`;
+
+      ruleContentDiv.style.display = 'block';
+
+      // Display only the violating rows
+      displayDatasetTable(violatingRows);
+
+      // Optionally, you can add a message indicating the number of violations
+      // typeText(`Found ${violationCount} rows that violate ${rule.title}.`);
+    }
+
+  </script>
+</body>
+</html>
