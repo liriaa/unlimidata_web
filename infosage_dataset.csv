@@ -1,0 +1,1001 @@
+patient_ID,disease,health_treatment,service_provider,medicine
+PT-A39C00,Sickle cell disease,Hydroxyurea therapy,Muhamad Alhaj Moustafa,"Hydroxyurea, crizanlizumab"
+PT-1E5E59,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Bowen Icon Cancer Centre,Rituximab
+PT-FA010A,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,Grace Sound (Kowloon) Hearing Centre,Ciprofloxacin ear drops
+PT-67EB62,Prostate Cancer,Prostatectomy,Mercy Cancer Care,Leuprolide
+PT-2C3274,Tinnitus (ringing),Sound therapy (masking); hearing aids,Otic Hearing & Speech Service Centre Limited,SSRIs
+PT-C483AE,Glioblastoma,Resection + Radiation,Mercy Cancer Care,Temozolomide
+PT-C541C1,Sensorineural hearing loss (age-related),Hearing aids,Ear Nose & Throat Centre of Hong Kong,None
+PT-4643AE,Bacterial conjunctivitis,Topical antibiotic eye drops,City Eye Specialists,Erythromycin ophthalmic
+PT-D9F44E,Chronic myeloid leukemia,Targeted therapy,Auckland Oncology,Imatinib
+PT-90C386,Hypertension,Lifestyle modification,CardioLabs,Lisinopril
+PT-6DF875,Chronic myelogenous leukemia,Targeted therapy,Muhamad Alhaj Moustafa,"Imatinib, dasatinib"
+PT-A1F04C,Tinnitus,Sound therapy / masking,Optical 88 Hearing Care Centre,Amitriptyline
+PT-6C5341,Atrial Fibrillation,Cardioversion,Gerber & Hutchison Cardiovascular,Warfarin
+PT-70FD2D,Selective Mutism,Speech therapy + CBT,Advanz Physiotherapy Centre (Causeway Bay),Sertraline
+PT-707895,Prostate cancer,Prostatectomy,Bowen Icon Cancer Centre,Leuprolide
+PT-E9672B,Aplastic anemia,Immunosuppressive therapy or stem cell transplant,Pooja P. Advani,"Antithymocyte globulin, cyclosporine"
+PT-C6F82F,Panic Disorder,Cognitive Behavioral Therapy,Joylife Consultancy Clinic,Sertraline (SSRI)
+PT-6D7F31,Low back pain,"Physical therapy (core strengthening, exercise)",Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (ibuprofen)
+PT-13ADCD,NSCLC,Surgical resection,Auckland Breast Centre,Pembrolizumab
+PT-3AD09A,Acne Vulgaris,Topical therapy (retinoids),Auckland Skin and Cancer Foundation,Tretinoin
+PT-4F8EAA,Breast Cancer,Lumpectomy + Radiation,Harbour Cancer Care,Tamoxifen
+PT-503AE3,Gingivitis,Scaling and root planing,Wellmed Dental Care Limited,Chlorhexidine rinse
+PT-D5BCAF,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Eye Institute Hawkes Bay,Olopatadine
+PT-8B58E1,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Y Physio. Rehabilitation Centre Limited,Acetaminophen
+PT-1AB98F,Sensorineural hearing loss (age-related),Hearing aids,Hong Kong Hearing & Dizziness Centre Limited,None
+PT-B10089,Colorectal Cancer,Colectomy (surgery),Pacific Radiology - St George's,5-Fluorouracil
+PT-1D7079,Ventricular Tachycardia,Implantable defibrillator,Manawatu Heartcare,Amiodarone
+PT-5BDDF7,Alopecia Areata,Intralesional steroids,NZ Dermatology & Skin Cancer Centre,Triamcinolone injection
+PT-CCDFBE,Hyperkalemia,Exposure Therapy,Christchurch PsychMed,Propranolol
+PT-FCD39E,Neck pain (cervicalgia),"Physical therapy (neck exercises, manual therapy)",Lantex Corporation Limited,NSAIDs (ibuprofen)
+PT-A7348F,Low back pain,"Physical therapy (core strengthening, exercise)",Aurora Physiotherapy And Fitness Centre Co. Limited,NSAIDs (ibuprofen)
+PT-C646E0,Periodontitis,Scaling and root planing,Wisdom Dental Center,Doxycycline
+PT-FD548D,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Alliance Physiotherapy Centre Limited,NSAIDs (ibuprofen)
+PT-560F51,Ovarian Cancer,Cytoreductive surgery,Canopy Cancer Care,Carboplatin
+PT-4008A6,Viral Warts,Cryotherapy,NZ Dermatology & Skin Cancer Centre,Imiquimod
+PT-500EF7,Melanoma (metastatic),Surgical excision,Auckland Radiation Oncology,Pembrolizumab
+PT-279CBC,Impacted wisdom tooth (infection),Surgical extraction,Koway Dental Clinic Centre,Amoxicillin
+PT-DE19C8,Otitis media (with effusion),Watchful waiting or tubes,Widex Hong Kong Hearing & Speech Centre Ltd.,Amoxicillin
+PT-222DF0,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Later Life Psychiatry,Sertraline (SSRI)
+PT-8C1FDD,Tinnitus,Sound therapy / masking,Optical 88 Hearing Care Centre,Amitriptyline
+PT-CEF9B9,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),OK Care Limited,Acetaminophen
+PT-125843,Aphasia,Speech-language therapy,Eye Openers Psychiatry,Donepezil
+PT-96991E,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Forhealth Physiotherapy Centre Limited,NSAIDs (naproxen)
+PT-891272,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-A44BC1,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Eye Institute Hawkes Bay,
+PT-D0E51B,Vitiligo,Phototherapy (UVB),NZ Dermatology & Skin Cancer Centre,Tacrolimus ointment
+PT-8E2597,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),City Eye Specialists,
+PT-A622BF,Atrial Fibrillation,Cardioversion,Aro Manawa (Heart) Health,Warfarin
+PT-BF60C7,Post-Traumatic Stress Disorder,Trauma-focused CBT,Joylife Consultancy Clinic,Sertraline (SSRI)
+PT-605AE3,Prostate cancer,Prostatectomy,Bowen Icon Cancer Centre,Leuprolide
+PT-2AF329,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Mercy Cancer Care,Rituximab
+PT-562209,Chronic myeloid leukemia,Targeted therapy,SalutisCare,Imatinib
+PT-EFFEFF,Spasmodic dysphonia,Voice therapy,Care For Hearing Centre Limited,Botulinum toxin injection
+PT-2DF72C,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Capital Eye Specialists,
+PT-F2ED38,Tinea (Fungal infection),Topical antifungal,Auckland Skin and Cancer Foundation,Terbinafine
+PT-6C1290,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Grace Sound (Kowloon) Hearing Centre,Thiazide diuretics (HCTZ)
+PT-2676CA,Otitis media (with effusion),Watchful waiting or tubes,Care For Hearing Centre Limited,Amoxicillin
+PT-5D0FF0,Stuttering,Speech therapy (fluency techniques),ENT Laser Hearing & Speech Therapy Centre Limited,None
+PT-255CE0,Atrial Fibrillation,Cardioversion,Aro Manawa (Heart) Health,Warfarin
+PT-6F869D,Tinnitus (ringing),Sound therapy (masking); hearing aids,Otic Hearing & Speech Service Centre Limited,SSRIs
+PT-F569C4,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Central Morthan Cure Physiotherapy Limited,Acetaminophen
+PT-9567B2,Lung cancer,Lobectomy,Bowen Icon Cancer Centre,Cisplatin
+PT-D508EE,Childhood Speech Delay,Speech therapy,Forhealth Physiotherapy Centre Limited,None
+PT-A3AF61,Social Anxiety Disorder,Cognitive Behavioral Therapy,MSQ Health,Paroxetine (SSRI)
+PT-EDF8A6,Age-related macular degeneration,AREDS vitamin supplements,Eye Institute Hawkes Bay,Lutein/Zeaxanthin
+PT-074401,Beta thalassemia major,Blood transfusions and chelation therapy,Centro Medico Biolife - Ematologia,"Deferoxamine, luspatercept"
+PT-34D983,Childhood Speech Delay,Speech therapy,Widex Hong Kong Hearing & Speech Centre Ltd.,None
+PT-433498,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Bowen Eye Clinic,Olopatadine
+PT-172CB9,Sciatica (nerve pain),"Physical therapy (stretching, posture training)",Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-0A09D3,Glioblastoma,Resection + Radiation,Mercy Cancer Care,Temozolomide
+PT-8FD936,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),Hong Kong Hearing & Dizziness Centre Limited,Carbamide peroxide
+PT-B0DB80,Meniere's disease,Low-salt diet + diuretics,Care For Hearing Centre Limited,Hydrochlorothiazide
+PT-A6E7AB,Dental abscess,Root canal or extraction with drainage,Dr. Smile,Amoxicillin/Clavulanate
+PT-1BF9DC,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Auckland Skin and Cancer Foundation,Metronidazole
+PT-E8ED8E,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Phonak (Hong Kong) Hearing Centre,Thiazide diuretics (HCTZ)
+PT-FC5284,Gingivitis,Scaling and root planing,Southern Dental Centre Co. Limited,Chlorhexidine rinse
+PT-50BC2D,Glaucoma,Prescription eye drops to lower intraocular pressure,Hamilton Eye Clinic,Latanoprost
+PT-BA8F22,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Joylife Consultancy Clinic,Escitalopram (SSRI)
+PT-6C668C,Developmental Language Disorder,Speech therapy,Gerber & Hutchison Cardiovascular,None
+PT-E1E85C,Hemophilia A,Factor VIII replacement,Pooja P. Advani,"Factor VIII, emicizumab"
+PT-18FEEF,Meniere's disease,Low-salt diet + diuretics,Care For Hearing Centre Limited,Hydrochlorothiazide
+PT-D0B701,Plantar fasciitis,Stretching exercises,Byrne & Hickman Physiotherapy & Sports Injury Centre,Ibuprofen (NSAID)
+PT-46F762,Post-Traumatic Stress Disorder,Trauma-focused CBT,Later Life Psychiatry,Sertraline (SSRI)
+PT-F691AB,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),OK Care Limited,NSAIDs (ibuprofen)
+PT-D24FAD,Hyperlipidemia,Lifestyle modification,Gerber & Hutchison Cardiovascular,Atorvastatin
+PT-18779B,CML,Targeted therapy (TKI),Harbour Cancer Centre,Imatinib
+PT-C8D86B,Melanoma,Wide excision,Pacific Radiology - St George's,Pembrolizumab
+PT-90F9D3,Glioblastoma,Resection + Radiation,Canopy Cancer Care,Temozolomide
+PT-6F1493,Sensorineural hearing loss (age-related),Hearing aids,Widex Hong Kong Hearing & Speech Centre Ltd.,None
+PT-57FC39,Coronary Artery Disease,Angioplasty (stent),Manawatu Heartcare,Aspirin
+PT-4A7A8B,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",SalutisCare,NSAIDs (naproxen)
+PT-22F7DF,Panic Disorder,Cognitive Behavioral Therapy,Kinder Minds,Sertraline (SSRI)
+PT-8905BE,Childhood Speech Delay,Speech therapy,Later Life Psychiatry,None
+PT-055581,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Victoria Dental Clinic,Metronidazole
+PT-C339A7,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,Hong Kong Hearing & Dizziness Centre Limited,Ciprofloxacin ear drops
+PT-24FAE7,Bruxism (teeth grinding),Mouth guard (dental splint),Sound Bright Speech Therapy Centre,Cyclobenzaprine
+PT-FB18A4,Otitis media (with effusion),Topical corticosteroids (eye drops),Capital Eye Specialists,Prednisolone
+PT-77E02E,Viral Warts,Cryotherapy,Auckland Skin and Cancer Foundation,Imiquimod
+PT-25D204,Post-Traumatic Stress Disorder,Trauma-focused CBT,Bilal Psychiatry Ltd,Sertraline (SSRI)
+PT-0AC218,Viral Warts,Cryotherapy,Auckland Skin and Cancer Foundation,Imiquimod
+PT-5236BD,Breast Cancer,Lumpectomy + Radiation,Auckland Breast Centre,Tamoxifen
+PT-A16C0E,Viral Warts,Cryotherapy,Dr E A Baird Dermatology,Imiquimod
+PT-369E20,NSCLC,Surgical resection,Harbour Cancer Care,Pembrolizumab
+PT-9F4691,Social Anxiety Disorder,Cognitive Behavioral Therapy,Coliber Group Psychiatry,Paroxetine (SSRI)
+PT-47C095,Sciatica (nerve pain),"Physical therapy (stretching, posture training)",Central Morthan Cure Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-58454B,Sensorineural hearing loss (age-related),Hearing aids,Care For Hearing Centre Limited,None
+PT-C11301,Bacterial conjunctivitis,Topical antibiotic ointment,City Eye Specialists,Erythromycin ophthalmic
+PT-77D63D,Colorectal Cancer,Colectomy (surgery),Auckland Breast Centre,5-Fluorouracil
+PT-38C11C,Iron-deficiency anemia,Iron supplementation,UOC di Ematologia Mariano Santo,Ferrous sulfate
+PT-2BE520,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Christchurch PsychMed,Escitalopram (SSRI)
+PT-718B15,Impacted wisdom tooth (infection),Surgical extraction,Victoria Dental Clinic,Amoxicillin
+PT-0E0FFB,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Y Physio. Rehabilitation Centre Limited,NSAIDs (naproxen)
+PT-5FD10A,Dysarthria,Speech therapy,MSQ Health,Levodopa
+PT-C894DD,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Koway Dental Clinic Centre,Metronidazole
+PT-B28585,Atrial Fibrillation,Cardioversion,Gerber & Hutchison Cardiovascular,Warfarin
+PT-DEBD39,Aphasia,Speech-language therapy,KK Speech Therapy (HK),Donepezil
+PT-0B892E,Angina pectoris,Nitrates (rest or sublingual),Gerber & Hutchison Cardiovascular,Nitroglycerin
+PT-BC4D60,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Fillan Healthcare - Dr K Hutton,Escitalopram (SSRI)
+PT-B8F072,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Later Life Psychiatry,Escitalopram (SSRI)
+PT-87686B,Low back pain,"Physical therapy (core strengthening, exercise)",Pacific Radiology - St George's,NSAIDs (ibuprofen)
+PT-40E42C,Glioblastoma multiforme,Surgical resection and radiation,Harbour Cancer Care,Temozolomide
+PT-A2D89B,Atopic Dermatitis,Topical corticosteroids,Skin Centre Claudelands,Hydrocortisone cream
+PT-0E6226,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Wisdom Dental Center,Metronidazole
+PT-E37FD8,Impacted wisdom tooth (infection),Surgical extraction,Koway Dental Clinic Centre,Amoxicillin
+PT-DCEB12,Obsessive-Compulsive Disorder,Exposure-based CBT,Later Life Psychiatry,Sertraline (SSRI)
+PT-F37A1D,Gingivitis,Vestibular rehabilitation (balance/coordination exercises),Central Morthan Cure Physiotherapy Limited,Acetaminophen
+PT-B6112E,Open-angle glaucoma,Prostaglandin analog eye drops,Eye Institute Hawkes Bay,Latanoprost
+PT-49E8CC,Melanoma,Wide excision,Auckland Oncology,Pembrolizumab
+PT-71D6E8,Presbyopia (farsighted age-related),Chemotherapy and stem cell transplant,Jithma P. Abeykoon,"Bortezomib, lenalidomide"
+PT-E86274,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Lantex Corporation Limited,NSAIDs (naproxen)
+PT-E89C2C,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Bilal Psychiatry Ltd,Escitalopram (SSRI)
+PT-54278B,Impacted wisdom tooth (infection),Surgical extraction,Wisdom Dental Center,Amoxicillin
+PT-CF20F4,Coronary Artery Disease,Angioplasty (stent),Aro Manawa (Heart) Health,Aspirin
+PT-39783B,Benign positional vertigo,Canalith repositioning (Epley maneuver),Ear Nose & Throat Centre of Hong Kong,None
+PT-27FB9A,Obsessive-Compulsive Disorder,Exposure-based CBT,Kinder Minds,Sertraline (SSRI)
+PT-E1DDED,Hypertension,Lifestyle modification,Ascot Angiography,Lisinopril
+PT-3AD07B,Rosacea,Topical therapy,Auckland Skin and Cancer Foundation,Metronidazole
+PT-8A82D2,Otitis media (with effusion),Watchful waiting or tubes,Hong Kong Community Speech Therapy Centre Limited,Amoxicillin
+PT-5ACE18,Angina pectoris,Nitrates (rest or sublingual),Ascot Angiography,Nitroglycerin
+PT-17FF28,Uveitis (non-infectious),Topical corticosteroids (eye drops),Eye Institute Hawkes Bay,Prednisolone
+PT-8D9ED9,Allergic conjunctivitis,Antihistamine eye drops,Bowen Eye Clinic,Olopatadine
+PT-0DB9EF,Lymphoma,Chemotherapy (ABVD),Pacific Radiology - St George's,Rituximab
+PT-2919F3,Glioblastoma,Resection + Radiation,Pacific Radiology - St George's,Temozolomide
+PT-3CDE1A,Voice Disorder,Voice therapy,Harbour Cancer Centre,Omeprazole (PPI)
+PT-16458B,Allergic conjunctivitis,Antihistamine eye drops,Auckland Myopia Clinic,Olopatadine
+PT-6FB85C,Bacterial conjunctivitis,Topical antibiotic eye drops,Eye Institute Wellington,Erythromycin ophthalmic
+PT-B89CAA,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Auckland Eye - New Lynn,
+PT-131A81,Gingivitis,Scaling and root planing,Victoria Dental Clinic,Chlorhexidine rinse
+PT-FFDAC1,Otitis media (with effusion),Watchful waiting or tubes,Optical 88 Hearing Care Centre,Amoxicillin
+PT-760DFE,Spasmodic dysphonia,Voice therapy,Mastery Speech And Swallowing Clinic Limited,Botulinum toxin injection
+PT-1DED81,Pancreatic Cancer,Whipple procedure,Harbour Cancer Centre,Gemcitabine
+PT-373016,NSCLC,Surgical resection,SalutisCare,Pembrolizumab
+PT-2EA505,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),Otic Hearing & Speech Service Centre Limited,Carbamide peroxide
+PT-ED8557,Open-angle glaucoma,Prostaglandin analog eye drops,Eye Institute Wellington,Latanoprost
+PT-43A255,Low back pain,"Physical therapy (core strengthening, exercise)",Alive Healthcare And Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-787112,Glioblastoma,Resection + Radiation,Bowen Icon Cancer Centre,Temozolomide
+PT-C6E742,Sensorineural hearing loss,Hearing aids or cochlear implant,Hong Kong Hearing & Dizziness Centre Limited,Prednisone
+PT-7979D5,Iron-deficiency anemia,Iron supplementation,Roberta H. Adams,Ferrous sulfate
+PT-197237,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Kerikeri Medical Centre,"Hydroxyurea, anagrelide"
+PT-9806DD,Otitis media (with effusion),Watchful waiting or tubes,Grace Sound (Kowloon) Hearing Centre,Amoxicillin
+PT-670BE3,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-CD5CB5,Iron-deficiency anemia,Iron supplementation,Aref Al-Kali,Ferrous sulfate
+PT-588507,Psoriasis,Phototherapy (UV light),Dr E A Baird Dermatology,Methotrexate
+PT-424B71,Dysarthria,Speech therapy,Pacific Radiology - St George's,Levodopa
+PT-A57FF3,Acoustic neuroma,Observation or surgery,Care For Hearing Centre Limited,No specific medication
+PT-D97EA4,Bacterial conjunctivitis,Topical antibiotic eye drops,Milford Eye Clinic,Erythromycin ophthalmic
+PT-3D5523,Oral thrush (candidiasis),Clotrimazole lozenges,Southern Dental Centre Co. Limited,Clotrimazole
+PT-7FF5A5,Melanoma,Wide excision,SalutisCare,Pembrolizumab
+PT-651DE0,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),The Hong Kong Society For The Deaf,Fluoxetine (SSRI)
+PT-DC080A,Neck pain (cervicalgia),"Physical therapy (neck exercises, manual therapy)",Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-0F8FAA,Allergic conjunctivitis,Antihistamine eye drops,Auckland Myopia Clinic,Olopatadine
+PT-2E8BB6,Basal Cell Carcinoma,Mohs surgery,Skin Centre Remuera,Vismodegib
+PT-693B5C,Sensorineural hearing loss,Hearing aids or cochlear implant,Care For Hearing Centre Limited,Prednisone
+PT-143CA6,Plantar fasciitis,Stretching exercises,Byrne & Hickman Physiotherapy & Sports Injury Centre,Ibuprofen (NSAID)
+PT-F80D2C,Dental caries,Cavity filling and fluoride application,UMP Dental Centre (Causeway Bay),Fluoride (topical)
+PT-C2777A,Low back pain,"Physical therapy (core strengthening, exercise)",Lantex Corporation Limited,NSAIDs (ibuprofen)
+PT-E567AF,Angina pectoris,Nitrates (rest or sublingual),Aro Manawa (Heart) Health,Nitroglycerin
+PT-FC6DE9,Oral thrush (candidiasis),Clotrimazole lozenges,Victoria Dental (Wan Chai) Limited,Clotrimazole
+PT-122CF8,Colorectal Cancer,Colectomy (surgery),Harbour Cancer Care,5-Fluorouracil
+PT-9C11A9,Sickle cell disease,Hydroxyurea therapy,Jithma P. Abeykoon,"Hydroxyurea, crizanlizumab"
+PT-1D8A04,Myocardial Infarction,Percutaneous coronary intervention,Midland Cardio Vascular Services,Aspirin
+PT-C7B163,Heart failure,ACE inhibitor and diuretic,Aro Manawa (Heart) Health,Furosemide
+PT-C443EE,Dental caries,Cavity filling and fluoride application,Victoria Dental (Wan Chai) Limited,Fluoride (topical)
+PT-5B3E22,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Eye Openers Psychiatry,Zolpidem
+PT-53AC25,Glioblastoma,Resection + Radiation,Auckland Breast Centre,Temozolomide
+PT-85A672,Dental caries,Cavity filling and fluoride application,Wellmed Dental Care Limited,Fluoride (topical)
+PT-072B26,Shoulder impingement,Physical therapy (stretch and strengthen shoulder),Lantex Corporation Limited,NSAIDs (ibuprofen)
+PT-D394D8,Benign positional vertigo,Canalith repositioning (Epley maneuver),Phonak (Hong Kong) Hearing Centre,None
+PT-BDD5D3,Voice Disorder,Voice therapy,Ashburn Clinic,Omeprazole (PPI)
+PT-76272F,Otitis media (with effusion),Watchful waiting or tubes,Widex Hong Kong Hearing & Speech Centre Ltd.,Amoxicillin
+PT-A3D059,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Canopy Cancer Care,Rituximab
+PT-853C7B,Tinea (Fungal infection),Topical antifungal,NZ Dermatology & Skin Cancer Centre,Terbinafine
+PT-4BAB45,Selective Mutism,Speech therapy + CBT,Centro Medico Biolife - Ematologia,Sertraline
+PT-BE23BA,Sensorineural hearing loss,Hearing aids or cochlear implant,Otic Hearing & Speech Service Centre Limited,Prednisone
+PT-532919,Hyperlipidemia,Lifestyle modification,Cardiology Specialists and Cardiology Specialist Diagnostics,Atorvastatin
+PT-84EE6A,Low back pain,"Physical therapy (core strengthening, exercise)",Y Physio. Rehabilitation Centre Limited,NSAIDs (ibuprofen)
+PT-3E436E,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,City Eye Specialists,
+PT-C45DB9,Melanoma (metastatic),Surgical excision,Bowen Icon Cancer Centre,Pembrolizumab
+PT-465528,Melanoma,Wide excision,Canopy Cancer Care,Pembrolizumab
+PT-D759D6,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Hamilton Eye Clinic,
+PT-D7E507,Lung cancer,Lobectomy,Mercy Cancer Care,Cisplatin
+PT-3C3901,Iron-deficiency anemia,Iron supplementation,Roberta H. Adams,Ferrous sulfate
+PT-F0222A,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Eye Openers Psychiatry,Methylphenidate
+PT-272BDD,Dysphagia,Swallowing therapy,OK Care Limited,Omeprazole (PPI)
+PT-BA58C0,Peripheral Artery Disease,Exercise therapy,Manawatu Heartcare,Cilostazol
+PT-F7D3C6,Glioblastoma multiforme,Surgical resection and radiation,Canopy Cancer Care,Temozolomide
+PT-5E5F07,Stuttering,Speech therapy (fluency techniques),Prestige Dental Limited,None
+PT-76FD85,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Y Physio. Rehabilitation Centre Limited,Acetaminophen
+PT-274AC7,Bruxism (teeth grinding),Mouth guard (dental splint),Dr. Smile,Cyclobenzaprine
+PT-EBC1BB,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,Hong Kong Hearing & Dizziness Centre Limited,Ciprofloxacin + Dexamethasone
+PT-BABA8F,Bacterial conjunctivitis,Topical antibiotic ointment,Hamilton Eye Clinic,Erythromycin ophthalmic
+PT-22A10B,Sickle cell disease,Hydroxyurea therapy,Centro Medico Gitalia - Ematologia,"Hydroxyurea, crizanlizumab"
+PT-F0E793,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),The Hong Kong Society For The Deaf,Carbamide peroxide
+PT-548BD4,Low back pain,"Physical therapy (core strengthening, exercise)",Alive Healthcare And Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-2E5248,Chronic myeloid leukemia,Targeted therapy,Mercy Cancer Care,Imatinib
+PT-457E15,Bulimia Nervosa,Cognitive Behavioral Therapy,Joylife Consultancy Clinic,Fluoxetine (SSRI)
+PT-98CC36,Heart Failure,ACE inhibitor + Beta-blocker,Gerber & Hutchison Cardiovascular,Lisinopril
+PT-1DA8F8,Heart Failure,ACE inhibitor + Beta-blocker,Ascot Angiography,Lisinopril
+PT-37D9D1,Dysphagia,Swallowing therapy,Christchurch Dermatology,Omeprazole (PPI)
+PT-CE594A,Rosacea,Topical therapy,Auckland Skin and Cancer Foundation,Metronidazole
+PT-C07E10,Open-angle glaucoma,Prostaglandin analog eye drops,City Eye Specialists,Latanoprost
+PT-E8C3FA,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Auckland Eye - New Lynn,
+PT-3D436F,Atrial Fibrillation,Cardioversion,CardioLabs,Warfarin
+PT-EEB1E7,Impacted wisdom tooth (infection),Surgical extraction,Victoria Dental (Wan Chai) Limited,Amoxicillin
+PT-4F515E,Oral herpes (HSV labialis),Antiviral therapy for herpes,Koway Dental Clinic Centre,Acyclovir
+PT-3E850A,Dental caries,Cavity filling and fluoride application,Wisdom Dental Center,Fluoride (topical)
+PT-1846D0,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Eye Openers Psychiatry,Methylphenidate
+PT-743234,Post-Traumatic Stress Disorder,Trauma-focused CBT,Kinder Minds,Sertraline (SSRI)
+PT-26A2DC,Colorectal Cancer,Colectomy (surgery),Auckland Radiation Oncology,5-Fluorouracil
+PT-9A1245,Sickle cell disease,Hydroxyurea therapy,Jithma P. Abeykoon,"Hydroxyurea, crizanlizumab"
+PT-1FF001,Polycythemia vera,Phlebotomy and cytoreductive therapy,Roberta H. Adams,"Hydroxyurea, ruxolitinib"
+PT-122C48,Basal Cell Carcinoma,Mohs surgery,Central Dermatolgy,Vismodegib
+PT-7194AE,Shoulder impingement,Physical therapy (stretch and strengthen shoulder),Forhealth Physiotherapy Centre Limited,NSAIDs (ibuprofen)
+PT-30D244,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Bowen Eye Clinic,Olopatadine
+PT-2912D5,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Bilal Psychiatry Ltd,Zolpidem
+PT-38B15B,Melanoma (metastatic),Surgical excision,Auckland Radiation Oncology,Pembrolizumab
+PT-E3324B,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,Ear Nose & Throat Centre of Hong Kong,Ciprofloxacin ear drops
+PT-B10DC1,Articulation Disorder,Speech therapy,UMP Dental Centre (Causeway Bay),None
+PT-925E95,Hyperkalemia,Diet changes,Heart Care Centre 2024,Furosemide
+PT-6620A2,Periodontitis,Scaling and root planing,Prestige Dental Limited,Doxycycline
+PT-FF72C6,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Ashburn Clinic,Escitalopram (SSRI)
+PT-6E1C49,Lung cancer,Lobectomy,Auckland Breast Centre,Cisplatin
+PT-97ED3E,Tinea (Fungal infection),Topical antifungal,Skin Centre Remuera,Terbinafine
+PT-6DB75A,Deep Vein Thrombosis,Thrombectomy,Bay Heart Group,Enoxaparin
+PT-97BF9F,Ovarian Cancer,Cytoreductive surgery,Harbour Cancer Centre,Carboplatin
+PT-AE638B,Chronic myelogenous leukemia,Targeted therapy,Centro Medico Biolife - Ematologia,"Imatinib, dasatinib"
+PT-B309B3,Multiple myeloma,Chemotherapy and stem cell transplant,Centro Medico Biolife - Ematologia,"Bortezomib, lenalidomide"
+PT-2580AD,Hyperkalemia,Diet changes,Ascot Angiography,Furosemide
+PT-85F037,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Milford Eye Clinic,
+PT-68748B,Obsessive-Compulsive Disorder,Exposure-based CBT,Bilal Psychiatry Ltd,Sertraline (SSRI)
+PT-2B8391,Social Anxiety Disorder,Cognitive Behavioral Therapy,Later Life Psychiatry,Paroxetine (SSRI)
+PT-1303B3,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,Hong Kong Hearing & Dizziness Centre Limited,Ciprofloxacin + Dexamethasone
+PT-629CA0,Immune thrombocytopenia,Steroids or IVIG,Centro Medico Gitalia - Ematologia,"Prednisone, eltrombopag"
+PT-9F2008,Ovarian Cancer,Cytoreductive surgery,Pacific Radiology - St George's,Carboplatin
+PT-964BBD,Plantar fasciitis,Stretching exercises,Advanz Physiotherapy Centre (Causeway Bay),Ibuprofen (NSAID)
+PT-965C79,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Aurora Physiotherapy And Fitness Centre Co. Limited,NSAIDs (ibuprofen)
+PT-CF4C37,Ventricular Tachycardia,Implantable defibrillator,Ascot Angiography,Amiodarone
+PT-5FFB77,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Alliance Physiotherapy Centre Limited,Acetaminophen
+PT-EB9263,Chronic myeloid leukemia,Targeted therapy,Canopy Cancer Care,Imatinib
+PT-D659A2,Specific Phobia,Exposure Therapy,Later Life Psychiatry,Propranolol
+PT-7B2A93,Meniere's disease,Low-salt diet + diuretics,Otic Hearing & Speech Service Centre Limited,Hydrochlorothiazide
+PT-C632A9,Basal Cell Carcinoma,Mohs surgery,Fiona Larsen Dermatology,Vismodegib
+PT-FCB3C1,Oral herpes (HSV labialis),Antiviral therapy for herpes,UMP Dental Centre (Causeway Bay),Acyclovir
+PT-519D8B,Heart Failure,ACE inhibitor + Beta-blocker,CardioLabs,Lisinopril
+PT-0800D0,Developmental Language Disorder,Speech therapy,Grace Sound (Kowloon) Hearing Centre,None
+PT-2541BE,Lung cancer,Lobectomy,SalutisCare,Cisplatin
+PT-C9F4D7,Social Anxiety Disorder,Cognitive Behavioral Therapy,Bilal Psychiatry Ltd,Paroxetine (SSRI)
+PT-46A986,Impacted wisdom tooth (infection),Surgical extraction,Koway Dental Clinic Centre,Amoxicillin
+PT-752EBE,Dental abscess,Root canal or extraction with drainage,UMP Dental Centre (Causeway Bay),Amoxicillin/Clavulanate
+PT-4B2AD9,Aphasia,Speech-language therapy,Southern Dental Centre Co. Limited,Donepezil
+PT-236EBE,Low back pain,"Physical therapy (core strengthening, exercise)",Forhealth Physiotherapy Centre Limited,NSAIDs (ibuprofen)
+PT-7D91BE,Otitis media (with effusion),Watchful waiting or tubes,Care For Hearing Centre Limited,Amoxicillin
+PT-DF4BDE,Tinea (Fungal infection),Topical antifungal,Skin Dermatology Institute,Terbinafine
+PT-D451A8,Developmental Language Disorder,Speech therapy,Alliance Physiotherapy Centre Limited,None
+PT-241F01,Essential thrombocythemia,Platelet-lowering therapy,Muhamad Alhaj Moustafa,"Hydroxyurea, anagrelide"
+PT-A172AC,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,Phonak (Hong Kong) Hearing Centre,Ciprofloxacin ear drops
+PT-68C673,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Optical 88 Hearing Care Centre,
+PT-CAAEE5,Impacted wisdom tooth (infection),Surgical extraction,Wellmed Dental Care Limited,Amoxicillin
+PT-FEE8D8,Immune thrombocytopenia,Steroids or IVIG,Jithma P. Abeykoon,"Prednisone, eltrombopag"
+PT-E71837,Deep Vein Thrombosis,Thrombectomy,Cardiology Specialists and Cardiology Specialist Diagnostics,Enoxaparin
+PT-AF7D57,Open-angle glaucoma,Prostaglandin analog eye drops,Auckland Eye - New Lynn,Latanoprost
+PT-5BB4F1,Colorectal Cancer,Colectomy (surgery),SalutisCare,5-Fluorouracil
+PT-5B0DD8,Bacterial conjunctivitis,Topical antibiotic eye drops,Eye Institute Hawkes Bay,Erythromycin ophthalmic
+PT-30156E,Social Anxiety Disorder,Cognitive Behavioral Therapy,Fillan Healthcare - Dr K Hutton,Paroxetine (SSRI)
+PT-7E830F,Selective Mutism,Speech therapy + CBT,MSQ Health,Sertraline
+PT-E7BDBB,Melanoma,Wide excision,Bowen Icon Cancer Centre,Pembrolizumab
+PT-E53017,Aphasia,Speech-language therapy,Centro Medico Biolife - Ematologia,Donepezil
+PT-7937FB,Myocardial Infarction,Percutaneous coronary intervention,Aro Manawa (Heart) Health,Aspirin
+PT-55A329,Glioblastoma,Resection + Radiation,Bowen Icon Cancer Centre,Temozolomide
+PT-9033BD,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Phonak (Hong Kong) Hearing Centre,Thiazide diuretics (HCTZ)
+PT-F22974,Bacterial conjunctivitis,Topical antibiotic eye drops,Kerikeri Medical Centre,Erythromycin ophthalmic
+PT-5A68D7,Heart failure,ACE inhibitor and diuretic,CardioLabs,Furosemide
+PT-6BAD0C,Glaucoma,Prescription eye drops to lower intraocular pressure,Capital Eye Specialists,Latanoprost
+PT-DF050C,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Harbour Cancer Centre,Rituximab
+PT-7F9BE4,Uveitis (non-infectious),Topical corticosteroids (eye drops),Capital Eye Specialists,Prednisolone
+PT-D7DCFF,Panic Disorder,Cognitive Behavioral Therapy,Eye Openers Psychiatry,Sertraline (SSRI)
+PT-9B5478,Pancreatic Cancer,Whipple procedure,Harbour Cancer Centre,Gemcitabine
+PT-74861C,Sensorineural hearing loss (age-related),Hearing aids,ENT Laser Hearing & Speech Therapy Centre Limited,None
+PT-789DB0,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Ear Nose & Throat Centre of Hong Kong,
+PT-BED0B6,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,The Hong Kong Society For The Deaf,Ciprofloxacin + Dexamethasone
+PT-5ED1E2,Neck pain (cervicalgia),"Physical therapy (neck exercises, manual therapy)",Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (ibuprofen)
+PT-6BA0BB,Tinea (Fungal infection),Topical antifungal,Widex Hong Kong Hearing & Speech Centre Ltd.,Terbinafine
+PT-61D9B4,Panic Disorder,Cognitive Behavioral Therapy,Fillan Healthcare - Dr K Hutton,Sertraline (SSRI)
+PT-A49BD3,Age-related macular degeneration,AREDS vitamin supplements,Eye Institute Hawkes Bay,Lutein/Zeaxanthin
+PT-5E7802,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Wellmed Dental Care Limited,Metronidazole
+PT-3AB31B,Social Anxiety Disorder,Cognitive Behavioral Therapy,Bilal Psychiatry Ltd,Paroxetine (SSRI)
+PT-FFD761,Spasmodic dysphonia,Voice therapy,Bay Heart Group,Botulinum toxin injection
+PT-ADA56E,Viral Warts,Cryotherapy,Skin Dermatology Institute,Imiquimod
+PT-7B70AA,Acne Vulgaris,Topical therapy (retinoids),Dr E A Baird Dermatology,Tretinoin
+PT-5CE608,Angina pectoris,Nitrates (rest or sublingual),Aro Manawa (Heart) Health,Nitroglycerin
+PT-73BDBB,Tinnitus,Sound therapy / masking,Grace Sound (Kowloon) Hearing Centre,Amitriptyline
+PT-2E867D,Peripheral Artery Disease,Exercise therapy,Manawatu Heartcare,Cilostazol
+PT-AD56C1,Alopecia Areata,Intralesional steroids,Skin Centre Remuera,Triamcinolone injection
+PT-4EB2F2,Lymphoma,Chemotherapy (ABVD),Harbour Cancer Care,Rituximab
+PT-35D24D,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),Hong Kong Hearing & Dizziness Centre Limited,Carbamide peroxide
+PT-38B47A,Glaucoma,Prescription eye drops to lower intraocular pressure,Bowen Eye Clinic,Latanoprost
+PT-0FFE53,Spasmodic dysphonia,Voice therapy,Eye Institute Wellington,Botulinum toxin injection
+PT-2F12CB,Essential thrombocythemia,Platelet-lowering therapy,Aref Al-Kali,"Hydroxyurea, anagrelide"
+PT-76C6E3,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,The Hong Kong Society For The Deaf,
+PT-CA34BC,Multiple myeloma,Chemotherapy and stem cell transplant,Hassan Alkhateeb,"Bortezomib, lenalidomide"
+PT-B6CCBC,"Autism (communication)""",Speech therapy,Central Morthan Cure Physiotherapy Limited,Risperidone
+PT-D0E6F4,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Ashburn Clinic,Methylphenidate
+PT-623B60,Benign positional vertigo,Canalith repositioning (Epley maneuver),Hong Kong Hearing & Dizziness Centre Limited,None
+PT-641C99,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Southern Dental Centre Co. Limited,Metronidazole
+PT-2AB52E,Vitiligo,Phototherapy (UVB),Fiona Larsen Dermatology,Tacrolimus ointment
+PT-718874,Alopecia Areata,Intralesional steroids,Skin Centre Claudelands,Triamcinolone injection
+PT-CEE69F,Angina pectoris,Nitrates (rest or sublingual),Gerber & Hutchison Cardiovascular,Nitroglycerin
+PT-3F3219,NSCLC,Surgical resection,Harbour Cancer Care,Pembrolizumab
+PT-C3174A,Prostate Cancer,Prostatectomy,Bowen Icon Cancer Centre,Leuprolide
+PT-50FE94,Dry eye (keratoconjunctivitis),Artificial tears,City Eye Specialists,Cyclosporine ophthalmic
+PT-3E5090,Oral herpes (HSV labialis),Antiviral therapy for herpes,Wisdom Dental Center,Acyclovir
+PT-BC5467,Aphasia,Speech-language therapy,Jin4 Jy5 Limited,Donepezil
+PT-1E1435,Rosacea,Topical therapy,Auckland Skin and Cancer Foundation,Metronidazole
+PT-841DD9,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Ashburn Clinic,Zolpidem
+PT-42B02A,Childhood Speech Delay,Speech therapy,Ascot Angiography,None
+PT-ADF55F,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Hamilton Eye Clinic,
+PT-DF8710,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Hamilton Eye Clinic,
+PT-410BE7,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (ibuprofen)
+PT-800FCD,Tinnitus,Sound therapy / masking,Hong Kong Hearing & Dizziness Centre Limited,Amitriptyline
+PT-C4E805,Plantar fasciitis,Stretching exercises,Advanz Physiotherapy Centre (Causeway Bay),Ibuprofen (NSAID)
+PT-DF9E04,Essential thrombocythemia,Platelet-lowering therapy,Aref Al-Kali,"Hydroxyurea, anagrelide"
+PT-6EBED6,Peripheral Artery Disease,Exercise therapy,Heart Care Centre 2024,Cilostazol
+PT-D71A03,Gingivitis,Scaling and root planing,Prestige Dental Limited,Chlorhexidine rinse
+PT-6DD7DD,Age-related macular degeneration,AREDS vitamin supplements,Hamilton Eye Clinic,Lutein/Zeaxanthin
+PT-723D00,Voice Disorder,Voice therapy,Bowen Icon Cancer Centre,Omeprazole (PPI)
+PT-631EB9,Periodontitis,Scaling and root planing,Sunny Days Smile Dental Clinic,Doxycycline
+PT-DA4C9A,Dysphagia,Swallowing therapy,Alive Healthcare And Physiotherapy Limited,Omeprazole (PPI)
+PT-D50B14,Sciatica (nerve pain),"Physical therapy (stretching, posture training)",OK Care Limited,NSAIDs (ibuprofen)
+PT-66EECD,Voice Disorder,Voice therapy,Skin Centre Remuera,Omeprazole (PPI)
+PT-66FEB0,Bacterial conjunctivitis,Topical antibiotic ointment,Hamilton Eye Clinic,Erythromycin ophthalmic
+PT-B2A217,Alopecia Areata,Intralesional steroids,NZ Dermatology & Skin Cancer Centre,Triamcinolone injection
+PT-355639,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),ENT Laser Hearing & Speech Therapy Centre Limited,Carbamide peroxide
+PT-AC9CB3,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (naproxen)
+PT-F289C6,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Bilal Psychiatry Ltd,Zolpidem
+PT-7BED7E,Ventricular Tachycardia,Implantable defibrillator,CardioLabs,Amiodarone
+PT-B86DDB,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Byrne & Hickman Physiotherapy & Sports Injury Centre,Acetaminophen
+PT-E32090,Myocardial Infarction,Percutaneous coronary intervention,Bay Heart Group,Aspirin
+PT-009697,Aplastic anemia,Immunosuppressive therapy or stem cell transplant,Mayo Clinic Hematology & Oncology,"Antithymocyte globulin, cyclosporine"
+PT-162005,Polycythemia vera,Phlebotomy and cytoreductive therapy,Hassan Alkhateeb,"Hydroxyurea, ruxolitinib"
+PT-771C69,Benign positional vertigo (BPPV),Canalith repositioning maneuvers (Epley),Advanz Physiotherapy Centre (Causeway Bay),Meclizine
+PT-44DF1D,CML,Targeted therapy (TKI),SalutisCare,Imatinib
+PT-7F62B7,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Eye Institute Wellington,
+PT-C30360,Gingivitis,Scaling and root planing,Prestige Dental Limited,Chlorhexidine rinse
+PT-3B45B3,Dysphagia,Swallowing therapy,ENT Laser Hearing & Speech Therapy Centre Limited,Omeprazole (PPI)
+PT-10E74F,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Eye Institute Wellington,
+PT-FD077A,Spasmodic dysphonia,Voice therapy,Bilal Psychiatry Ltd,Botulinum toxin injection
+PT-42B3F9,Social Anxiety Disorder,Cognitive Behavioral Therapy,Joylife Consultancy Clinic,Paroxetine (SSRI)
+PT-F6F7E0,Hyperlipidemia,Lifestyle modification,Gerber & Hutchison Cardiovascular,Atorvastatin
+PT-DB5041,Cataract,Cataract surgery,Auckland Myopia Clinic,None
+PT-40C387,Beta thalassemia major,Blood transfusions and chelation therapy,Roberta H. Adams,"Deferoxamine, luspatercept"
+PT-08ADE4,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Canopy Cancer Care,Rituximab
+PT-5D9FE0,Chronic myeloid leukemia,Targeted therapy,Canopy Cancer Care,Imatinib
+PT-8DA93E,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Y Physio. Rehabilitation Centre Limited,NSAIDs (naproxen)
+PT-224F6E,Glaucoma,Prescription eye drops to lower intraocular pressure,Hamilton Eye Clinic,Latanoprost
+PT-CC366F,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Auckland Eye - New Lynn,
+PT-99642D,Sickle cell disease,Hydroxyurea therapy,Aref Al-Kali,"Hydroxyurea, crizanlizumab"
+PT-314A9D,Periodontitis,Scaling and root planing,Wellmed Dental Care Limited,Doxycycline
+PT-2A95B9,Obsessive-Compulsive Disorder,Exposure-based CBT,Joylife Consultancy Clinic,Sertraline (SSRI)
+PT-A783D6,Aplastic anemia,Immunosuppressive therapy or stem cell transplant,Muhamad Alhaj Moustafa,"Antithymocyte globulin, cyclosporine"
+PT-FF4CFB,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Eye Institute Wellington,
+PT-74B704,Coronary Artery Disease,Angioplasty (stent),Ascot Angiography,Aspirin
+PT-3476AD,Peripheral Artery Disease,Exercise therapy,Cardiology Specialists and Cardiology Specialist Diagnostics,Cilostazol
+PT-F97175,Melanoma,Wide excision,Auckland Radiation Oncology,Pembrolizumab
+PT-78B630,Benign positional vertigo,Canalith repositioning (Epley maneuver),Otic Hearing & Speech Service Centre Limited,None
+PT-C9D20E,Heart Failure,ACE inhibitor + Beta-blocker,Midland Cardio Vascular Services,Lisinopril
+PT-297151,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Alive Healthcare And Physiotherapy Limited,NSAIDs (naproxen)
+PT-EFA5B3,Melanoma,Wide excision,Auckland Radiation Oncology,Pembrolizumab
+PT-3CEB6E,Lymphoma,Chemotherapy (ABVD),Canopy Cancer Care,Rituximab
+PT-87D60C,Bacterial conjunctivitis,Topical antibiotic eye drops,Kerikeri Medical Centre,Erythromycin ophthalmic
+PT-B05867,Atrial Fibrillation,Cardioversion,Aro Manawa (Heart) Health,Warfarin
+PT-B4D027,Vitiligo,Phototherapy (UVB),NZ Dermatology & Skin Cancer Centre,Tacrolimus ointment
+PT-70C965,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Christchurch PsychMed,Escitalopram (SSRI)
+PT-519A1A,Aphasia,Speech-language therapy,Auckland Breast Centre,Donepezil
+PT-BBE169,"Autism (communication)""",Speech therapy,Christchurch Heart Group,Risperidone
+PT-208052,Angina pectoris,Nitrates (rest or sublingual),Cardiology Specialists and Cardiology Specialist Diagnostics,Nitroglycerin
+PT-E30D43,Acoustic neuroma,Observation or surgery,Otic Hearing & Speech Service Centre Limited,No specific medication
+PT-96B81D,Heart failure,ACE inhibitor and diuretic,CardioLabs,Furosemide
+PT-8B1D5A,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Fillan Healthcare - Dr K Hutton,Methylphenidate
+PT-417104,Colorectal Cancer,Colectomy (surgery),SalutisCare,5-Fluorouracil
+PT-0AA97D,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Auckland Radiation Oncology,Rituximab
+PT-B46525,Prostate Cancer,Prostatectomy,Auckland Oncology,Leuprolide
+PT-CFE111,Angina pectoris,Nitrates (rest or sublingual),Ascot Angiography,Nitroglycerin
+PT-089EFC,Age-related macular degeneration,AREDS vitamin supplements,Eye Institute Wellington,Lutein/Zeaxanthin
+PT-43BA4E,Basal Cell Carcinoma,Mohs surgery,NZ Dermatology & Skin Cancer Centre,Vismodegib
+PT-67B7E3,Dry eye (keratoconjunctivitis),Artificial tears,City Eye Specialists,Cyclosporine ophthalmic
+PT-DEE97A,Sciatica (nerve pain),"Physical therapy (stretching, posture training)",Aurora Physiotherapy And Fitness Centre Co. Limited,NSAIDs (ibuprofen)
+PT-4E00B0,Actinic Keratosis,Cryotherapy,Helander Dermatology,Fluorouracil cream
+PT-6E798D,Actinic Keratosis,Cryotherapy,Auckland Skin and Cancer Foundation,Fluorouracil cream
+PT-385294,Chronic myelogenous leukemia,Targeted therapy,Aref Al-Kali,"Imatinib, dasatinib"
+PT-F8AAF2,Plantar fasciitis,Stretching exercises,OK Care Limited,Ibuprofen (NSAID)
+PT-E7551C,Heart Failure,ACE inhibitor + Beta-blocker,Christchurch Heart Group,Lisinopril
+PT-3B767D,Neck pain (cervicalgia),"Physical therapy (neck exercises, manual therapy)",Alive Healthcare And Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-96C149,Tinnitus,Sound therapy / masking,The Hong Kong Society For The Deaf,Amitriptyline
+PT-FCCFF1,Dental abscess,Root canal or extraction with drainage,Southern Dental Centre Co. Limited,Amoxicillin/Clavulanate
+PT-21EEF6,Melanoma (metastatic),Surgical excision,Harbour Cancer Centre,Pembrolizumab
+PT-A75D53,Post-Traumatic Stress Disorder,Trauma-focused CBT,Eye Openers Psychiatry,Sertraline (SSRI)
+PT-E40DA3,Immune thrombocytopenia,Steroids or IVIG,Hassan Alkhateeb,"Prednisone, eltrombopag"
+PT-2F8514,Hyperlipidemia,Lifestyle modification,Heart Care Centre 2024,Atorvastatin
+PT-435C7F,Peripheral Artery Disease,Exercise therapy,Ascot Angiography,Cilostazol
+PT-9C826F,Dental caries,Cavity filling and fluoride application,Dr. Smile,Fluoride (topical)
+PT-1DC718,Oral thrush (candidiasis),Clotrimazole lozenges,Victoria Dental (Wan Chai) Limited,Clotrimazole
+PT-D6AF00,Dysarthria,Speech therapy,Hong Kong Oral Motor Reconstruction Therapy LImited,Levodopa
+PT-BFB024,Sickle cell disease,Hydroxyurea therapy,Hassan Alkhateeb,"Hydroxyurea, crizanlizumab"
+PT-B53B7A,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-005B1F,Bacterial conjunctivitis,Topical antibiotic ointment,Kerikeri Medical Centre,Erythromycin ophthalmic
+PT-5221FF,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Auckland Eye - New Lynn,
+PT-0C2FE5,Hemophilia A,Factor VIII replacement,Pooja P. Advani,"Factor VIII, emicizumab"
+PT-E0FC6F,Articulation Disorder,Speech therapy,Dr. Smile,None
+PT-63E23F,Tinea (Fungal infection),Topical antifungal,Auckland Skin and Cancer Foundation,Terbinafine
+PT-4C5A79,Melanoma,Wide excision,Canopy Cancer Care,Pembrolizumab
+PT-6658FB,Sensorineural hearing loss (age-related),Hearing aids,Otic Hearing & Speech Service Centre Limited,None
+PT-3C7282,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Alliance Physiotherapy Centre Limited,Acetaminophen
+PT-350358,Melanoma,Wide excision,Auckland Radiation Oncology,Pembrolizumab
+PT-AFCA90,Obsessive-Compulsive Disorder,Exposure-based CBT,Eye Openers Psychiatry,Sertraline (SSRI)
+PT-EF5967,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",OK Care Limited,NSAIDs (naproxen)
+PT-D6F749,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Christchurch PsychMed,Zolpidem
+PT-9E76E5,Acoustic neuroma,Observation or surgery,Otic Hearing & Speech Service Centre Limited,No specific medication
+PT-8FDFDA,Dental caries,Cavity filling and fluoride application,Sunny Days Smile Dental Clinic,Fluoride (topical)
+PT-4045CD,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,ENT Laser Hearing & Speech Therapy Centre Limited,Ciprofloxacin ear drops
+PT-6BE479,Acne Vulgaris,Topical therapy (retinoids),Muhamad Alhaj Moustafa,Tretinoin
+PT-92471A,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Ear Nose & Throat Centre of Hong Kong,
+PT-0432EE,Hemophilia A,Factor VIII replacement,Roberta H. Adams,"Factor VIII, emicizumab"
+PT-B686AF,Essential thrombocythemia,Platelet-lowering therapy,Hassan Alkhateeb,"Hydroxyurea, anagrelide"
+PT-388183,Heart Failure,ACE inhibitor + Beta-blocker,Bay Heart Group,Lisinopril
+PT-CF643E,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Auckland Eye - New Lynn,Olopatadine
+PT-97694D,Essential thrombocythemia,Platelet-lowering therapy,Muhamad Alhaj Moustafa,"Hydroxyurea, anagrelide"
+PT-5699C7,Peripheral Artery Disease,Exercise therapy,CardioLabs,Cilostazol
+PT-98FFBC,Chronic myeloid leukemia,Targeted therapy,Canopy Cancer Care,Imatinib
+PT-6CD62D,Essential thrombocythemia,Platelet-lowering therapy,Aref Al-Kali,"Hydroxyurea, anagrelide"
+PT-138540,Oral herpes (HSV labialis),Antiviral therapy for herpes,UMP Dental Centre (Causeway Bay),Acyclovir
+PT-111684,Selective Mutism,Speech therapy + CBT,Ashburn Clinic,Sertraline
+PT-309619,Sickle cell disease,Hydroxyurea therapy,Roberta H. Adams,"Hydroxyurea, crizanlizumab"
+PT-B60FDE,Chronic myeloid leukemia,Targeted therapy,Harbour Cancer Centre,Imatinib
+PT-9A2C0F,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Alive Healthcare And Physiotherapy Limited,NSAIDs (naproxen)
+PT-EA344E,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Ear Nose & Throat Centre of Hong Kong,
+PT-C22E30,Heart failure,ACE inhibitor and diuretic,Cardiology Specialists and Cardiology Specialist Diagnostics,Furosemide
+PT-FA81B7,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Mercy Cancer Care,Rituximab
+PT-9C2FD9,Low back pain,"Physical therapy (core strengthening, exercise)",Alive Healthcare And Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-9A80FB,Essential thrombocythemia,Platelet-lowering therapy,Aref Al-Kali,"Hydroxyurea, anagrelide"
+PT-023938,Open-angle glaucoma,Prostaglandin analog eye drops,Bowen Eye Clinic,Latanoprost
+PT-53259D,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (naproxen)
+PT-95D14A,Prostate cancer,Prostatectomy,SalutisCare,Leuprolide
+PT-211541,Immune thrombocytopenia,Steroids or IVIG,Hassan Alkhateeb,"Prednisone, eltrombopag"
+PT-156A21,Chronic myeloid leukemia,Targeted therapy,Auckland Radiation Oncology,Imatinib
+PT-CD2C19,Gingivitis,Scaling and root planing,Prestige Dental Limited,Chlorhexidine rinse
+PT-FBA071,Tinea (Fungal infection),Topical antifungal,Skin Dermatology Institute,Terbinafine
+PT-0631D0,Actinic Keratosis,Cryotherapy,Skin Centre Claudelands,Fluorouracil cream
+PT-0F9182,Immune thrombocytopenia,Steroids or IVIG,ENT Laser Hearing & Speech Therapy Centre Limited,"Prednisone, eltrombopag"
+PT-A802A6,Vitiligo,Phototherapy (UVB),Auckland Skin and Cancer Foundation,Tacrolimus ointment
+PT-6FABD1,Heart failure,ACE inhibitor and diuretic,Aro Manawa (Heart) Health,Furosemide
+PT-B85963,Vitiligo,Phototherapy (UVB),Dr E A Baird Dermatology,Tacrolimus ointment
+PT-7089EA,Low back pain,"Physical therapy (core strengthening, exercise)",Alliance Physiotherapy Centre Limited,NSAIDs (ibuprofen)
+PT-1BF4CB,Von Willebrand disease,Desmopressin or factor replacement,Mayo Clinic Hematology & Oncology,"Desmopressin, tranexamic acid"
+PT-C7914D,Tinnitus,Sound therapy / masking,Care For Hearing Centre Limited,Amitriptyline
+PT-9706C6,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Fillan Healthcare - Dr K Hutton,Sertraline (SSRI)
+PT-0BF196,Uveitis (non-infectious),Topical corticosteroids (eye drops),Milford Eye Clinic,Prednisolone
+PT-0FE729,Acoustic neuroma,Observation or surgery,Phonak (Hong Kong) Hearing Centre,No specific medication
+PT-01B91C,Atopic Dermatitis,Topical corticosteroids,Central Dermatolgy,Hydrocortisone cream
+PT-77747D,Spasmodic dysphonia,Voice therapy,Skin Centre Remuera,Botulinum toxin injection
+PT-D7FC3F,Cataract,Cataract surgery,Milford Eye Clinic,None
+PT-C1A61A,Post-Traumatic Stress Disorder,Trauma-focused CBT,Christchurch PsychMed,Sertraline (SSRI)
+PT-0127CC,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Aurora Physiotherapy And Fitness Centre Co. Limited,Acetaminophen
+PT-165B5D,Sickle cell disease,Hydroxyurea therapy,Muhamad Alhaj Moustafa,"Hydroxyurea, crizanlizumab"
+PT-B99338,Angina pectoris,Sound therapy / masking,Hong Kong Hearing & Dizziness Centre Limited,Amitriptyline
+PT-B681A2,Hyperkalemia,Diet changes,Bay Heart Group,Furosemide
+PT-2E946D,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),MSQ Health,Sertraline (SSRI)
+PT-46A9E1,Voice Disorder,Voice therapy,Phonak (Hong Kong) Hearing Centre,Omeprazole (PPI)
+PT-A3D5EC,CML,Targeted therapy (TKI),Pacific Radiology - St George's,Imatinib
+PT-43729E,Acne Vulgaris,Topical therapy (retinoids),Christchurch Dermatology,Tretinoin
+PT-A236E5,Dysarthria,Speech therapy,Prestige Dental Limited,Levodopa
+PT-488C22,CML,Targeted therapy (TKI),Canopy Cancer Care,Imatinib
+PT-228AE0,Oral herpes (HSV labialis),Antiviral therapy for herpes,Victoria Dental (Wan Chai) Limited,Acyclovir
+PT-E8E955,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Alive Healthcare And Physiotherapy Limited,NSAIDs (naproxen)
+PT-370DF5,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Hamilton Eye Clinic,
+PT-41C8E7,Rosacea,Topical therapy,NZ Dermatology & Skin Cancer Centre,Metronidazole
+PT-0146EB,Age-related macular degeneration,AREDS vitamin supplements,Bowen Eye Clinic,Lutein/Zeaxanthin
+PT-858E67,Meniere's disease,Low-salt diet + diuretics,Care For Hearing Centre Limited,Hydrochlorothiazide
+PT-1E71BE,Bacterial conjunctivitis,Topical antibiotic eye drops,Eye Institute Hawkes Bay,Erythromycin ophthalmic
+PT-2B075F,Social Anxiety Disorder,Cognitive Behavioral Therapy,Fillan Healthcare - Dr K Hutton,Paroxetine (SSRI)
+PT-FDC2AC,Uveitis (non-infectious),Topical corticosteroids (eye drops),Bowen Eye Clinic,Prednisolone
+PT-E75521,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Later Life Psychiatry,Sertraline (SSRI)
+PT-A98394,Myocardial Infarction,Percutaneous coronary intervention,Bay Heart Group,Aspirin
+PT-A8E9F7,Developmental Language Disorder,Speech therapy,Harbour Cancer Care,None
+PT-F240BC,Hyperkalemia,Diet changes,Manawatu Heartcare,Furosemide
+PT-4FADB6,Alopecia Areata,Intralesional steroids,Auckland Skin and Cancer Foundation,Triamcinolone injection
+PT-E8966D,Dental abscess,Root canal or extraction with drainage,Wisdom Dental Center,Amoxicillin/Clavulanate
+PT-A09271,Heart Failure,ACE inhibitor + Beta-blocker,CardioLabs,Lisinopril
+PT-6DB7AB,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Eye Openers Psychiatry,Zolpidem
+PT-6B7DEC,Spasmodic dysphonia,Voice therapy,MSQ Health,Botulinum toxin injection
+PT-23367E,Shoulder impingement,Physical therapy (stretch and strengthen shoulder),Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (ibuprofen)
+PT-593799,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Forhealth Physiotherapy Centre Limited,Acetaminophen
+PT-D4934E,Cataract,Cataract surgery,Milford Eye Clinic,None
+PT-B265F9,Oral herpes (HSV labialis),Antiviral therapy for herpes,Koway Dental Clinic Centre,Acyclovir
+PT-9F0793,Ventricular Tachycardia,Implantable defibrillator,Cardiology Specialists and Cardiology Specialist Diagnostics,Amiodarone
+PT-103676,Acoustic neuroma,Observation or surgery,Care For Hearing Centre Limited,No specific medication
+PT-0E489A,Psoriasis,Phototherapy (UV light),Central Dermatolgy,Methotrexate
+PT-C0DF47,Deep Vein Thrombosis,Thrombectomy,Cardiology Specialists and Cardiology Specialist Diagnostics,Enoxaparin
+PT-848A75,Coronary Artery Disease,Angioplasty (stent),Manawatu Heartcare,Aspirin
+PT-6CB555,Hemophilia A,Factor VIII replacement,Centro Medico Biolife - Ematologia,"Factor VIII, emicizumab"
+PT-0E1884,Colorectal Cancer,Colectomy (surgery),Mercy Cancer Care,5-Fluorouracil
+PT-8E6991,Colorectal Cancer,Colectomy (surgery),SalutisCare,5-Fluorouracil
+PT-19D0DD,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Bowen Icon Cancer Centre,SSRIs
+PT-BDBD93,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Kinder Minds,Sertraline (SSRI)
+PT-FEE793,Ventricular Tachycardia,Implantable defibrillator,CardioLabs,Amiodarone
+PT-B76207,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Phonak (Hong Kong) Hearing Centre,
+PT-774A23,Chronic myeloid leukemia,Targeted therapy,Bowen Icon Cancer Centre,Imatinib
+PT-2F426D,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Alive Healthcare And Physiotherapy Limited,NSAIDs (naproxen)
+PT-AD8F68,Childhood Speech Delay,Speech therapy,Pooja P. Advani,None
+PT-7D9CE9,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),OK Care Limited,Acetaminophen
+PT-432AB1,Benign positional vertigo,Canalith repositioning (Epley maneuver),Phonak (Hong Kong) Hearing Centre,None
+PT-2FA60A,Heart Failure,ACE inhibitor + Beta-blocker,Midland Cardio Vascular Services,Lisinopril
+PT-8BBF51,Polycythemia vera,Phlebotomy and cytoreductive therapy,Centro Medico Biolife - Ematologia,"Hydroxyurea, ruxolitinib"
+PT-B0A86C,Coronary Artery Disease,Angioplasty (stent),Midland Cardio Vascular Services,Aspirin
+PT-CE1B47,Stuttering,Speech therapy (fluency techniques),Speech Therapy And Rehabilitation Training Centre Limited,None
+PT-EE8D82,Chronic myelogenous leukemia,Targeted therapy,Jithma P. Abeykoon,"Imatinib, dasatinib"
+PT-A7E7BA,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (ibuprofen)
+PT-B79847,Vitiligo,Phototherapy (UVB),Skin Centre Claudelands,Tacrolimus ointment
+PT-ED9AD0,Heart Failure,ACE inhibitor + Beta-blocker,Manawatu Heartcare,Lisinopril
+PT-EA224E,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Otic Hearing & Speech Service Centre Limited,Thiazide diuretics (HCTZ)
+PT-5E19BA,Atopic Dermatitis,Topical corticosteroids,Central Dermatolgy,Hydrocortisone cream
+PT-A3E0E7,Beta thalassemia major,Blood transfusions and chelation therapy,Aref Al-Kali,"Deferoxamine, luspatercept"
+PT-3F55C2,Heart failure,ACE inhibitor and diuretic,Christchurch Heart Group,Furosemide
+PT-DE2412,Lymphoma,Chemotherapy (ABVD),Mercy Cancer Care,Rituximab
+PT-A2FB52,Developmental Language Disorder,Speech therapy,Mastery Speech And Swallowing Clinic Limited,None
+PT-A09D97,Melanoma,Wide excision,Auckland Breast Centre,Pembrolizumab
+PT-66A2E7,Benign positional vertigo,Canalith repositioning (Epley maneuver),Phonak (Hong Kong) Hearing Centre,None
+PT-9731BD,Uveitis (non-infectious),Topical corticosteroids (eye drops),Auckland Eye - New Lynn,Prednisolone
+PT-6487E2,Chronic myelogenous leukemia,Targeted therapy,Hassan Alkhateeb,"Imatinib, dasatinib"
+PT-3D15C0,Post-Traumatic Stress Disorder,Trauma-focused CBT,Christchurch PsychMed,Sertraline (SSRI)
+PT-39AB9F,Coronary Artery Disease,Angioplasty (stent),Midland Cardio Vascular Services,Aspirin
+PT-859B25,Ventricular Tachycardia,Implantable defibrillator,Gerber & Hutchison Cardiovascular,Amiodarone
+PT-05742B,Bacterial conjunctivitis,Topical antibiotic ointment,City Eye Specialists,Erythromycin ophthalmic
+PT-8812A4,Benign positional vertigo,Canalith repositioning (Epley maneuver),Hong Kong Hearing & Dizziness Centre Limited,None
+PT-D59DA8,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Eye Openers Psychiatry,Escitalopram (SSRI)
+PT-2A0C18,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Eye Institute Hawkes Bay,
+PT-CA9B6F,Plantar fasciitis,Stretching exercises,Advanz Physiotherapy Centre (Causeway Bay),Ibuprofen (NSAID)
+PT-C3E1EE,Post-Traumatic Stress Disorder,Trauma-focused CBT,Coliber Group Psychiatry,Sertraline (SSRI)
+PT-1FABE4,Post-Traumatic Stress Disorder,Trauma-focused CBT,Eye Openers Psychiatry,Sertraline (SSRI)
+PT-65F7D8,Deep Vein Thrombosis,Thrombectomy,Heart Care Centre 2024,Enoxaparin
+PT-187B76,Selective Mutism,Speech therapy + CBT,Christchurch PsychMed,Sertraline
+PT-CBEB02,Heart Failure,ACE inhibitor + Beta-blocker,Cardiology Specialists and Cardiology Specialist Diagnostics,Lisinopril
+PT-E7EB64,Developmental Language Disorder,Speech therapy,Auckland Oncology,None
+PT-849C15,Low back pain,"Physical therapy (core strengthening, exercise)",Aurora Physiotherapy And Fitness Centre Co. Limited,NSAIDs (ibuprofen)
+PT-0ADC5C,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Alive Healthcare And Physiotherapy Limited,NSAIDs (naproxen)
+PT-2B8B52,Von Willebrand disease,Desmopressin or factor replacement,Centro Medico Gitalia - Ematologia,"Desmopressin, tranexamic acid"
+PT-68AC77,Atopic Dermatitis,Topical corticosteroids,Christchurch Dermatology,Hydrocortisone cream
+PT-D44334,Angina pectoris,Nitrates (rest or sublingual),Midland Cardio Vascular Services,Nitroglycerin
+PT-7DB626,Uveitis (non-infectious),Topical corticosteroids (eye drops),Eye Institute Hawkes Bay,Prednisolone
+PT-3D1527,Melanoma (metastatic),Surgical excision,Canopy Cancer Care,Pembrolizumab
+PT-902FF7,"Autism (communication)""",Speech therapy,Helander Dermatology,Risperidone
+PT-5EFC0F,Post-Traumatic Stress Disorder,Trauma-focused CBT,Christchurch PsychMed,Sertraline (SSRI)
+PT-EC9B86,Ventricular Tachycardia,Implantable defibrillator,Heart Care Centre 2024,Amiodarone
+PT-D108EA,Uveitis (non-infectious),Topical corticosteroids (eye drops),Milford Eye Clinic,Prednisolone
+PT-96606F,Atrial Fibrillation,Cardioversion,Ascot Angiography,Warfarin
+PT-B5BF83,Social Anxiety Disorder,Cognitive Behavioral Therapy,Later Life Psychiatry,Paroxetine (SSRI)
+PT-EE9E3E,Impacted wisdom tooth (infection),Surgical extraction,Dr. Smile,Amoxicillin
+PT-4E08CB,Rosacea,Topical therapy,Skin Centre Claudelands,Metronidazole
+PT-F78609,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),SalutisCare,Rituximab
+PT-C1DDF4,Bruxism (teeth grinding),Mouth guard (dental splint),Southern Dental Centre Co. Limited,Cyclobenzaprine
+PT-626CC0,Actinic Keratosis,Cryotherapy,Dr E A Baird Dermatology,Fluorouracil cream
+PT-EA6FBC,Immune thrombocytopenia,Steroids or IVIG,Muhamad Alhaj Moustafa,"Prednisone, eltrombopag"
+PT-A35676,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Kerikeri Medical Centre,
+PT-F955E4,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Widex Hong Kong Hearing & Speech Centre Ltd.,
+PT-EAA007,Hyperlipidemia,Lifestyle modification,Gerber & Hutchison Cardiovascular,Atorvastatin
+PT-35BA5A,Tinnitus,Sound therapy / masking,The Hong Kong Society For The Deaf,Amitriptyline
+PT-22AC22,Dry eye (keratoconjunctivitis),Artificial tears,Bowen Eye Clinic,Cyclosporine ophthalmic
+PT-946460,Dysphagia,Swallowing therapy,Skin Dermatology Institute,Omeprazole (PPI)
+PT-4ED164,Prostate Cancer,Prostatectomy,Harbour Cancer Care,Leuprolide
+PT-B8F9DA,Iron-deficiency anemia,Iron supplementation,Pooja P. Advani,Ferrous sulfate
+PT-219948,Lymphoma,Chemotherapy (ABVD),Pacific Radiology - St George's,Rituximab
+PT-8736E5,Plantar fasciitis,Stretching exercises,Alive Healthcare And Physiotherapy Limited,Ibuprofen (NSAID)
+PT-9C7A69,Low back pain,"Physical therapy (core strengthening, exercise)",Alliance Physiotherapy Centre Limited,NSAIDs (ibuprofen)
+PT-D44155,Articulation Disorder,Speech therapy,Christchurch Heart Group,None
+PT-09D646,Meniere's disease,Low-salt diet + diuretics,The Hong Kong Society For The Deaf,Hydrochlorothiazide
+PT-AF4917,Rosacea,Topical therapy,Dr E A Baird Dermatology,Metronidazole
+PT-693642,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Christchurch PsychMed,Sertraline (SSRI)
+PT-E00E3B,Otitis media (with effusion),Watchful waiting or tubes,Care For Hearing Centre Limited,Amoxicillin
+PT-6CE38A,Obsessive-Compulsive Disorder,Exposure-based CBT,Kinder Minds,Sertraline (SSRI)
+PT-EEA247,Sensorineural hearing loss (age-related),Hearing aids,Widex Hong Kong Hearing & Speech Centre Ltd.,None
+PT-91D1FA,Tinea (Fungal infection),Topical antifungal,NZ Dermatology & Skin Cancer Centre,Terbinafine
+PT-141E02,Specific Phobia,Exposure Therapy,Coliber Group Psychiatry,Propranolol
+PT-697DA6,Chronic myelogenous leukemia,Targeted therapy,Hassan Alkhateeb,"Imatinib, dasatinib"
+PT-67B8C9,NSCLC,Surgical resection,Pacific Radiology - St George's,Pembrolizumab
+PT-C5372B,Myocardial Infarction,Percutaneous coronary intervention,Christchurch Heart Group,Aspirin
+PT-3D306A,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (naproxen)
+PT-CE5181,Breast Cancer,Lumpectomy + Radiation,SalutisCare,Tamoxifen
+PT-9F6A56,Hyperkalemia,Diet changes,Christchurch Heart Group,Furosemide
+PT-0EB8D2,Sickle cell disease,Hydroxyurea therapy,Pooja P. Advani,"Hydroxyurea, crizanlizumab"
+PT-92DEFB,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Y Physio. Rehabilitation Centre Limited,NSAIDs (naproxen)
+PT-70F62C,Dental abscess,Root canal or extraction with drainage,Wellmed Dental Care Limited,Amoxicillin/Clavulanate
+PT-AE05C6,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),City Eye Specialists,
+PT-8D498D,Aplastic anemia,Immunosuppressive therapy or stem cell transplant,Jithma P. Abeykoon,"Antithymocyte globulin, cyclosporine"
+PT-B31A13,Heart failure,ACE inhibitor and diuretic,Heart Care Centre 2024,Furosemide
+PT-A8BA0A,Bruxism (teeth grinding),Mouth guard (dental splint),Wisdom Dental Center,Cyclobenzaprine
+PT-2664DC,Selective Mutism,Speech therapy + CBT,SalutisCare,Sertraline
+PT-736D15,Bruxism (teeth grinding),Mouth guard (dental splint),Koway Dental Clinic Centre,Cyclobenzaprine
+PT-C9560A,Rosacea,Topical therapy,Auckland Skin and Cancer Foundation,Metronidazole
+PT-E8B63A,Actinic Keratosis,Cryotherapy,Skin Centre Claudelands,Fluorouracil cream
+PT-0C6BF4,Gingivitis,Scaling and root planing,Sunny Days Smile Dental Clinic,Chlorhexidine rinse
+PT-375F16,Otitis media (with effusion),Watchful waiting or tubes,The Hong Kong Society For The Deaf,Amoxicillin
+PT-350546,Benign positional vertigo (BPPV),Canalith repositioning maneuvers (Epley),OK Care Limited,Meclizine
+PT-D68CD2,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Eye Openers Psychiatry,Escitalopram (SSRI)
+PT-AB8EDC,Von Willebrand disease,Desmopressin or factor replacement,Hassan Alkhateeb,"Desmopressin, tranexamic acid"
+PT-56CC49,Angina pectoris,Nitrates (rest or sublingual),Ascot Angiography,Nitroglycerin
+PT-29AC7F,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Fillan Healthcare - Dr K Hutton,Zolpidem
+PT-546324,Lymphoma,Chemotherapy (ABVD),Harbour Cancer Centre,Rituximab
+PT-ED3085,Melanoma (metastatic),Surgical excision,Canopy Cancer Care,Pembrolizumab
+PT-FB319D,Voice Disorder,Voice therapy,Central Dermatolgy,Omeprazole (PPI)
+PT-E4B497,Colorectal Cancer,Colectomy (surgery),Harbour Cancer Care,5-Fluorouracil
+PT-9D6D91,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Bilal Psychiatry Ltd,Escitalopram (SSRI)
+PT-D81263,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,Widex Hong Kong Hearing & Speech Centre Ltd.,Ciprofloxacin ear drops
+PT-0ABB7B,Panic Disorder,Cognitive Behavioral Therapy,Eye Openers Psychiatry,Sertraline (SSRI)
+PT-81F2ED,Ventricular Tachycardia,Implantable defibrillator,Manawatu Heartcare,Amiodarone
+PT-C6F4A4,Low back pain,"Physical therapy (core strengthening, exercise)",Aurora Physiotherapy And Fitness Centre Co. Limited,NSAIDs (ibuprofen)
+PT-37AC20,Hyperkalemia,Diet changes,Ascot Angiography,Furosemide
+PT-B3BCAF,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Eye Institute Wellington,
+PT-85FCE9,Melanoma,Wide excision,Auckland Breast Centre,Pembrolizumab
+PT-34F210,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Southern Dental Centre Co. Limited,Metronidazole
+PT-172105,Angina pectoris,Nitrates (rest or sublingual),Cardiology Specialists and Cardiology Specialist Diagnostics,Nitroglycerin
+PT-046BB8,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Capital Eye Specialists,Olopatadine
+PT-D8A478,Hypertension,Lifestyle modification,Cardiology Specialists and Cardiology Specialist Diagnostics,Lisinopril
+PT-1A728C,Essential thrombocythemia,Platelet-lowering therapy,Hassan Alkhateeb,"Hydroxyurea, anagrelide"
+PT-BE9637,Prostate Cancer,Prostatectomy,Auckland Radiation Oncology,Leuprolide
+PT-B36DAC,CML,Targeted therapy (TKI),Bowen Icon Cancer Centre,Imatinib
+PT-DCAA85,Tinnitus,Sound therapy / masking,Hong Kong Hearing & Dizziness Centre Limited,Amitriptyline
+PT-80B87D,Basal Cell Carcinoma,Mohs surgery,Skin Centre Remuera,Vismodegib
+PT-ACE3ED,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,MSQ Health,Zolpidem
+PT-D0889F,Age-related macular degeneration,AREDS vitamin supplements,Auckland Myopia Clinic,Lutein/Zeaxanthin
+PT-3203AC,Dysphagia,Swallowing therapy,Harbour Cancer Care,Omeprazole (PPI)
+PT-B7E8C7,Prostate cancer,Prostatectomy,Auckland Radiation Oncology,Leuprolide
+PT-DC65A6,Melanoma,Wide excision,SalutisCare,Pembrolizumab
+PT-B55CFB,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Bowen Eye Clinic,
+PT-ADA4A9,Periodontitis,Scaling and root planing,UMP Dental Centre (Causeway Bay),Doxycycline
+PT-8F1367,Dry eye (keratoconjunctivitis),Artificial tears,Eye Institute Hawkes Bay,Cyclosporine ophthalmic
+PT-D91BBF,Obsessive-Compulsive Disorder,Exposure-based CBT,MSQ Health,Sertraline (SSRI)
+PT-B5F5FC,Shoulder impingement,Physical therapy (stretch and strengthen shoulder),Aurora Physiotherapy And Fitness Centre Co. Limited,NSAIDs (ibuprofen)
+PT-C95005,Vitiligo,Phototherapy (UVB),NZ Dermatology & Skin Cancer Centre,Tacrolimus ointment
+PT-FF39F4,Hyperkalemia,Diet changes,Heart Care Centre 2024,Furosemide
+PT-BB2205,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Eye Openers Psychiatry,Sertraline (SSRI)
+PT-D86E10,Bacterial conjunctivitis,Topical antibiotic eye drops,Milford Eye Clinic,Erythromycin ophthalmic
+PT-FAA4AB,Glioblastoma,Resection + Radiation,Auckland Radiation Oncology,Temozolomide
+PT-434E51,Low back pain,"Physical therapy (core strengthening, exercise)",Central Morthan Cure Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-749CAC,Hyperkalemia,Diet changes,Manawatu Heartcare,Furosemide
+PT-462E5F,Prostate cancer,Prostatectomy,Mercy Cancer Care,Leuprolide
+PT-0CCBBF,Sensorineural hearing loss (age-related),Hearing aids,ENT Laser Hearing & Speech Therapy Centre Limited,None
+PT-DD4F7B,Aphasia,Speech-language therapy,Christchurch Dermatology,Donepezil
+PT-A622AA,Prostate Cancer,Prostatectomy,Harbour Cancer Centre,Leuprolide
+PT-117469,Specific Phobia,Exposure Therapy,Coliber Group Psychiatry,Propranolol
+PT-4E3A96,Immune thrombocytopenia,Steroids or IVIG,UOC di Ematologia Mariano Santo,"Prednisone, eltrombopag"
+PT-8D4813,Ovarian Cancer,Cytoreductive surgery,Harbour Cancer Care,Carboplatin
+PT-9C5D81,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,MSQ Health,Zolpidem
+PT-6E44B7,Gingivitis,Scaling and root planing,Wellmed Dental Care Limited,Chlorhexidine rinse
+PT-A405BB,Oral thrush (candidiasis),Clotrimazole lozenges,Wellmed Dental Care Limited,Clotrimazole
+PT-2FEBA2,Plantar fasciitis,Stretching exercises,Y Physio. Rehabilitation Centre Limited,Ibuprofen (NSAID)
+PT-3738F2,Lymphoma,Chemotherapy (ABVD),Aurora Physiotherapy And Fitness Centre Co. Limited,Rituximab
+PT-F90D59,Heart failure,ACE inhibitor and diuretic,Christchurch Heart Group,Furosemide
+PT-09C6C4,Heart failure,ACE inhibitor and diuretic,Manawatu Heartcare,Furosemide
+PT-DCECD1,Hyperkalemia,Diet changes,Heart Care Centre 2024,Furosemide
+PT-AA6C14,Hemophilia A,Factor VIII replacement,Centro Medico Gitalia - Ematologia,"Factor VIII, emicizumab"
+PT-2945FF,Bacterial conjunctivitis,Topical antibiotic eye drops,City Eye Specialists,Erythromycin ophthalmic
+PT-F8D9CB,Basal Cell Carcinoma,Mohs surgery,Central Dermatolgy,Vismodegib
+PT-46FCAB,Rosacea,Topical therapy,Christchurch Dermatology,Metronidazole
+PT-9555ED,Cataract,Cataract surgery,Bowen Eye Clinic,None
+PT-17CE81,Melanoma (metastatic),Surgical excision,Auckland Oncology,Pembrolizumab
+PT-2E6093,Tinea (Fungal infection),Topical antifungal,Dr E A Baird Dermatology,Terbinafine
+PT-EB5B2B,Prostate Cancer,Prostatectomy,Canopy Cancer Care,Leuprolide
+PT-E5CD1B,Pancreatic Cancer,Whipple procedure,Auckland Oncology,Gemcitabine
+PT-1AA6A3,Low back pain,"Physical therapy (core strengthening, exercise)",Central Morthan Cure Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-127C75,Specific Phobia,Exposure Therapy,Kinder Minds,Propranolol
+PT-970539,NSCLC,Surgical resection,Mercy Cancer Care,Pembrolizumab
+PT-6FD4E6,Chronic myelogenous leukemia,Targeted therapy,Pooja P. Advani,"Imatinib, dasatinib"
+PT-FBA3E2,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Ear Nose & Throat Centre of Hong Kong,
+PT-B06D13,Sickle cell disease,Hydroxyurea therapy,Pooja P. Advani,"Hydroxyurea, crizanlizumab"
+PT-DC65BE,Obsessive-Compulsive Disorder,Exposure-based CBT,Kinder Minds,Sertraline (SSRI)
+PT-7A0CF4,Pancreatic Cancer,Whipple procedure,Pacific Radiology - St George's,Gemcitabine
+PT-C54FAC,Articulation Disorder,Speech therapy,Kinder Minds,None
+PT-152763,Otitis media (with effusion),Watchful waiting or tubes,Phonak (Hong Kong) Hearing Centre,Amoxicillin
+PT-A337F2,Dental caries,Cavity filling and fluoride application,Dr. Smile,Fluoride (topical)
+PT-921378,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Forhealth Physiotherapy Centre Limited,NSAIDs (naproxen)
+PT-E22479,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Otic Hearing & Speech Service Centre Limited,
+PT-98C3DB,Atopic Dermatitis,Topical corticosteroids,Skin Centre Claudelands,Hydrocortisone cream
+PT-870E2A,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Coliber Group Psychiatry,Zolpidem
+PT-6FDE2C,Age-related macular degeneration,AREDS vitamin supplements,Hamilton Eye Clinic,Lutein/Zeaxanthin
+PT-9DD650,Melanoma (metastatic),Surgical excision,Harbour Cancer Centre,Pembrolizumab
+PT-0BB3B7,Stuttering,Speech therapy (fluency techniques),Eye Openers Psychiatry,None
+PT-16DAF4,Beta thalassemia major,Blood transfusions and chelation therapy,Hassan Alkhateeb,"Deferoxamine, luspatercept"
+PT-55FC2A,Developmental Language Disorder,Speech therapy,Coliber Group Psychiatry,None
+PT-35E832,Dysphagia,Swallowing therapy,Eye Institute Hawkes Bay,Omeprazole (PPI)
+PT-F28482,Tinnitus (ringing),Sound therapy (masking); hearing aids,Widex Hong Kong Hearing & Speech Centre Ltd.,SSRIs
+PT-190592,Psoriasis,Phototherapy (UV light),Dr E A Baird Dermatology,Methotrexate
+PT-F0E4EA,Panic Disorder,Cognitive Behavioral Therapy,Bilal Psychiatry Ltd,Sertraline (SSRI)
+PT-331A9D,Sensorineural hearing loss,Hearing aids or cochlear implant,Phonak (Hong Kong) Hearing Centre,Prednisone
+PT-10E527,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Harbour Cancer Care,Rituximab
+PT-8E6A23,Pancreatic Cancer,Whipple procedure,Canopy Cancer Care,Gemcitabine
+PT-7727C8,Hyperkalemia,Diet changes,Heart Care Centre 2024,Furosemide
+PT-0C67CF,Tinnitus (ringing),Sound therapy (masking); hearing aids,Otic Hearing & Speech Service Centre Limited,SSRIs
+PT-7AA04C,Vitiligo,Phototherapy (UVB),Skin Centre Remuera,Tacrolimus ointment
+PT-3B0B2E,Post-Traumatic Stress Disorder,Trauma-focused CBT,Christchurch PsychMed,Sertraline (SSRI)
+PT-86C8FF,Allergic conjunctivitis,Antihistamine eye drops,Capital Eye Specialists,Olopatadine
+PT-61555B,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Grace Sound (Kowloon) Hearing Centre,Thiazide diuretics (HCTZ)
+PT-0EF0CC,Bacterial conjunctivitis,Topical antibiotic eye drops,Eye Institute Wellington,Erythromycin ophthalmic
+PT-3618F1,Childhood Speech Delay,Speech therapy,Ascot Angiography,None
+PT-4F87EE,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Capital Eye Specialists,
+PT-0D6692,Uveitis (non-infectious),Topical corticosteroids (eye drops),Eye Institute Wellington,Prednisolone
+PT-C08FF3,Obsessive-Compulsive Disorder,Exposure-based CBT,MSQ Health,Sertraline (SSRI)
+PT-0F3539,Bulimia Nervosa,Cognitive Behavioral Therapy,Christchurch PsychMed,Fluoxetine (SSRI)
+PT-CF5837,Myocardial Infarction,Percutaneous coronary intervention,Gerber & Hutchison Cardiovascular,Aspirin
+PT-B3B09C,Atopic Dermatitis,Topical corticosteroids,Skin Dermatology Institute,Hydrocortisone cream
+PT-3D60F6,Sensorineural hearing loss,Hearing aids or cochlear implant,Optical 88 Hearing Care Centre,Prednisone
+PT-3B00D3,Polycythemia vera,Phlebotomy and cytoreductive therapy,Roberta H. Adams,Botulinum toxin injection
+PT-A7709C,"Autism (communication)""",Speech therapy,Jin4 Jy5 Limited,Risperidone
+PT-05B2E9,Iron-deficiency anemia,Iron supplementation,Centro Medico Gitalia - Ematologia,Ferrous sulfate
+PT-D8D765,Bacterial conjunctivitis,Topical antibiotic ointment,City Eye Specialists,Erythromycin ophthalmic
+PT-BEF007,Chronic myeloid leukemia,Targeted therapy,Mercy Cancer Care,Imatinib
+PT-E3E978,Sickle cell disease,Hydroxyurea therapy,Roberta H. Adams,"Hydroxyurea, crizanlizumab"
+PT-74F499,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,Care For Hearing Centre Limited,Ciprofloxacin + Dexamethasone
+PT-A9D0A5,Actinic Keratosis,Cryotherapy,Skin Centre Remuera,Fluorouracil cream
+PT-5A6BCE,Pancreatic Cancer,Whipple procedure,Auckland Radiation Oncology,Gemcitabine
+PT-AD8890,Hyperkalemia,Diet changes,Ascot Angiography,Furosemide
+PT-50ACE9,Acne Vulgaris,Topical therapy (retinoids),Fiona Larsen Dermatology,Tretinoin
+PT-2E9B9D,Alopecia Areata,Intralesional steroids,Skin Centre Claudelands,Triamcinolone injection
+PT-CF2E1C,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Eye Openers Psychiatry,Escitalopram (SSRI)
+PT-BD5BA3,Shoulder impingement,Physical therapy (stretch and strengthen shoulder),Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-6BFB1D,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,Hong Kong Hearing & Dizziness Centre Limited,Ciprofloxacin + Dexamethasone
+PT-2D5179,Sickle cell disease,Hydroxyurea therapy,Jithma P. Abeykoon,"Hydroxyurea, crizanlizumab"
+PT-168CBF,Post-Traumatic Stress Disorder,Trauma-focused CBT,MSQ Health,Sertraline (SSRI)
+PT-24B738,Hyperkalemia,Diet changes,Cardiology Specialists and Cardiology Specialist Diagnostics,Furosemide
+PT-D5C6D1,Oral thrush (candidiasis),Clotrimazole lozenges,Southern Dental Centre Co. Limited,"Hydroxyurea, crizanlizumab"
+PT-6725A8,Basal Cell Carcinoma,Mohs surgery,Fiona Larsen Dermatology,Vismodegib
+PT-6BCB9B,Vitiligo,Phototherapy (UVB),NZ Dermatology & Skin Cancer Centre,Tacrolimus ointment
+PT-717CAA,Uveitis (non-infectious),Topical corticosteroids (eye drops),Capital Eye Specialists,Prednisolone
+PT-1948E8,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Kinder Minds,Methylphenidate
+PT-A771A4,Dysarthria,Speech therapy,Heart Care Centre 2024,Levodopa
+PT-4FF1D0,CML,Targeted therapy (TKI),Harbour Cancer Centre,Imatinib
+PT-78195B,Multiple myeloma,Chemotherapy and stem cell transplant,Mayo Clinic Hematology & Oncology,"Bortezomib, lenalidomide"
+PT-93F33E,Viral Warts,Cryotherapy,Helander Dermatology,Imiquimod
+PT-D9B204,Panic Disorder,Cognitive Behavioral Therapy,Joylife Consultancy Clinic,Sertraline (SSRI)
+PT-A20408,Dental abscess,Root canal or extraction with drainage,Victoria Dental Clinic,Amoxicillin/Clavulanate
+PT-1CF24B,Bruxism (teeth grinding),Mouth guard (dental splint),Victoria Dental (Wan Chai) Limited,Cyclobenzaprine
+PT-831A42,Hypertension,Lifestyle modification,Midland Cardio Vascular Services,Lisinopril
+PT-E2861F,Rosacea,Topical therapy,Skin Dermatology Institute,Metronidazole
+PT-B61C10,Dry eye (keratoconjunctivitis),Artificial tears,Eye Institute Wellington,Cyclosporine ophthalmic
+PT-962779,Age-related macular degeneration,AREDS vitamin supplements,Bowen Eye Clinic,Lutein/Zeaxanthin
+PT-C9EEBD,Melanoma,Wide excision,Mercy Cancer Care,Pembrolizumab
+PT-4BB53B,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),MSQ Health,Escitalopram (SSRI)
+PT-97FF02,Atrial Fibrillation,Cardioversion,Cardiology Specialists and Cardiology Specialist Diagnostics,Warfarin
+PT-7269B5,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",OK Care Limited,NSAIDs (naproxen)
+PT-A5FB30,Sickle cell disease,Hydroxyurea therapy,City Eye Specialists,"Hydroxyurea, crizanlizumab"
+PT-549515,Dental caries,Cavity filling and fluoride application,Wisdom Dental Center,Fluoride (topical)
+PT-483226,Open-angle glaucoma,Prostaglandin analog eye drops,Bowen Eye Clinic,Latanoprost
+PT-20B6A2,Glioblastoma,Resection + Radiation,SalutisCare,Temozolomide
+PT-9E6001,Specific Phobia,Exposure Therapy,Bilal Psychiatry Ltd,Propranolol
+PT-087312,Periodontitis,Scaling and root planing,UMP Dental Centre (Causeway Bay),Doxycycline
+PT-D17162,Prostate Cancer,Prostatectomy,Auckland Radiation Oncology,Leuprolide
+PT-97F6AF,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Bowen Eye Clinic,
+PT-E74617,Ovarian Cancer,Cytoreductive surgery,Auckland Radiation Oncology,Carboplatin
+PT-898F35,Dysarthria,Speech therapy,Phonak (Hong Kong) Hearing Centre,Levodopa
+PT-B93D28,Dysarthria,Speech therapy,Aurora Physiotherapy And Fitness Centre Co. Limited,Levodopa
+PT-AD9437,Peripheral Artery Disease,Exercise therapy,Gerber & Hutchison Cardiovascular,Cilostazol
+PT-D2DBC6,Von Willebrand disease,Desmopressin or factor replacement,Mayo Clinic Hematology & Oncology,"Desmopressin, tranexamic acid"
+PT-17B983,Acoustic neuroma,Observation or surgery,Grace Sound (Kowloon) Hearing Centre,No specific medication
+PT-FF37B4,Plantar fasciitis,Stretching exercises,Byrne & Hickman Physiotherapy & Sports Injury Centre,Ibuprofen (NSAID)
+PT-C8E953,Melanoma,Wide excision,Bowen Icon Cancer Centre,Pembrolizumab
+PT-11EDF5,Immune thrombocytopenia,Steroids or IVIG,Roberta H. Adams,"Prednisone, eltrombopag"
+PT-456F15,Melanoma,Wide excision,SalutisCare,Pembrolizumab
+PT-E6BA16,Stuttering,Speech therapy (fluency techniques),Centro Medico Biolife - Ematologia,None
+PT-33ADB2,Viral Warts,Cryotherapy,Fiona Larsen Dermatology,Imiquimod
+PT-DD7DFA,Heart failure,ACE inhibitor and diuretic,Cardiology Specialists and Cardiology Specialist Diagnostics,Furosemide
+PT-03C716,"Autism (communication)""",Speech therapy,Prestige Dental Limited,Risperidone
+PT-276486,Oral thrush (candidiasis),Clotrimazole lozenges,Koway Dental Clinic Centre,Clotrimazole
+PT-20E3CD,Age-related macular degeneration,AREDS vitamin supplements,Capital Eye Specialists,Lutein/Zeaxanthin
+PT-76136B,NSCLC,Surgical resection,Auckland Oncology,Pembrolizumab
+PT-A6A8E5,Sensorineural hearing loss,Hearing aids or cochlear implant,Grace Sound (Kowloon) Hearing Centre,Prednisone
+PT-E42236,Ovarian Cancer,Cytoreductive surgery,Harbour Cancer Care,Carboplatin
+PT-329F4D,Breast Cancer,Lumpectomy + Radiation,Harbour Cancer Care,Tamoxifen
+PT-DA7EDF,Iron-deficiency anemia,Iron supplementation,Roberta H. Adams,Ferrous sulfate
+PT-6AEC8B,Sickle cell disease,Hydroxyurea therapy,Mayo Clinic Hematology & Oncology,"Hydroxyurea, crizanlizumab"
+PT-57D929,Essential thrombocythemia,Platelet-lowering therapy,Jithma P. Abeykoon,"Hydroxyurea, anagrelide"
+PT-03A952,"Autism (communication)""",Speech therapy,Y Physio. Rehabilitation Centre Limited,Risperidone
+PT-2FE39F,Hyperlipidemia,Lifestyle modification,Ascot Angiography,Atorvastatin
+PT-01A41E,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Grace Sound (Kowloon) Hearing Centre,Thiazide diuretics (HCTZ)
+PT-C0EAF2,Cataract,Cataract surgery,Kerikeri Medical Centre,None
+PT-BCEB95,"Autism (communication)""",Speech therapy,Harbour Cancer Centre,Risperidone
+PT-95087F,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Milford Eye Clinic,Olopatadine
+PT-024DBF,Spasmodic dysphonia,Voice therapy,ENT Laser Hearing & Speech Therapy Centre Limited,Botulinum toxin injection
+PT-08BDA3,Age-related macular degeneration,AREDS vitamin supplements,Milford Eye Clinic,Lutein/Zeaxanthin
+PT-8CF6B5,Aplastic anemia,Immunosuppressive therapy or stem cell transplant,Centro Medico Gitalia - Ematologia,"Antithymocyte globulin, cyclosporine"
+PT-4235A8,Knee osteoarthritis,"Physical therapy (quadriceps strengthening, range-of-motion exercises)",Central Morthan Cure Physiotherapy Limited,NSAIDs (naproxen)
+PT-5B56C7,NSCLC,Surgical resection,Auckland Breast Centre,Pembrolizumab
+PT-0D52DB,Dental abscess,Root canal or extraction with drainage,Koway Dental Clinic Centre,Amoxicillin/Clavulanate
+PT-B3CDF5,Atopic Dermatitis,Topical corticosteroids,Fiona Larsen Dermatology,Hydrocortisone cream
+PT-FF24A5,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,The Hong Kong Society For The Deaf,Ciprofloxacin + Dexamethasone
+PT-5E93D7,Periodontitis,Scaling and root planing,Dr. Smile,Doxycycline
+PT-1B1A1E,Hypertension,Lifestyle modification,Christchurch Heart Group,Lisinopril
+PT-9CF951,Coronary Artery Disease,Angioplasty (stent),Heart Care Centre 2024,Aspirin
+PT-A6E962,Bacterial conjunctivitis,Topical antibiotic ointment,Milford Eye Clinic,Erythromycin ophthalmic
+PT-083F45,Sciatica (nerve pain),"Physical therapy (stretching, posture training)",Advanz Physiotherapy Centre (Causeway Bay),NSAIDs (ibuprofen)
+PT-75648F,Viral Warts,Cryotherapy,Auckland Skin and Cancer Foundation,Imiquimod
+PT-D52743,Meniere’s disease (vertigo),Low-salt diet; vestibular rehabilitation,Ear Nose & Throat Centre of Hong Kong,Thiazide diuretics (HCTZ)
+PT-3A889D,Presbyopia (farsighted age-related),Reading glasses or multifocal lenses,Milford Eye Clinic,
+PT-64385E,Uveitis (non-infectious),Topical corticosteroids (eye drops),Hamilton Eye Clinic,Prednisolone
+PT-FAFF40,Rosacea,Topical therapy,Christchurch Dermatology,Metronidazole
+PT-D07624,Uveitis (non-infectious),Topical corticosteroids (eye drops),Auckland Myopia Clinic,Prednisolone
+PT-5AAEF5,Ventricular Tachycardia,Implantable defibrillator,Midland Cardio Vascular Services,Amiodarone
+PT-D5713F,Melanoma (metastatic),Surgical excision,Auckland Radiation Oncology,Pembrolizumab
+PT-34D4A0,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Y Physio. Rehabilitation Centre Limited,NSAIDs (ibuprofen)
+PT-0505EF,Immune thrombocytopenia,Steroids or IVIG,Centro Medico Gitalia - Ematologia,"Prednisone, eltrombopag"
+PT-37E87C,Rosacea,Topical therapy,Christchurch Dermatology,Metronidazole
+PT-7C898F,Beta thalassemia major,Blood transfusions and chelation therapy,UOC di Ematologia Mariano Santo,"Deferoxamine, luspatercept"
+PT-626D97,Hyperkalemia,Diet changes,Cardiology Specialists and Cardiology Specialist Diagnostics,Furosemide
+PT-BB7B02,Actinic Keratosis,Cryotherapy,Central Dermatolgy,Fluorouracil cream
+PT-74E1E7,Iron-deficiency anemia,Iron supplementation,Mayo Clinic Hematology & Oncology,Ferrous sulfate
+PT-A31F4A,Prostate Cancer,Prostatectomy,Harbour Cancer Care,Leuprolide
+PT-C20C71,Aplastic anemia,Immunosuppressive therapy or stem cell transplant,Centro Medico Gitalia - Ematologia,"Antithymocyte globulin, cyclosporine"
+PT-0BF608,Acoustic neuroma,Observation or surgery,Care For Hearing Centre Limited,No specific medication
+PT-492561,Psoriasis,Phototherapy (UV light),Skin Dermatology Institute,Methotrexate
+PT-FCFDC5,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),Fillan Healthcare - Dr K Hutton,Sertraline (SSRI)
+PT-952569,Panic Disorder,Cognitive Behavioral Therapy,Bilal Psychiatry Ltd,Sertraline (SSRI)
+PT-DA5A0E,Colorectal Cancer,Colectomy (surgery),SalutisCare,5-Fluorouracil
+PT-286CC9,Iron-deficiency anemia,Iron supplementation,Centro Medico Gitalia - Ematologia,
+PT-1DDC2A,Peripheral Artery Disease,Exercise therapy,Aro Manawa (Heart) Health,Cilostazol
+PT-1274FA,Major Depressive Disorder,Cognitive Behavioral Therapy (CBT),MSQ Health,Sertraline (SSRI)
+PT-6EAA13,Immune thrombocytopenia,Steroids or IVIG,Roberta H. Adams,"Prednisone, eltrombopag"
+PT-9FD88D,Bacterial conjunctivitis,Topical antibiotic ointment,City Eye Specialists,Erythromycin ophthalmic
+PT-39591A,Dry eye (keratoconjunctivitis),Artificial tears,Jin4 Jy5 Limited,Cyclosporine ophthalmic
+PT-95A1FC,Sciatica (nerve pain),"Physical therapy (stretching, posture training)",Y Physio. Rehabilitation Centre Limited,NSAIDs (ibuprofen)
+PT-FE04EC,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Central Morthan Cure Physiotherapy Limited,Olopatadine
+PT-5FE50B,Panic Disorder,Cognitive Behavioral Therapy,Fillan Healthcare - Dr K Hutton,Sertraline (SSRI)
+PT-8C1E60,Prostate cancer,Prostatectomy,Auckland Radiation Oncology,Leuprolide
+PT-EA670F,Heart Failure,ACE inhibitor + Beta-blocker,Bay Heart Group,Lisinopril
+PT-DB03BC,Prostate cancer,Prostatectomy,Auckland Oncology,Leuprolide
+PT-E14CE4,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Ashburn Clinic,Escitalopram (SSRI)
+PT-F7BD1A,Colorectal Cancer,Colectomy (surgery),Harbour Cancer Care,5-Fluorouracil
+PT-A70293,Prostate Cancer,Prostatectomy,Pacific Radiology - St George's,Leuprolide
+PT-38AF5B,Post-Traumatic Stress Disorder,Trauma-focused CBT,Joylife Consultancy Clinic,Sertraline (SSRI)
+PT-ABD8D7,Glaucoma,Prescription eye drops to lower intraocular pressure,Eye Institute Wellington,Latanoprost
+PT-7DB091,Cataract,Cataract surgery,Eye Institute Wellington,None
+PT-620632,Colorectal Cancer,Colectomy (surgery),SalutisCare,5-Fluorouracil
+PT-FA76B4,Low back pain,"Physical therapy (core strengthening, exercise)",OK Care Limited,NSAIDs (ibuprofen)
+PT-CC0909,Low back pain,"Physical therapy (core strengthening, exercise)",Y Physio. Rehabilitation Centre Limited,NSAIDs (ibuprofen)
+PT-92EC2C,Rotator cuff injury,Physical therapy (shoulder strengthening exercises),Y Physio. Rehabilitation Centre Limited,NSAIDs (ibuprofen)
+PT-C89BCE,Prostate cancer,Prostatectomy,Harbour Cancer Centre,Leuprolide
+PT-189E38,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Ashburn Clinic,Zolpidem
+PT-26175C,Glaucoma,Prescription eye drops to lower intraocular pressure,Auckland Eye - New Lynn,Latanoprost
+PT-D01254,Bacterial conjunctivitis,Topical antibiotic ointment,Auckland Eye - New Lynn,Erythromycin ophthalmic
+PT-DE2E70,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Later Life Psychiatry,Methylphenidate
+PT-F2C3A4,Breast Cancer,Lumpectomy + Radiation,SalutisCare,Tamoxifen
+PT-281FE5,Ventricular Tachycardia,Implantable defibrillator,Gerber & Hutchison Cardiovascular,Amiodarone
+PT-66C8B4,Hypertension,Lifestyle modification,Heart Care Centre 2024,Lisinopril
+PT-11D4DA,Multiple myeloma,Chemotherapy and stem cell transplant,Jithma P. Abeykoon,"Bortezomib, lenalidomide"
+PT-E499F8,CML,Targeted therapy (TKI),Auckland Oncology,Imatinib
+PT-528653,Sickle cell disease,Hydroxyurea therapy,UOC di Ematologia Mariano Santo,"Hydroxyurea, crizanlizumab"
+PT-46DA83,Allergic conjunctivitis,Antihistamine eye drops,Capital Eye Specialists,Olopatadine
+PT-4D32FE,Otitis externa (swimmer’s ear),Topical antibiotic/steroid ear drops,Optical 88 Hearing Care Centre,Ciprofloxacin + Dexamethasone
+PT-122BD1,Rosacea,Topical therapy,Dr E A Baird Dermatology,Metronidazole
+PT-4611BE,Lymphoma,Chemotherapy (ABVD),Auckland Breast Centre,Rituximab
+PT-B3711F,Benign positional vertigo (BPPV),Canalith repositioning maneuvers (Epley),Aurora Physiotherapy And Fitness Centre Co. Limited,Meclizine
+PT-7FEF35,Age-related macular degeneration,AREDS vitamin supplements,Eye Institute Wellington,Lutein/Zeaxanthin
+PT-511DE5,Lymphoma,Chemotherapy (ABVD),Auckland Oncology,Rituximab
+PT-4B851A,Melanoma,Wide excision,Canopy Cancer Care,Pembrolizumab
+PT-76FEF0,Deep Vein Thrombosis,Thrombectomy,Midland Cardio Vascular Services,Enoxaparin
+PT-0C436F,Articulation Disorder,Speech therapy,Auckland Breast Centre,None
+PT-774B93,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Dr. Smile,Metronidazole
+PT-AFE7D1,Meniere’s disease (vertigo),"Physical therapy (core strengthening, exercise)",Byrne & Hickman Physiotherapy & Sports Injury Centre,NSAIDs (ibuprofen)
+PT-D17A35,Sensorineural hearing loss,Hearing aids or cochlear implant,Ear Nose & Throat Centre of Hong Kong,Prednisone
+PT-480879,Concussion (post-trauma),Vestibular rehabilitation (balance/coordination exercises),Alliance Physiotherapy Centre Limited,Acetaminophen
+PT-69D3D2,TMJ disorder (jaw pain),"Physical therapy (jaw stretching, mobilization)",Forhealth Physiotherapy Centre Limited,NSAIDs (naproxen)
+PT-6EA913,Earwax impaction,Cerumenolytic ear drops (softening and irrigation),Ear Nose & Throat Centre of Hong Kong,Carbamide peroxide
+PT-5F9490,Coronary Artery Disease,Angioplasty (stent),Manawatu Heartcare,Aspirin
+PT-139074,Acute necrotizing ulcerative gingivitis,Debridement and chlorhexidine rinse,Wisdom Dental Center,Metronidazole
+PT-3D40AB,Dysarthria,Speech therapy,Bowen Eye Clinic,Levodopa
+PT-2B169A,Tinnitus (ringing),Sound therapy (masking); hearing aids,The Hong Kong Society For The Deaf,SSRIs
+PT-CA8B5E,Voice Disorder,Voice therapy,Alliance Physiotherapy Centre Limited,Omeprazole (PPI)
+PT-85500A,Open-angle glaucoma,Prostaglandin analog eye drops,Eye Institute Wellington,Latanoprost
+PT-141DFE,Post-Traumatic Stress Disorder,Trauma-focused CBT,Christchurch PsychMed,Sertraline (SSRI)
+PT-F53767,Sickle cell disease,Hydroxyurea therapy,Pooja P. Advani,"Hydroxyurea, crizanlizumab"
+PT-165221,Meniere's disease,Low-salt diet + diuretics,Widex Hong Kong Hearing & Speech Centre Ltd.,Hydrochlorothiazide
+PT-286F66,Impacted wisdom tooth (infection),Surgical extraction,Prestige Dental Limited,Amoxicillin
+PT-041CAF,Prostate cancer,Prostatectomy,Canopy Cancer Care,Leuprolide
+PT-6A5CA7,Basal Cell Carcinoma,Mohs surgery,Skin Centre Remuera,Vismodegib
+PT-99A7A1,Tinea (Fungal infection),Topical antifungal,Christchurch Dermatology,Terbinafine
+PT-C51BBF,Colorectal Cancer,Colectomy (surgery),Mercy Cancer Care,5-Fluorouracil
+PT-C7E60A,Sensorineural hearing loss,Hearing aids or cochlear implant,Phonak (Hong Kong) Hearing Centre,Prednisone
+PT-8FE6BF,Acoustic neuroma,Observation or surgery,Ear Nose & Throat Centre of Hong Kong,No specific medication
+PT-F51BCD,Childhood Speech Delay,Speech therapy,Mercy Cancer Care,None
+PT-9AAA1E,Glaucoma,Prescription eye drops to lower intraocular pressure,Eye Institute Wellington,Latanoprost
+PT-25A76C,Hyperkalemia,Diet changes,Gerber & Hutchison Cardiovascular,Furosemide
+PT-1E1F7F,Uveitis (non-infectious),Topical corticosteroids (eye drops),Milford Eye Clinic,Prednisolone
+PT-3D0B9B,Sensorineural hearing loss,Hearing aids or cochlear implant,Grace Sound (Kowloon) Hearing Centre,Prednisone
+PT-3CDF58,Oral thrush (candidiasis),Clotrimazole lozenges,Wellmed Dental Care Limited,Clotrimazole
+PT-204ECE,Post-Traumatic Stress Disorder,Trauma-focused CBT,Bilal Psychiatry Ltd,Sertraline (SSRI)
+PT-1456A0,Impacted wisdom tooth (infection),Surgical extraction,UMP Dental Centre (Causeway Bay),Amoxicillin
+PT-1AADA3,Chronic myelogenous leukemia,Targeted therapy,UOC di Ematologia Mariano Santo,"Imatinib, dasatinib"
+PT-D0ACF2,Bruxism (teeth grinding),Mouth guard (dental splint),Koway Dental Clinic Centre,Cyclobenzaprine
+PT-310E83,Obsessive-Compulsive Disorder,Exposure-based CBT,Later Life Psychiatry,Sertraline (SSRI)
+PT-AA6684,Impacted wisdom tooth (infection),Surgical extraction,Victoria Dental Clinic,Amoxicillin
+PT-865FF0,Psoriasis,Phototherapy (UV light),Helander Dermatology,Methotrexate
+PT-B067DF,Iron-deficiency anemia,Iron supplementation,Muhamad Alhaj Moustafa,Ferrous sulfate
+PT-AB8C57,Panic Disorder,Cognitive Behavioral Therapy,Ashburn Clinic,Sertraline (SSRI)
+PT-5B5258,Childhood Speech Delay,Speech therapy,Advanz Physiotherapy Centre (Causeway Bay),None
+PT-52B7D8,Selective Mutism,Speech therapy + CBT,Wellmed Dental Care Limited,Sertraline
+PT-B7E277,Acoustic neuroma,Observation or surgery,Widex Hong Kong Hearing & Speech Centre Ltd.,No specific medication
+PT-E7ADBE,Developmental Language Disorder,Speech therapy,Skin Dermatology Institute,None
+PT-3D70ED,Age-related macular degeneration,AREDS vitamin supplements,Kerikeri Medical Centre,Lutein/Zeaxanthin
+PT-1EF558,Bacterial conjunctivitis,Topical antibiotic ointment,Bowen Eye Clinic,Erythromycin ophthalmic
+PT-215C7A,Generalized Anxiety Disorder,Cognitive Behavioral Therapy (CBT),Coliber Group Psychiatry,Escitalopram (SSRI)
+PT-15EEC0,Hypertension,Lifestyle modification,Bay Heart Group,Lisinopril
+PT-9435B8,Spasmodic dysphonia,Voice therapy,Byrne & Hickman Physiotherapy & Sports Injury Centre,Botulinum toxin injection
+PT-56D9E7,Hemophilia A,Factor VIII replacement,UOC di Ematologia Mariano Santo,"Factor VIII, emicizumab"
+PT-50E993,Myocardial Infarction,Percutaneous coronary intervention,Midland Cardio Vascular Services,Aspirin
+PT-3BA76C,Oral thrush (candidiasis),Clotrimazole lozenges,Southern Dental Centre Co. Limited,Clotrimazole
+PT-206D7A,Plantar fasciitis,Stretching exercises,Y Physio. Rehabilitation Centre Limited,Ibuprofen (NSAID)
+PT-C70BA0,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,ENT Laser Hearing & Speech Therapy Centre Limited,Ciprofloxacin ear drops
+PT-B82108,Oral herpes (HSV labialis),Antiviral therapy for herpes,Sunny Days Smile Dental Clinic,Acyclovir
+PT-093C3D,Acoustic neuroma,Observation or surgery,Optical 88 Hearing Care Centre,No specific medication
+PT-551DB9,Hyperkalemia,Diet changes,Midland Cardio Vascular Services,Furosemide
+PT-688C7C,Age-related macular degeneration,AREDS vitamin supplements,Capital Eye Specialists,Lutein/Zeaxanthin
+PT-FBA915,Tinnitus (ringing),Sound therapy (masking); hearing aids,Ear Nose & Throat Centre of Hong Kong,SSRIs
+PT-53F19D,CML,Targeted therapy (TKI),Auckland Breast Centre,Imatinib
+PT-483D4C,Attention-Deficit/Hyperactivity Disorder,Behavioral Therapy,Fillan Healthcare - Dr K Hutton,Methylphenidate
+PT-947A87,Rosacea,Topical therapy,Skin Centre Remuera,Metronidazole
+PT-71C641,Actinic Keratosis,Cryotherapy,Helander Dermatology,Fluorouracil cream
+PT-1EA5D6,Oral thrush (candidiasis),Clotrimazole lozenges,Victoria Dental (Wan Chai) Limited,Clotrimazole
+PT-C7FFDD,Selective Mutism,Speech therapy + CBT,Bay Heart Group,Sertraline
+PT-B24139,Age-related macular degeneration,AREDS vitamin supplements,Capital Eye Specialists,Lutein/Zeaxanthin
+PT-E9AF69,Lung cancer,Lobectomy,Bowen Icon Cancer Centre,Cisplatin
+PT-8CB5E3,Sensorineural hearing loss (age-related),Hearing aids,Grace Sound (Kowloon) Hearing Centre,None
+PT-1F4FDE,Shoulder impingement,Physical therapy (stretch and strengthen shoulder),Alliance Physiotherapy Centre Limited,NSAIDs (ibuprofen)
+PT-B98456,Coronary Artery Disease,Angioplasty (stent),Manawatu Heartcare,Aspirin
+PT-2058EC,Rosacea,Topical therapy,Fiona Larsen Dermatology,Metronidazole
+PT-83D03C,Panic Disorder,Cognitive Behavioral Therapy,Later Life Psychiatry,Sertraline (SSRI)
+PT-173C2F,Chronic otitis media,Tympanostomy tube surgery; hearing aid if needed,Grace Sound (Kowloon) Hearing Centre,Ciprofloxacin ear drops
+PT-9DA498,Refractive error (myopia/hyperopia/astigmatism),Speech therapy,Lantex Corporation Limited,None
+PT-73A59D,Refractive error (myopia/hyperopia/astigmatism),Corrective lenses (glasses or contacts),Grace Speech Therapy and Swallowing Centre,
+PT-78E8BB,Pancreatic Cancer,Whipple procedure,Pacific Radiology - St George's,Gemcitabine
+PT-D5F635,Prostate cancer,Prostatectomy,Harbour Cancer Centre,Leuprolide
+PT-520B25,Hyperkalemia,Diet changes,Aro Manawa (Heart) Health,Furosemide
+PT-E33A0A,Deep Vein Thrombosis,Thrombectomy,CardioLabs,Enoxaparin
+PT-BA25E5,Dry eye (keratoconjunctivitis),Artificial tears,City Eye Specialists,Cyclosporine ophthalmic
+PT-7004E5,Hypertension,Lifestyle modification,Gerber & Hutchison Cardiovascular,Lisinopril
+PT-16C1B3,Dental caries,Cavity filling and fluoride application,Southern Dental Centre Co. Limited,Fluoride (topical)
+PT-E6831A,Insomnia (behavioral),Cognitive Behavioral Therapy for Insomnia,Later Life Psychiatry,Zolpidem
+PT-B12E26,Rosacea,Topical therapy,Helander Dermatology,Metronidazole
+PT-F01A46,Hypertension,Lifestyle modification,Christchurch Heart Group,Lisinopril
+PT-7E08B8,Allergic conjunctivitis,Antihistamine/mast-cell-stabilizer eye drops,Auckland Eye - New Lynn,Olopatadine
+PT-A7D322,Specific Phobia,Exposure Therapy,Joylife Consultancy Clinic,Propranolol
+PT-E940C6,Multiple myeloma,Chemotherapy and stem cell transplant,Hassan Alkhateeb,"Bortezomib, lenalidomide"
+PT-FD95AB,Non-Hodgkin lymphoma,Combination chemotherapy (R-CHOP),Canopy Cancer Care,Rituximab
+PT-B0162A,Social Anxiety Disorder,Cognitive Behavioral Therapy,Kinder Minds,Paroxetine (SSRI)
+PT-12FFBB,NSCLC,Surgical resection,Harbour Cancer Centre,Pembrolizumab
+PT-ED8AAD,Social Anxiety Disorder,Cognitive Behavioral Therapy,Kinder Minds,Paroxetine (SSRI)
+PT-7A3132,Deep Vein Thrombosis,Thrombectomy,Bay Heart Group,Enoxaparin
+PT-A768B1,Social Anxiety Disorder,Cognitive Behavioral Therapy,Coliber Group Psychiatry,Paroxetine (SSRI)
+PT-2BC8C3,Open-angle glaucoma,Prostaglandin analog eye drops,Kerikeri Medical Centre,Latanoprost
+PT-7DB287,Acne Vulgaris,Topical therapy (retinoids),Skin Centre Remuera,Tretinoin
+PT-1A8A06,Bruxism (teeth grinding),Mouth guard (dental splint),Wisdom Dental Center,Cyclobenzaprine
+PT-A74925,Allergic conjunctivitis,Antihistamine eye drops,City Eye Specialists,Olopatadine
+PT-1EAFE3,Peripheral Artery Disease,Exercise therapy,Ascot Angiography,Cilostazol
+PT-2BDA55,Tinnitus (ringing),Sound therapy (masking); hearing aids,Phonak (Hong Kong) Hearing Centre,SSRIs
+PT-1F668B,CML,Targeted therapy (TKI),Auckland Breast Centre,Imatinib
+PT-C72C0C,Glioblastoma,Resection + Radiation,Pacific Radiology - St George's,Temozolomide
+PT-CA554A,Breast Cancer,Lumpectomy + Radiation,Mercy Cancer Care,Tamoxifen
+PT-7240EA,Impacted wisdom tooth (infection),Surgical extraction,Victoria Dental (Wan Chai) Limited,Amoxicillin
+PT-B901EA,Voice Disorder,Voice therapy,Mayo Clinic Hematology & Oncology,Omeprazole (PPI)
+PT-938779,Pancreatic Cancer,Whipple procedure,Bowen Icon Cancer Centre,Gemcitabine
+PT-820364,Ventricular Tachycardia,Implantable defibrillator,Ascot Angiography,Amiodarone
+PT-5EBF1E,Actinic Keratosis,Cryotherapy,Dr E A Baird Dermatology,Fluorouracil cream
+PT-2C0127,Melanoma (metastatic),Surgical excision,Harbour Cancer Care,Pembrolizumab
+PT-E7C319,Bacterial conjunctivitis,Topical antibiotic eye drops,Eye Institute Wellington,Erythromycin ophthalmic
+PT-86759D,"Autism (communication)""",Speech therapy,Hong Kong Community Speech Therapy Centre Limited,Risperidone
+PT-798634,Glioblastoma multiforme,Surgical resection and radiation,Auckland Breast Centre,Temozolomide
+PT-10C49D,Voice Disorder,Voice therapy,Otic Hearing & Speech Service Centre Limited,Omeprazole (PPI)
+PT-597496,Conductive hearing loss (otosclerosis),Stapedectomy (surgical) or hearing aid,Widex Hong Kong Hearing & Speech Centre Ltd.,
+PT-C6FF1C,Glioblastoma,Resection + Radiation,Auckland Breast Centre,Temozolomide
+PT-89E9C3,Dysphagia,Swallowing therapy,Auckland Myopia Clinic,Omeprazole (PPI)
+PT-7A312C,Voice Disorder,Voice therapy,Auckland Skin and Cancer Foundation,Omeprazole (PPI)
+PT-364B1C,Voice Disorder,Voice therapy,ENT Laser Hearing & Speech Therapy Centre Limited,Omeprazole (PPI)
+PT-9852FC,Neck pain (cervicalgia),"Physical therapy (neck exercises, manual therapy)",Central Morthan Cure Physiotherapy Limited,NSAIDs (ibuprofen)
+PT-1D103B,Benign positional vertigo (BPPV),Canalith repositioning maneuvers (Epley),Aurora Physiotherapy And Fitness Centre Co. Limited,Meclizine
+PT-F05A9E,Impacted wisdom tooth (infection),Surgical extraction,Speech Therapy And Rehabilitation Training Centre Limited,Amoxicillin
